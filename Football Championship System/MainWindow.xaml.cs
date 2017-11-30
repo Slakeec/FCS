@@ -23,6 +23,7 @@ namespace Football_Championship_System
         public MainWindow()
         {
             InitializeComponent();
+            //
         }
     }
 }
