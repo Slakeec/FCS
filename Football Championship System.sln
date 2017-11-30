@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Football Championship System", "Football Championship System\Football Championship System.csproj", "{DF63CC6D-F41D-4165-98DD-506201E344A8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Football Game", "Football Game\Football Game.csproj", "{64B4A333-5C5E-4088-B55D-016BABC1A9B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{DF63CC6D-F41D-4165-98DD-506201E344A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF63CC6D-F41D-4165-98DD-506201E344A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF63CC6D-F41D-4165-98DD-506201E344A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64B4A333-5C5E-4088-B55D-016BABC1A9B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64B4A333-5C5E-4088-B55D-016BABC1A9B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64B4A333-5C5E-4088-B55D-016BABC1A9B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64B4A333-5C5E-4088-B55D-016BABC1A9B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
