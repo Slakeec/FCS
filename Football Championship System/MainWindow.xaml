@@ -13,6 +13,45 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Image Source="Resources/logo.svg.png"></Image>
+        <Grid Grid.Row="1" Margin="5" Visibility="Visible" Name="GridEnter">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Name="labelLogin" Content="Enter your login" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"></Label>
+            <Label Name="labelPassword" Content="Enter your password" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Grid.Row="1"></Label>
+            <TextBox Name="textBoxLogin" Text="" Grid.Column="1" VerticalAlignment="Center" Grid.ColumnSpan="2" FontSize="16"></TextBox>
+            <PasswordBox Name="passwordBox" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"></PasswordBox>
+            <Button Grid.Row="2" Name="ButtonSettings" Content="Settings" FontSize="20" Margin="3"></Button>
+            <Button Grid.Row="2" Grid.Column="1" Name="ButtonRegistration" Content="Registration" FontSize="20" Margin="3,0,3,3" Height="35" VerticalAlignment="Bottom" Click="ButtonRegistration_Click"></Button>
+            <Button Grid.Row="2" Grid.Column="2" Name="ButtomEnter" Content="Enter" FontSize="20" Margin="3"></Button>
+        </Grid>
+        <Grid Grid.Row="1" Margin="5" Visibility="Hidden" Name="GridRegistration">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Name="LabelLogin" Content="Enter you login" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"></Label>
+            <Label Name="LabelPassword" Content="Enter your password" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Grid.Row="1"></Label>
+            <Label Name="LabelConfirming" Content="Confirm your password" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Grid.Row="2"></Label>
+            <TextBox Name="textBoxRegistrationLogin" Text="" VerticalAlignment="Center" Grid.Column="1"></TextBox>
+            <PasswordBox Name="passwordBoxRegistration" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1"></PasswordBox>
+            <PasswordBox Name="passwordBoxConfirming" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1"></PasswordBox>
+            <Button Name="ButtonBack" Content="Back" FontSize="20" VerticalAlignment="Bottom" Grid.Row="3" Margin="3,0,3,3" Click="ButtonBack_Click"></Button>
+            <Button Name="ButtonOK" Content="Sign up" FontSize="20" Grid.Row="3" Grid.Column="1" Margin="3,0,3,3" Click="ButtonOK_Click"/>
+        </Grid>
         <Button Name="ButtonExit" Grid.Row="2" Margin="5" Content="EXIT" FontSize="30" Click="ButtonExit_Click"></Button>
     </Grid>
 </Window>

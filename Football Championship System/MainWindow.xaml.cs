@@ -29,5 +29,24 @@ namespace Football_Championship_System
         {
             this.Close();
         }
+
+        private void ButtonBack_Click(object sender, RoutedEventArgs e)
+        {
+            GridRegistration.Visibility = Visibility.Hidden;
+            GridEnter.Visibility = Visibility.Visible;
+        }
+
+        private void ButtonOK_Click(object sender, RoutedEventArgs e)
+        {
+            //Добавить нового пользователя
+            GridRegistration.Visibility = Visibility.Hidden;
+            GridEnter.Visibility = Visibility.Visible;
+        }
+
+        private void ButtonRegistration_Click(object sender, RoutedEventArgs e)
+        {
+            GridEnter.Visibility = Visibility.Hidden;
+            GridRegistration.Visibility = Visibility.Visible;
+        }
     }
 }
