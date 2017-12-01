@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Football Championship Syste
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Football Game", "Football Game\Football Game.csproj", "{64B4A333-5C5E-4088-B55D-016BABC1A9B5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classes", "Classes\Classes.csproj", "{F60491B5-F5A4-4930-92BA-6ED77283AFC1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{64B4A333-5C5E-4088-B55D-016BABC1A9B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64B4A333-5C5E-4088-B55D-016BABC1A9B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64B4A333-5C5E-4088-B55D-016BABC1A9B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F60491B5-F5A4-4930-92BA-6ED77283AFC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F60491B5-F5A4-4930-92BA-6ED77283AFC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F60491B5-F5A4-4930-92BA-6ED77283AFC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F60491B5-F5A4-4930-92BA-6ED77283AFC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
