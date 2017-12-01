@@ -23,7 +23,6 @@ namespace Football_Championship_System
         public MainWindow()
         {
             InitializeComponent();
-            
         }
 
         private void ButtonExit_Click(object sender, RoutedEventArgs e)

@@ -10,8 +10,9 @@
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
+        <Image Source="Resources/logo.svg.png"></Image>
         <Button Name="ButtonExit" Grid.Row="2" Margin="5" Content="EXIT" FontSize="30" Click="ButtonExit_Click"></Button>
     </Grid>
 </Window>
