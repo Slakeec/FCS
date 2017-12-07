@@ -95,7 +95,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Classes\Classes.csproj">
+      <Project>{f60491b5-f5a4-4930-92ba-6ed77283afc1}</Project>
+      <Name>Classes</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\logo.svg.png" />
   </ItemGroup>

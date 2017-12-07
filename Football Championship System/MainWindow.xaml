@@ -28,7 +28,7 @@
             <Label Name="labelPassword" Content="Enter your password" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Grid.Row="1"></Label>
             <TextBox Name="textBoxLogin" Text="" Grid.Column="1" VerticalAlignment="Center" Grid.ColumnSpan="2" FontSize="16"></TextBox>
             <PasswordBox Name="passwordBox" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"></PasswordBox>
-            <Button Grid.Row="2" Name="ButtonSettings" Content="Settings" FontSize="20" Margin="3"></Button>
+            <Button Grid.Row="2" Name="ButtonSettings" Content="Settings" FontSize="20" Margin="3" Click="ButtonSettings_Click"/>
             <Button Grid.Row="2" Grid.Column="1" Name="ButtonRegistration" Content="Registration" FontSize="20" Margin="3,0,3,3" Height="35" VerticalAlignment="Bottom" Click="ButtonRegistration_Click"></Button>
             <Button Grid.Row="2" Grid.Column="2" Name="ButtomEnter" Content="Enter" FontSize="20" Margin="3"></Button>
         </Grid>
@@ -51,6 +51,40 @@
             <PasswordBox Name="passwordBoxConfirming" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1"></PasswordBox>
             <Button Name="ButtonBack" Content="Back" FontSize="20" VerticalAlignment="Bottom" Grid.Row="3" Margin="3,0,3,3" Click="ButtonBack_Click"></Button>
             <Button Name="ButtonOK" Content="Sign up" FontSize="20" Grid.Row="3" Grid.Column="1" Margin="3,0,3,3" Click="ButtonOK_Click"/>
+        </Grid>
+        <Grid Grid.Row="1" Name="GridSettings" Visibility="Hidden" Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <RadioButton Name="RadioButton60sec" Content="60 sec" FontSize="20" VerticalAlignment="Center"></RadioButton>
+                <RadioButton Name="RadioButton90sec" Content="90 sec" FontSize="20" VerticalAlignment="Center" Grid.Row="1"></RadioButton>
+                <RadioButton Name="RadioButton180sec" Content="180 sec" FontSize="20" VerticalAlignment="Center" Grid.Row="2"></RadioButton>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <RadioButton Name="RadioButton1Level" Content="1 Level" FontSize="20" VerticalAlignment="Center"></RadioButton>
+                <RadioButton Name="RadioButton2Level" Content="2 Level" FontSize="20" VerticalAlignment="Center" Grid.Row="1"></RadioButton>
+                <RadioButton Name="RadioButton3Level" Content="3 Level" FontSize="20" VerticalAlignment="Center" Grid.Row="2"></RadioButton>
+                <RadioButton Name="RadioButton4Level" Content="4 Level" FontSize="20" VerticalAlignment="Center" Grid.Row="3"></RadioButton>
+            </Grid>
+            <Button Grid.Row="1" Name="ButtonSettingsBack" Content="Back" FontSize="20" Click="ButtonSettingsBack_Click" Margin="3"></Button>
+            <Button Grid.Row="1" Grid.Column="1" Name="ButtonSettingsOK" Content="Confirm" FontSize="20" Click="ButtonSettingsOK_Click" Margin="3"></Button>
         </Grid>
         <Button Name="ButtonExit" Grid.Row="2" Margin="5" Content="EXIT" FontSize="30" Click="ButtonExit_Click"></Button>
     </Grid>
