@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Football_Championship_System"
         mc:Ignorable="d"
         Title="Football championship system" Height="350" Width="525">
-    <Grid>
+    <Grid Loaded="Grid_Loaded">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -30,7 +30,7 @@
             <PasswordBox Name="passwordBox" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"></PasswordBox>
             <Button Grid.Row="2" Name="ButtonSettings" Content="Settings" FontSize="20" Margin="3" Click="ButtonSettings_Click"/>
             <Button Grid.Row="2" Grid.Column="1" Name="ButtonRegistration" Content="Registration" FontSize="20" Margin="3,0,3,3" Height="35" VerticalAlignment="Bottom" Click="ButtonRegistration_Click"></Button>
-            <Button Grid.Row="2" Grid.Column="2" Name="ButtomEnter" Content="Enter" FontSize="20" Margin="3"></Button>
+            <Button Grid.Row="2" Grid.Column="2" Name="ButtomEnter" Content="Enter" FontSize="20" Margin="3" Click="ButtomEnter_Click"/>
         </Grid>
         <Grid Grid.Row="1" Margin="5" Visibility="Hidden" Name="GridRegistration">
             <Grid.RowDefinitions>
@@ -85,6 +85,20 @@
             </Grid>
             <Button Grid.Row="1" Name="ButtonSettingsBack" Content="Back" FontSize="20" Click="ButtonSettingsBack_Click" Margin="3"></Button>
             <Button Grid.Row="1" Grid.Column="1" Name="ButtonSettingsOK" Content="Confirm" FontSize="20" Click="ButtonSettingsOK_Click" Margin="3"></Button>
+        </Grid>
+        <Grid Grid.Row="1" Name="GridChoosingMyTeam" Margin="5" Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Choose of the possible team" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"></Label>
+            <ComboBox Name="ComboxTeams" Grid.Column="1" Margin="5" FontSize="20" VerticalAlignment="Center"></ComboBox>
+            <Button Name="ButtonBackFromChoosing" Grid.Row="1" Content="Back" FontSize="20" VerticalAlignment="Bottom" Margin="3,0,3,3" Click="ButtonBackFromChoosing_Click"></Button>
+            <Button Name="ButtonOKFromChoosing" Grid.Row="1" Grid.Column="1" Content="Start" FontSize="20" VerticalAlignment="Center" Margin="3" Click="ButtonOKFromChoosing_Click"></Button>
         </Grid>
         <Button Name="ButtonExit" Grid.Row="2" Margin="5" Content="EXIT" FontSize="30" Click="ButtonExit_Click"></Button>
     </Grid>

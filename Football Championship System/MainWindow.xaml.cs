@@ -21,8 +21,16 @@ namespace Football_Championship_System
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Settings settings;
+        public Settings Setting
+        {
+            get { return settings; }
+            set { settings = value; }
+        }
+
         public MainWindow()
         {
+            this.Setting = new Settings();
             InitializeComponent();
         }
 
@@ -62,12 +70,16 @@ namespace Football_Championship_System
             if (RadioButton60sec.IsChecked==false && RadioButton90sec.IsChecked==false && RadioButton180sec.IsChecked==false)
             {
                 MessageBox.Show("Choose one of the possible time", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
             }
             if (RadioButton1Level.IsChecked==false && RadioButton2Level.IsChecked==false && RadioButton3Level.IsChecked==false && RadioButton4Level.IsChecked==false)
             {
                 MessageBox.Show("Choose one of the possible level", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
             }
-            Settings settings = new Settings();
+            int time = RadioButton60sec.IsChecked == true ? 60 : RadioButton90sec.IsChecked == true ? 90 : 180;
+            int level = RadioButton1Level.IsChecked == true ? 1 : RadioButton2Level.IsChecked == true ? 2 : RadioButton3Level.IsChecked == true ? 3 : 4;
+            this.Setting = new Settings(time, level);
             GridSettings.Visibility = Visibility.Hidden;
             GridEnter.Visibility = Visibility.Visible;
         }
@@ -76,6 +88,40 @@ namespace Football_Championship_System
         {
             GridEnter.Visibility = Visibility.Hidden;
             GridSettings.Visibility = Visibility.Visible;
-        }   
+        }
+
+        private void ButtonBackFromChoosing_Click(object sender, RoutedEventArgs e)
+        {
+            GridChoosingMyTeam.Visibility = Visibility.Hidden;
+            GridEnter.Visibility = Visibility.Visible;
+        }
+
+        private void ButtonOKFromChoosing_Click(object sender, RoutedEventArgs e)
+        {
+
+            //start game
+        }
+
+        private void ButtomEnter_Click(object sender, RoutedEventArgs e)
+        {
+            if (false)//no login
+            {
+                MessageBox.Show("You need to sign in!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else if (false) //has choosen a team
+            {
+                //start a game
+            }
+            else
+            {
+                GridEnter.Visibility = Visibility.Hidden;
+                GridChoosingMyTeam.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            ComboxTeams.ItemsSource = (new Repository()).Teams;
+        }
     }
 }
