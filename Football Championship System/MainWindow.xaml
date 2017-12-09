@@ -29,7 +29,7 @@
             <TextBox Name="textBoxLogin" Text="" Grid.Column="1" VerticalAlignment="Center" Grid.ColumnSpan="2" FontSize="16"></TextBox>
             <PasswordBox Name="passwordBox" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"></PasswordBox>
             <Button Grid.Row="2" Name="ButtonSettings" Content="Settings" FontSize="20" Margin="3" Click="ButtonSettings_Click"/>
-            <Button Grid.Row="2" Grid.Column="1" Name="ButtonRegistration" Content="Registration" FontSize="20" Margin="3,0,3,3" Height="35" VerticalAlignment="Bottom" Click="ButtonRegistration_Click"></Button>
+            <Button Grid.Row="2" Grid.Column="1" Name="ButtonRegistration" Content="Registration" FontSize="20" Margin="3" VerticalAlignment="Bottom" Click="ButtonRegistration_Click"></Button>
             <Button Grid.Row="2" Grid.Column="2" Name="ButtomEnter" Content="Enter" FontSize="20" Margin="3" Click="ButtomEnter_Click"/>
         </Grid>
         <Grid Grid.Row="1" Margin="5" Visibility="Hidden" Name="GridRegistration">

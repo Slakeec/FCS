@@ -39,12 +39,20 @@ namespace Classes
             get { return myTeam; }
             set { myTeam = value; }
         }
-        public Team(string name, bool myTeam)
+        private int userId;
+        public int UserId
+        {
+            get { return userId; }
+            set { userId = value; }
+        }
+
+        public Team(string name, bool myTeam, int userID)
         {
             this.Name = name;
             this.Games = 0;
             this.Points = 0;
             this.MyTeam = myTeam;
+            this.UserId = userID;
         }
         public Team()
         {
