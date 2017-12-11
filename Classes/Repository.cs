@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,6 +16,20 @@ namespace Classes
             get { return teams; }
             set { teams = value; }
         }
+
+        static Team GetTeamList(int TeamId)
+        {
+            using (var client = new HttpClient())
+            {
+                string Baseurl = " http://api.football-data.org/v1/teams/";
+                String EndUrl = "/players";
+                String url = Baseurl + TeamId + EndUrl;
+                string result = client.GetStringAsync(url).Result;
+                return JsonConvert.DeserializeObject<Team>(result);
+            }
+        }
+
+        
         public Repository()
         {
             this.Teams = new List<string>

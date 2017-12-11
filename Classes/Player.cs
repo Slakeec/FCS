@@ -73,10 +73,10 @@ namespace Classes
             get { return teamId; }
             set { teamId = value; }
         }
-        public Player(string name, string nationality, int goals, int idTeam, int number,  string position)
+        public Player(string name, string nationality, int idTeam, int number,  string position)
         {
             this.Name = name;            
-            this.Goals = goals;
+            this.Goals = 0;
             this.TeamId = idTeam;
             this.Nationlity = nationality;
             this.Number = number;

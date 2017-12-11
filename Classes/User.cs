@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Classes
 {
-    class User
+    public class User
     {
         private int id;
         public int Id
@@ -26,17 +26,16 @@ namespace Classes
             get { return password; }
             set { password = value; }
         }
-        private int championshipId;
-        public int ChampionshipId
-        {
-            get { return championshipId; }
-            set { championshipId = value; }
-        }
-        public User(string login, string password, int champId)
+      
+        public User(string login, string password)
         {
             this.Login = login;
             this.Password = password;
-            this.ChampionshipId = champId;
+            
+        }
+        public User()
+        {
+
         }
     }
 }
