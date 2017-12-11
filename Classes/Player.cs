@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,18 +15,51 @@ namespace Classes
             get { return id; }
             set { id = value; }
         }
+        [JsonProperty("name")]
         private string name;
+
         public string Name
         {
-            get { return name; }
-            set { name = value; }
+            get { return Name; }
+            set { Name = value; }
         }
-        private string surname;
-        public string Surname
+
+
+        [JsonProperty("nationality")]
+        private string nationlity;
+
+        public string Nationlity
         {
-            get { return surname; }
-            set { surname = value; }
+            get { return nationlity; }
+            set { nationlity = value; }
         }
+
+        [JsonProperty("marketValue")]
+        private string marketPrice;
+
+        public string MarketPrice
+        {
+            get { return marketPrice; }
+            set { marketPrice = value; }
+        }
+
+        [JsonProperty("jerseyNumber")]
+        private int number;
+        public int Number
+        {
+            get { return number; }
+            set { number = value; }
+        }
+        
+        [JsonProperty("position")]
+        private string position;
+
+        public string Position
+        {
+            get { return marketPrice; }
+            set { marketPrice = value; }
+        }
+
         private int goals;
         public int Goals
         {
@@ -39,16 +73,18 @@ namespace Classes
             get { return teamId; }
             set { teamId = value; }
         }
-        public Player(string name, string surname, int goals, int idTeam)
+        public Player(string name, string nationality, int goals, int idTeam, int number,  string position)
         {
-            this.Name = name;
-            this.Surname = surname;
+            this.Name = name;            
             this.Goals = goals;
             this.TeamId = idTeam;
+            this.Nationlity = nationality;
+            this.Number = number;
+            this.Position = position;
         }
         public Player()
         {
-                //
+                
         }
     }
 }

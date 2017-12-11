@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,24 @@ namespace Classes
         {
             get { return name; }
             set { name = value; }
+        }
+
+        [JsonProperty("count")]
+        private int count;
+
+        public int Count
+        {
+            get { return count; }
+            set { count = value; }
+        }
+
+        [JsonProperty("players")]
+        private List<Player> players;
+
+        public List<Player> Players
+        {
+            get { return players; }
+            set { players = value; }
         }
 
         private int games;
@@ -46,13 +65,15 @@ namespace Classes
             set { userId = value; }
         }
 
-        public Team(string name, bool myTeam, int userID)
+        public Team(string name, bool myTeam, int userID, int count, List<Player> players)
         {
             this.Name = name;
             this.Games = 0;
             this.Points = 0;
             this.MyTeam = myTeam;
             this.UserId = userID;
+            this.Count = count;
+            this.Players = players;
         }
         public Team()
         {
