@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Classes;
+using ServiceClasses;
 
 namespace Football_Championship_System
 {
@@ -48,6 +49,21 @@ namespace Football_Championship_System
         private void ButtonOK_Click(object sender, RoutedEventArgs e)
         {
             //Добавить нового пользователя
+            if (textBoxRegistrationLogin.Text=="" || passwordBoxRegistration.Password=="" || passwordBoxConfirming.Password=="")
+            {
+                MessageBox.Show("Fill login and password fields", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            if (passwordBoxRegistration.Password!=passwordBoxConfirming.Password)
+            {
+                MessageBox.Show("You entered different passwords", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            using (var context = new Context())
+            {
+                context.Users.Add(new User(textBoxRegistrationLogin.Text, Hashing.HashPaswword(passwordBoxRegistration.Password)));
+                context.SaveChanges();
+            }
             GridRegistration.Visibility = Visibility.Hidden;
             GridEnter.Visibility = Visibility.Visible;
         }
@@ -104,11 +120,22 @@ namespace Football_Championship_System
 
         private void ButtomEnter_Click(object sender, RoutedEventArgs e)
         {
-            if (false)//no login
+            if (textBoxLogin.Text=="" || passwordBox.Password=="")//no login
             {
-                MessageBox.Show("You need to sign in!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Enter login and password please", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
             }
-            else if (false) //has choosen a team
+            else if (LINQFactory.IsLogin(textBoxLogin.Text)==false)
+            {
+                MessageBox.Show("You enter incorrect login", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            else if (LINQFactory.IsLoginAndPassword(textBoxLogin.Text, passwordBox.Password)==false)
+            {
+                MessageBox.Show("Your password is incorrect", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            else if (LINQFactory.HasACareer(textBoxLogin.Text)) //has choosen a team
             {
                 //start a game
             }

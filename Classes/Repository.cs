@@ -10,8 +10,8 @@ namespace Classes
 {
     public class Repository
     {
-        private List<string> teams;
-        public List<string> Teams
+        private List<int> teams;
+        public List<int> Teams
         {
             get { return teams; }
             set { teams = value; }
@@ -29,31 +29,12 @@ namespace Classes
             }
         }
 
-        
+       
         public Repository()
         {
-            this.Teams = new List<string>
+            this.Teams = new List<int>
             {
-                "Arsenal",
-                "Chelsea",
-                "Manchester United",
-                "Manchester City",
-                "Liverpool",
-                "Barselona",
-                "Real Madrid",
-                "Atletiko Madrid",
-                "Bayern Munchen",
-                "Borussia Dortmund",
-                "Juventus",
-                "Napoli",
-                "Roma",
-                "Inter",
-                "PSG",
-                "Monaco",
-                "CSKA",
-                "Zenit",
-                "Spartak",
-                "Lokomotiv"
+                57,61,62,64,65,66,73,78,81,86,94,95,98,100,108,109
             };
         }
     }

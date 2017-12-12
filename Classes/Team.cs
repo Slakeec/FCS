@@ -65,13 +65,12 @@ namespace Classes
             set { userId = value; }
         }
 
-        public Team(string name, bool myTeam, int userID, int count, List<Player> players)
+        public Team(string name, int count, List<Player> players)
         {
             this.Name = name;
+            this.MyTeam = false;
             this.Games = 0;
             this.Points = 0;
-            this.MyTeam = myTeam;
-            this.UserId = userID;
             this.Count = count;
             this.Players = players;
         }

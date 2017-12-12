@@ -7,16 +7,16 @@ using System.Data.Entity;
 
 namespace Classes
 {
-   public class Context: DbContext
+    public class Context: DbContext
     {
-        Context() : base("FCSDataBase")
+        public Context() : base("FCSDataBase")
         {
         }
 
-        DbSet<User> Users;
-        DbSet<Team> Teams;
-        DbSet<Player> Players;
-        DbSet<Match> Matches;
+        public DbSet<User> Users { get; set; }
+        public DbSet<Team> Teams { get; set; }
+        public DbSet<Player> Players { get; set; }
+        public DbSet<Match> Matches { get; set; }
         
     }
 }

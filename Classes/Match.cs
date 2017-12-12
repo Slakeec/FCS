@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Classes
 {
-    class Match
+    public class Match
     {
         private int id;
 
