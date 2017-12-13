@@ -114,7 +114,11 @@ namespace Football_Championship_System
 
         private void ButtonOKFromChoosing_Click(object sender, RoutedEventArgs e)
         {
-
+            if (ComboxTeams.SelectedIndex==-1)
+            {
+                MessageBox.Show("You haven't choosen a team", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
             //start game
         }
 
@@ -148,7 +152,7 @@ namespace Football_Championship_System
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-            ComboxTeams.ItemsSource = (new Repository()).Teams;
+            ComboxTeams.ItemsSource = (new Repository()).TeamNames;
         }
     }
 }

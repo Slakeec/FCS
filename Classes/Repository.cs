@@ -10,14 +10,20 @@ namespace Classes
 {
     public class Repository
     {
-        private List<int> teams;
-        public List<int> Teams
+        private List<int> teamsId;
+        public List<int> TeamsId
         {
-            get { return teams; }
-            set { teams = value; }
+            get { return teamsId; }
+            set { teamsId = value; }
+        }
+        private List<string>teamNames;
+        public List<string>TeamNames
+        {
+            get { return teamNames; }
+            set { teamNames = value; }
         }
 
-        static Team GetTeamList(int TeamId)
+        static Team GetTeam(int TeamId)
         {
             using (var client = new HttpClient())
             {
@@ -29,12 +35,27 @@ namespace Classes
             }
         }
 
-       
+       public List<Team> GetTeamList()
+        {
+            List<Team> ans = new List<Team>();
+            for (int i =0; i<TeamsId.Count; i++)
+            {
+                Team t = GetTeam(TeamsId[i]);
+                t.Name = TeamNames[i];
+                ans.Add(t);
+            }
+            return ans;
+        }
         public Repository()
         {
-            this.Teams = new List<int>
+            this.TeamsId = new List<int>
             {
                 57,61,62,64,65,66,73,78,81,86,94,95,98,100,108,109
+            };
+            this.TeamNames = new List<string>
+            {
+                "Arsenal","Chelsea","Everton","Liverpool","Manchester City","Manchester United","Tottenham","Atletico Madrid",
+                "Barselona","Real Madrid", "Villyereal","Valencia","Milan","Roma","Inter","Juventus"
             };
         }
     }

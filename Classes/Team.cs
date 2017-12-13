@@ -74,6 +74,10 @@ namespace Classes
             this.Count = count;
             this.Players = players;
         }
+        public Team(int count, List<Player>players) : this("", count, players)
+        {
+            
+        }
         public Team()
         {
 
