@@ -28,6 +28,12 @@ namespace Football_Championship_System
             get { return settings; }
             set { settings = value; }
         }
+        private int userId;
+        public int UserId
+        {
+            get { return userId; }
+            set { userId = value; }
+        }
 
         public MainWindow()
         {
@@ -120,6 +126,11 @@ namespace Football_Championship_System
                 return;
             }
             //start game
+            string myteam = ComboxTeams.SelectedValue.ToString();
+            Championship.CreateChampionship(myteam, UserId);
+            Champoins_League chp = new Champoins_League();
+            chp.ShowDialog();
+
         }
 
         private void ButtomEnter_Click(object sender, RoutedEventArgs e)
@@ -142,9 +153,12 @@ namespace Football_Championship_System
             else if (LINQFactory.HasACareer(textBoxLogin.Text)) //has choosen a team
             {
                 //start a game
+                Champoins_League chp = new Champoins_League();
+                chp.ShowDialog();
             }
             else
             {
+                this.UserId = LINQFactory.GetUserIdByLogin(textBoxLogin.Text);
                 GridEnter.Visibility = Visibility.Hidden;
                 GridChoosingMyTeam.Visibility = Visibility.Visible;
             }
@@ -152,7 +166,7 @@ namespace Football_Championship_System
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-            ComboxTeams.ItemsSource = (new Repository()).TeamNames;
+            ComboxTeams.ItemsSource = new Repository().TeamNames;
         }
     }
 }

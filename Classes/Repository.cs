@@ -22,8 +22,14 @@ namespace Classes
             get { return teamNames; }
             set { teamNames = value; }
         }
+        private static int cnt = 15;
+        public static int Cnt
+        {
+            get { return cnt; }
+            set { cnt = value; }
+        }
 
-        static Team GetTeam(int TeamId)
+        public static Team GetTeam(int TeamId)
         {
             using (var client = new HttpClient())
             {
@@ -48,13 +54,13 @@ namespace Classes
         }
         public Repository()
         {
-            this.TeamsId = new List<int>
+            TeamsId = new List<int>
             {
-                57,61,62,64,65,66,73,78,81,86,94,95,98,100,108,109
+                62,57,64,65,66,73,78,81,86,94,95,98,100,108,109
             };
-            this.TeamNames = new List<string>
+            TeamNames = new List<string>
             {
-                "Arsenal","Chelsea","Everton","Liverpool","Manchester City","Manchester United","Tottenham","Atletico Madrid",
+                "Everton","Arsenal","Liverpool","Manchester City","Manchester United","Tottenham","Atletico Madrid",
                 "Barselona","Real Madrid", "Villyereal","Valencia","Milan","Roma","Inter","Juventus"
             };
         }

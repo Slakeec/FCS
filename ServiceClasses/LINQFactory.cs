@@ -32,5 +32,13 @@ namespace ServiceClasses
                 return context.Teams.Any(t => t.UserId == id);
             }
         }
+        public static int GetUserIdByLogin(string login)
+        {
+            using (var context = new Context())
+            {
+                int id = context.Users.First(u => u.Login == login).Id;
+                return id;
+            }
+        }
     }
 }
