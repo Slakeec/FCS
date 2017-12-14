@@ -33,7 +33,7 @@ namespace GameFootball
 
         private void FootballGameForm_Load(object sender, EventArgs e)
         {
-           
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -110,11 +110,11 @@ namespace GameFootball
 
         private void FootballGameForm_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Up)
+            if (e.KeyCode == Keys.W)
             {
                 isUpPressed = true;
             }
-            if (e.KeyCode == Keys.Down)
+            if (e.KeyCode == Keys.S)
             {
                 isDownPressed = true;
             }
@@ -123,11 +123,11 @@ namespace GameFootball
 
         private void FootballGameForm_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Up)
+            if (e.KeyCode == Keys.W)
             {
                 isUpPressed = false;
             }
-            if (e.KeyCode == Keys.Down)
+            if (e.KeyCode == Keys.S)
             {
                 isDownPressed = false;
             }

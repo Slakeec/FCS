@@ -15,9 +15,14 @@ namespace GameFootball
         public abstract void TeamMovingUp(List<Footballer> sqw);
         public abstract void TeamMovingDown(List<Footballer> sqw);
 
-        //public AbstractTeam(List<Footballer> team)
-        //{
-        //    Squad = team;
-        //}
+        public AbstractTeam()
+        {
+
+        }
+
+        public AbstractTeam(List<Footballer> team)
+        {
+            Squad = team;
+        }
     }
 }

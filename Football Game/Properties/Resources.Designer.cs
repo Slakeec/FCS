@@ -73,6 +73,16 @@ namespace Football_Game.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap greenback {
+            get {
+                object obj = ResourceManager.GetObject("greenback", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MyBall2 {
             get {
                 object obj = ResourceManager.GetObject("MyBall2", resourceCulture);
