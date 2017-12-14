@@ -13,6 +13,15 @@ namespace GameFootball
         //public List<Footballer> Squad { get; set; }
         public const int playerSpeed = 9;
 
+        public TeamPlayer()
+        {
+
+        }
+
+        public TeamPlayer(List<Footballer> team) : base(team)
+        {
+            Squad = team;
+        }
 
         public override void TeamMovingUp(List<Footballer> sqw)
         {

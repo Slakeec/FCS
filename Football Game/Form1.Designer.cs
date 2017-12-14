@@ -68,13 +68,8 @@
             this.BottomPictureBox = new System.Windows.Forms.PictureBox();
             this.ToppictureBox = new System.Windows.Forms.PictureBox();
             this.aPitch = new System.Windows.Forms.PictureBox();
-            this.listBoxScorings = new System.Windows.Forms.ListBox();
             this.listViewWhoScored = new System.Windows.Forms.ListView();
-            this.Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Score = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.dataGridViewWhoScored = new System.Windows.Forms.DataGridView();
-            this.Player = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TableScore = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.secondTeamGoal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.firstTeamGoal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rightForw)).BeginInit();
@@ -102,7 +97,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.BottomPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToppictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aPitch)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWhoScored)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
@@ -480,60 +474,25 @@
             this.aPitch.TabIndex = 0;
             this.aPitch.TabStop = false;
             // 
-            // listBoxScorings
-            // 
-            this.listBoxScorings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.listBoxScorings.Enabled = false;
-            this.listBoxScorings.FormattingEnabled = true;
-            this.listBoxScorings.ItemHeight = 31;
-            this.listBoxScorings.Location = new System.Drawing.Point(2, 71);
-            this.listBoxScorings.Name = "listBoxScorings";
-            this.listBoxScorings.Size = new System.Drawing.Size(391, 531);
-            this.listBoxScorings.TabIndex = 35;
-            // 
             // listViewWhoScored
             // 
+            this.listViewWhoScored.BackColor = System.Drawing.Color.White;
+            this.listViewWhoScored.BackgroundImage = global::Football_Game.Properties.Resources.greenback;
             this.listViewWhoScored.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Name,
-            this.Score});
+            this.columnHeader1});
             this.listViewWhoScored.Enabled = false;
-            this.listViewWhoScored.Location = new System.Drawing.Point(12, 670);
+            this.listViewWhoScored.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listViewWhoScored.ForeColor = System.Drawing.Color.Black;
+            this.listViewWhoScored.Location = new System.Drawing.Point(26, 33);
             this.listViewWhoScored.Name = "listViewWhoScored";
-            this.listViewWhoScored.Size = new System.Drawing.Size(365, 375);
-            this.listViewWhoScored.TabIndex = 36;
+            this.listViewWhoScored.Size = new System.Drawing.Size(357, 547);
+            this.listViewWhoScored.TabIndex = 35;
             this.listViewWhoScored.UseCompatibleStateImageBehavior = false;
+            this.listViewWhoScored.View = System.Windows.Forms.View.List;
             // 
-            // Name
+            // columnHeader1
             // 
-            this.Name.Text = "Name";
-            // 
-            // Score
-            // 
-            this.Score.Text = "Score";
-            // 
-            // dataGridViewWhoScored
-            // 
-            this.dataGridViewWhoScored.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewWhoScored.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Player,
-            this.TableScore});
-            this.dataGridViewWhoScored.Enabled = false;
-            this.dataGridViewWhoScored.Location = new System.Drawing.Point(21, 1120);
-            this.dataGridViewWhoScored.Name = "dataGridViewWhoScored";
-            this.dataGridViewWhoScored.RowTemplate.Height = 40;
-            this.dataGridViewWhoScored.Size = new System.Drawing.Size(333, 150);
-            this.dataGridViewWhoScored.TabIndex = 37;
-            // 
-            // Player
-            // 
-            this.Player.HeaderText = "Name";
-            this.Player.Name = "Player";
-            this.Player.Width = 200;
-            // 
-            // TableScore
-            // 
-            this.TableScore.HeaderText = "Score";
-            this.TableScore.Name = "TableScore";
+            this.columnHeader1.Width = 150;
             // 
             // FootballGameForm
             // 
@@ -542,7 +501,6 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(3184, 1669);
-            this.Controls.Add(this.dataGridViewWhoScored);
             this.Controls.Add(this.listViewWhoScored);
             this.Controls.Add(this.slashLabel);
             this.Controls.Add(this.goalLabel);
@@ -579,10 +537,9 @@
             this.Controls.Add(this.BottomPictureBox);
             this.Controls.Add(this.ToppictureBox);
             this.Controls.Add(this.aPitch);
-            this.Controls.Add(this.listBoxScorings);
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(2558, 1544);
-       //     this.Name = "FootballGameForm";
+            this.Name = "FootballGameForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.TopMost = true;
@@ -617,7 +574,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.BottomPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToppictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aPitch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWhoScored)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -664,13 +620,8 @@
         private System.Windows.Forms.Label whoScoredLabel;
         private System.Windows.Forms.Label scoredGoalLabel;
         private System.Windows.Forms.Label slashLabel;
-        private System.Windows.Forms.ListBox listBoxScorings;
         private System.Windows.Forms.ListView listViewWhoScored;
-        private System.Windows.Forms.ColumnHeader Name;
-        private System.Windows.Forms.ColumnHeader Score;
-        private System.Windows.Forms.DataGridView dataGridViewWhoScored;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Player;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TableScore;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }
 

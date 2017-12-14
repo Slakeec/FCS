@@ -61,6 +61,8 @@ namespace GameFootball
                 new Footballer("Shava",0),
                 new Footballer("Misha",0)
             };
+            team1.Squad = FirstTeam;
+
         }
 
         public void BallMooving(PictureBox ball)
@@ -112,7 +114,7 @@ namespace GameFootball
             }
         }
 
-        public void FirstTeamGoalScored( PictureBox ball, PictureBox goal,List<Footballer> squad,Label goalScoredLabel, Label whoScoredLabel, Label scoredLabel, ref int teamScore, ListView whoScoredListView)
+        public void FirstTeamGoalScored(PictureBox ball, PictureBox goal, List<Footballer> squad, Label goalScoredLabel, Label whoScoredLabel, Label scoredLabel, ref int teamScore, ListView whoScoredListView)
         {
             
             countForlabel = r.Next(1, 5);
