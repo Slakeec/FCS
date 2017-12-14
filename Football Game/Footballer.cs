@@ -18,12 +18,18 @@ namespace GameFootball
         public int GoalsScored { get; set; }
         public TeamPlayer Team { get; set; }
 
-        public Footballer(string name,PictureBox pictbx, int Xposition, int Yposition)
+        public Footballer(string name, int goalsscored, PictureBox pictbx, int Xposition, int Yposition)
         {
+            Name = name;
+            GoalsScored = goalsscored;
+            this.positionOnTheScreen = pictbx;
             X_PositionInitial = Xposition;
             Y_PositionInitial = Yposition;
+        }
+        public Footballer(string name, int goalsscored)
+        {
             Name = name;
-            this.positionOnTheScreen = pictbx;
+            GoalsScored = goalsscored;
         }
     }
 }

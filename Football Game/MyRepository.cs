@@ -13,14 +13,15 @@ namespace GameFootball
         public int countForAcceleration = 0;
 
         public int BallSpeedY = 5;
+
         public int PlusBallSpeedY1 = 1;
         public int PlusBallSpeedY2 = 5;
         public int PlusBallSpeedY3 = 10;
         public int PlusBallSpeedY4 = 15;
 
         public int BallSpeedX = 9;
-        const int PlusBallSpeedXClone = 9;
 
+        const int PlusBallSpeedXClone = 9;
         public int PlusBallSpeedX1 = 7;
         public int PlusBallSpeedX2 = 12;
         public int PlusBallSpeedX3 = 15;
@@ -38,6 +39,29 @@ namespace GameFootball
         string goallabel2 = "SCORED A GOLASO!!!";
         string goallabel3 = "WITH A BANGER!!!";
         string goallabel4 = "FOUND BACK OF THE NET!!!";
+
+        string toScoreString;
+
+        public List<Footballer> FirstTeam;
+        public List<string> WhoScoredList=new List<string>();
+
+        public MyRepository()
+        {
+            FirstTeam = new List<Footballer>
+            {
+                new Footballer("SevaGoal",0),
+                new Footballer("Arina",0),
+                new Footballer("Anton",0),
+                new Footballer("Natasha",0),
+                new Footballer("Liza",0),
+                new Footballer("Jama",0),
+                new Footballer("Pstygo",0),
+                new Footballer("Meis",0),
+                new Footballer("Valentin",0),
+                new Footballer("Shava",0),
+                new Footballer("Misha",0)
+            };
+        }
 
         public void BallMooving(PictureBox ball)
         {
@@ -88,7 +112,7 @@ namespace GameFootball
             }
         }
 
-        public void FirstTeamGoalScored( PictureBox ball, PictureBox goal,List<Footballer> squad,Label goalScoredLabel, Label whoScoredLabel, Label scoredLabel, ref int teamScore)
+        public void FirstTeamGoalScored( PictureBox ball, PictureBox goal,List<Footballer> squad,Label goalScoredLabel, Label whoScoredLabel, Label scoredLabel, ref int teamScore, ListView whoScoredListView)
         {
             
             countForlabel = r.Next(1, 5);
@@ -96,11 +120,16 @@ namespace GameFootball
             {
                 teamScore++;
                 TeamsReset(squad, ball);
-
+                
                 foreach (var player in squad)
                 {
                     if (player.LastTouch == true)
                     {
+                        player.GoalsScored++;
+                        toScoreString = $"{player.Name} scored {player.GoalsScored} goals";
+                        WhoScoredList.Add(player.Name);
+                        whoScoredListView.Items.Add(toScoreString);
+
                         if (countForlabel == 1)
                         {
                             scoredLabel.Text = goallabel1;
@@ -118,8 +147,6 @@ namespace GameFootball
                             scoredLabel.Text = goallabel4;
                         }
                         goalScoredLabel.Visible = true;                        
-                        playerNameLetters = player.Name.Length;
-
                         whoScoredLabel.Text = $"{player.Name}";
                         whoScoredLabel.Visible = true;
                         scoredLabel.Visible = true;
@@ -391,14 +418,11 @@ namespace GameFootball
             if (isuppressed)
             {
                 team1.TeamMovingUp(sqw);                
-                //player.positionOnTheScreen.Location = new Point(player.positionOnTheScreen.Location.X, player.positionOnTheScreen.Location.Y - PlayerSpeed);
             }
 
             if (isdownpressed)
             {
-                //
                 team1.TeamMovingDown(sqw);
-                //player.positionOnTheScreen.Location = new Point(player.positionOnTheScreen.Location.X, player.positionOnTheScreen.Location.Y + PlayerSpeed);
             }
 
             //foreach (var player in sqw)

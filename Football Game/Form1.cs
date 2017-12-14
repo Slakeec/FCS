@@ -14,6 +14,7 @@ namespace GameFootball
     {
         MyRepository MyRep=new MyRepository();
         List<Footballer> PlayerSQW;
+        List<PictureBox> PictureBoxes;
         int imagecount=0, timer1count=0, timerfortimecount = 0;
         int labelcount = 0;
         int FirstTeamScore=0;
@@ -22,22 +23,12 @@ namespace GameFootball
         public FootballGameForm()
         {
             InitializeComponent();
-            PlayerSQW = new List<Footballer>
+            PictureBoxes = new List<PictureBox> { Goalkeeper, CentrDef1, CentrDef2, Mid1, Mid2, Mid3, Mid4, Mid5, leftForw, centralForw, rightForw };
+            PlayerSQW = MyRep.FirstTeam;
+            for (int i = 0; i < PlayerSQW.Count ; i++)
             {
-                new Footballer("SevaGoal",Goalkeeper,Goalkeeper.Location.X,Goalkeeper.Location.Y),
-                new Footballer("Arina",CentrDef1,CentrDef1.Location.X,CentrDef1.Location.Y),
-                new Footballer("Anton",CentrDef2,CentrDef2.Location.X,CentrDef2.Location.Y),
-                new Footballer("Natasha",Mid1,Mid1.Location.X, Mid1.Location.Y),
-                new Footballer("Liza",Mid2,Mid2.Location.X,Mid2.Location.Y),
-                new Footballer("Jama",Mid3,Mid3.Location.X,Mid3.Location.Y),
-                new Footballer("Pstygo",Mid4,Mid4.Location.X, Mid4.Location.Y),
-                new Footballer("Meis",Mid5,Mid5.Location.X,Mid5.Location.Y),
-                new Footballer("Valentin",leftForw,leftForw.Location.X,leftForw.Location.Y),
-                new Footballer("Shava",centralForw,centralForw.Location.X,centralForw.Location.Y),
-                new Footballer("Misha",rightForw,rightForw.Location.X,rightForw.Location.Y)
-            };
-            
-                  
+                PlayerSQW[i] = new Footballer(PlayerSQW[i].Name,PlayerSQW[i].GoalsScored, PictureBoxes[i], PictureBoxes[i].Location.X, PictureBoxes[i].Location.Y);
+            }                  
         }
 
         private void FootballGameForm_Load(object sender, EventArgs e)
@@ -53,7 +44,7 @@ namespace GameFootball
             MyRep.CollisionWithBorders(bottomPictBox, highBoundPictBox, leftHighPictBox, leftBottomPictBox, rightHighPictBox, rightBottomPictBox, aBall);
             MyRep.PlayerTeamMoving(PlayerSQW, isUpPressed, isDownPressed);
             MyRep.CollisionWithPlayers(aBall,PlayerSQW,isUpPressed,isDownPressed);
-            MyRep.FirstTeamGoalScored(aBall, secondTeamGoal, PlayerSQW, goalLabel, whoScoredLabel, scoredGoalLabel, ref FirstTeamScore);
+            MyRep.FirstTeamGoalScored(aBall, secondTeamGoal, PlayerSQW, goalLabel, whoScoredLabel, scoredGoalLabel, ref FirstTeamScore, listViewWhoScored);
             if (timer1count % 5 == 0)
             {
                 MyRep.AccelerationXChangeToNormal();
