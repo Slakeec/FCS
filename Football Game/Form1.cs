@@ -26,7 +26,7 @@ namespace GameFootball
 
         int imagecount=0, timer1count=0, timerfortimecount = 0;
         int labelcount = 0;
-        int FirstTeamScore=0;
+        int FirstTeamScore=0,SecondTeamScore=0;
         public bool isUpPressed, isDownPressed, isUpArrowPressed, isDownArrowPressed;
 
         public FootballGameForm()
@@ -66,10 +66,10 @@ namespace GameFootball
             MyRep.BallMooving(aBall);
             MyRep.CollisionWithBorders(bottomPictBox, highBoundPictBox, leftHighPictBox, leftBottomPictBox, rightHighPictBox, rightBottomPictBox, aBall);
             MyRep.CollisionWithPlayers(aBall,PlayerSQW,isUpPressed,isDownPressed);
-            MyRep.FirstTeamGoalScored(aBall, secondTeamGoal, PlayerSQW, goalLabel, whoScoredLabel, scoredGoalLabel, ref FirstTeamScore, listViewWhoScored);
+            MyRep.FirstTeamGoalScored(aBall, secondTeamGoal, PlayerSQW, firstTeamGoal, Player2SQW, goalLabel, whoScoredLabel, scoredGoalLabel, ref FirstTeamScore, ref SecondTeamScore, listViewWhoScored);
             MyRep.PlayerTeamMoving(PlayerSQW, isUpPressed, isDownPressed);
             MyRep.Player2TeamMoving(Player2SQW, isUpArrowPressed, isDownArrowPressed);
-            MyRep.CompTeamMoving(Player2SQW, Player2PictBoxes, PictureBoxesLines);
+            MyRep.CompTeamMoving(Player2SQW, Player2PictBoxes, PictureBoxesLines,aBall);
             if (timer1count % 5 == 0)
             {
                 MyRep.AccelerationXChangeToNormal();
@@ -86,6 +86,7 @@ namespace GameFootball
             if (goalLabel.Visible)
             {
                 firstTeamScoreLabel.Text = FirstTeamScore.ToString();
+                secondTeamScoreLabel.Text = SecondTeamScore.ToString();
                 timer1.Enabled = false;
                 labelcount++;     
                 if (labelcount % 30 != 0)

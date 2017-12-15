@@ -52,7 +52,6 @@ namespace GameFootball
 
         public MyRepository()
         {
-            team2 = new CompTeam();
             SecondTeam = new List<Footballer>
             {
                 new Footballer("Kostyan",0),
@@ -83,6 +82,7 @@ namespace GameFootball
                 new Footballer("Misha",0)
             };
             team1.Squad = FirstTeam;
+            team2 = new CompTeam(9,SecondTeam);
 
         }
 
@@ -126,32 +126,48 @@ namespace GameFootball
                 whoscoredLabel.Visible = false;
             }
         }
-        public void TeamsReset(List<Footballer> squad,PictureBox ball)
+        public void TeamsReset(List<Footballer> squad,PictureBox ball, List<Footballer> squad2)
         {
             foreach (var player in squad)
             {
                 player.positionOnTheScreen.Location = new Point(player.X_PositionInitial, player.Y_PositionInitial);
-                ball.Location = new Point(500, 350);
             }
+            foreach (var player in squad2)
+            {
+                player.positionOnTheScreen.Location = new Point(player.X_PositionInitial, player.Y_PositionInitial);
+            }
+                ball.Location = new Point(700, 350);
+        
         }
 
-        public void FirstTeamGoalScored(PictureBox ball, PictureBox goal, List<Footballer> squad, Label goalScoredLabel, Label whoScoredLabel, Label scoredLabel, ref int teamScore, ListView whoScoredListView)
+        public void FirstTeamGoalScored(PictureBox ball, PictureBox goal, List<Footballer> squad, PictureBox leftgoal, List<Footballer> squad2,  Label goalScoredLabel, Label whoScoredLabel, Label scoredLabel, ref int teamScore, ref int secondTeamScore, ListView whoScoredListView)
         {
-            
+            List<Footballer> ScoredTeam = new List<Footballer>();
             countForlabel = r.Next(1, 5);
-            if (ball.Bounds.IntersectsWith(goal.Bounds))
+            if (ball.Bounds.IntersectsWith(goal.Bounds) || ball.Bounds.IntersectsWith(leftgoal.Bounds))
             {
-                teamScore++;
-                team1.GoalsScored = teamScore;
-                TeamsReset(squad, ball);
+                if (ball.Bounds.IntersectsWith(goal.Bounds))
+                {
+                    ScoredTeam = squad;
+                    teamScore++;
+                    team1.GoalsScored = teamScore;
+                }
+                if (ball.Bounds.IntersectsWith(leftgoal.Bounds))
+                {
+                    ScoredTeam = squad;
+                    secondTeamScore++;
+                    team2.GoalsScored = secondTeamScore;
+                }
+
+                TeamsReset(squad, ball,squad2);
                 
-                foreach (var player in squad)
+                foreach (var player in ScoredTeam)
                 {
                     if (player.LastTouch == true)
                     {
                         player.GoalsScored++;
-                        player.LastGoalTime = Time.Min;
-                        toScoreString = $"{player.LastGoalTime}' {player.Name}  {team1.GoalsScored}-0 ";
+                        player.LastGoalTime = Time.Min+1;
+                        toScoreString = $"{player.LastGoalTime}' {player.Name}  {team1.GoalsScored}-{team2.GoalsScored}";
                         WhoScoredList.Add(toScoreString);
                         foreach (var str in WhoScoredList)
                         {
@@ -444,34 +460,122 @@ namespace GameFootball
                 }
             }
         }
-        public void CompTeamMoving(List<Footballer>sqw, Dictionary<int,PictureBox> Players, Dictionary<int,PictureBox> lines)
+        public void CompTeamMoving(List<Footballer>sqw, Dictionary<int,PictureBox> Players, Dictionary<int,PictureBox> lines, PictureBox Ball)
         {
-            foreach (var k in lines.Keys)
+            if (Ball.Location.Y < lines[0].Location.Y)
             {
-                if (k == 0)
+                if (Ball.Location.X < lines[2].Location.X)
                 {
-                    foreach (var kk in lines.Keys)
+                    if (Ball.Location.Y < sqw[10].positionOnTheScreen.Location.Y)
                     {
-                        if (kk == 2)
-                        {
-                            foreach (var kkk in Players.Keys)
-                            {
-                                if (kkk == 10)
-                                {
-                                    //if (aBall.myBall.Location.Y < sqw[10].positionOnTheScreen.Location.Y)
-                                    //{
-                                    //    team2.TeamMovingUp(sqw);
-                                    //}
-                                    //else
-                                    //{
-                                    //    team2.TeamMovingDown(sqw);
-                                    //}
-                                }
-                            }
-                        }
+                        team2.TeamMovingUp(sqw);
+                    }
+                    else
+                    {
+                        team2.TeamMovingDown(sqw);
+                    }
+                }
+                if (Ball.Location.X > lines[2].Location.X && Ball.Location.X < lines[3].Location.X)
+                {
+                    if (Ball.Location.Y < sqw[3].positionOnTheScreen.Location.Y)
+                    {
+                        team2.TeamMovingUp(sqw);
+                    }
+                    else
+                    {
+                        team2.TeamMovingDown(sqw);
+                    }
+                }
+                if (Ball.Location.X > lines[3].Location.X && Ball.Location.X < lines[4].Location.X)
+                {
+                    if (Ball.Location.Y < sqw[1].positionOnTheScreen.Location.Y)
+                    {
+                        team2.TeamMovingUp(sqw);
+                    }
+                    else
+                    {
+                        team2.TeamMovingDown(sqw);
                     }
                 }
             }
+            if (Ball.Location.Y > lines[0].Location.Y && Ball.Location.Y < lines[1].Location.Y)
+            {
+                if (Ball.Location.X < lines[2].Location.X)
+                {
+                    if (Ball.Location.Y < sqw[9].positionOnTheScreen.Location.Y)
+                    {
+                        team2.TeamMovingUp(sqw);
+                    }
+                    else
+                    {
+                        team2.TeamMovingDown(sqw);
+                    }
+                }
+                if (Ball.Location.X > lines[2].Location.X && Ball.Location.X < lines[3].Location.X)
+                {
+                    if (Ball.Location.Y < sqw[5].positionOnTheScreen.Location.Y)
+                    {
+                        team2.TeamMovingUp(sqw);
+                    }
+                    else
+                    {
+                        team2.TeamMovingDown(sqw);
+                    }
+                }
+
+            }
+            if (Ball.Location.Y > lines[1].Location.Y)
+            {
+                if (Ball.Location.X < lines[2].Location.X)
+                {
+                    if (Ball.Location.Y < sqw[8].positionOnTheScreen.Location.Y)
+                    {
+                        team2.TeamMovingUp(sqw);
+                    }
+                    else
+                    {
+                        team2.TeamMovingDown(sqw);
+                    }
+                }
+                if (Ball.Location.X > lines[2].Location.X && Ball.Location.X < lines[3].Location.X)
+                {
+                    if (Ball.Location.Y < sqw[7].positionOnTheScreen.Location.Y)
+                    {
+                        team2.TeamMovingUp(sqw);
+                    }
+                    else
+                    {
+                        team2.TeamMovingDown(sqw);
+                    }
+                }
+                if (Ball.Location.X > lines[3].Location.X && Ball.Location.X < lines[4].Location.X)
+                {
+                    if (Ball.Location.Y < sqw[2].positionOnTheScreen.Location.Y)
+                    {
+                        team2.TeamMovingUp(sqw);
+                    }
+                    else
+                    {
+                        team2.TeamMovingDown(sqw);
+                    }
+                }
+            }
+
+            if (Ball.Location.X > lines[4].Location.X || (Ball.Location.Y>lines[0].Location.Y && Ball.Location.Y<lines[1].Location.Y && Ball.Location.X>lines[3].Location.X && Ball.Location.X<lines[4].Location.X))
+            {
+                if (lines[0].Location.Y < sqw[0].positionOnTheScreen.Location.Y && lines[1].Location.Y > sqw[0].positionOnTheScreen.Location.Y - sqw[0].positionOnTheScreen.Height)
+                {
+                    if (Ball.Location.Y < sqw[0].positionOnTheScreen.Location.Y)
+                    {
+                        team2.TeamMovingUp(sqw);
+                    }
+                    else
+                    {
+                        team2.TeamMovingDown(sqw);
+                    }
+                }
+            }
+
         }
 
         public void Player2TeamMoving(List<Footballer> sqw, bool isupArrowpressed, bool isdownArrowpressed)

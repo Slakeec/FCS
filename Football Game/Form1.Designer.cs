@@ -736,7 +736,7 @@
             // 
             // verticalLine3
             // 
-            this.verticalLine3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.verticalLine3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
             this.verticalLine3.Location = new System.Drawing.Point(2613, 1536);
             this.verticalLine3.Name = "verticalLine3";
             this.verticalLine3.Size = new System.Drawing.Size(11, 92);
