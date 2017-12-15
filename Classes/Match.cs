@@ -8,51 +8,68 @@ namespace Classes
 {
     public class Match
     {
-        private int id;
-
-        public int Id
-        {
-            get { return id; }
-            set { id = value; }
-        }
-
-        private string score;
-
-        public string Score
-        {
-            get { return score; }
-            set { score = value; }
-        }
-
         private Team teamOne;
-
         public Team TeamOne
         {
             get { return teamOne; }
             set { teamOne = value; }
         }
         private int goalTeamOne;
-
         public int GoalTeamOne
         {
             get { return goalTeamOne; }
             set { goalTeamOne = value; }
         }
+        private List<Player>playersOne;
+        public List<Player>PlayersOne 
+        {
+            get { return playersOne; }
+            set { playersOne = value; }
+        }
+        private List<string> scorersOne;
+        public List<string> ScorersOne
+        {
+            get { return scorersOne; }
+            set { scorersOne = value; }
+        }
+        private int formOne;
+        public int FormOne
+        {
+            get { return formOne; }
+            set { formOne = value; }
+        }
 
         private Team teamTwo;
-
         public Team TeamTwo
         {
             get { return teamTwo; }
-            set { teamOne = value; }
+            set { teamTwo = value; }
         }
         private int goalTeamTwo;
-
         public int GoalTeamTwo
         {
             get { return goalTeamTwo; }
             set { goalTeamTwo = value; }
         }
+        private List<Player> playersTwo;
+        public List<Player> PlayersTwo
+        {
+            get { return playersTwo; }
+            set { playersTwo = value; }
+        }
+        private List<string> scorersTwo;
+        public List<string> ScorersTwo
+        {
+            get { return scorersTwo; }
+            set { scorersTwo = value; }
+        }
+        private int formTwo;
+        public int FormTwo
+        {
+            get { return formTwo; }
+            set { formTwo = value; }
+        }
+
 
 
 

@@ -40,5 +40,12 @@ namespace ServiceClasses
                 return id;
             }
         }
+        public static List<Team> GetTeamsByUser(int userID)
+        {
+            using (var context = new Context())
+            {
+                return context.Teams.Where(t => t.UserId == userID).ToList();
+            }
+        }
     }
 }

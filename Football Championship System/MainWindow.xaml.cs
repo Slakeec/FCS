@@ -128,7 +128,7 @@ namespace Football_Championship_System
             //start game
             string myteam = ComboxTeams.SelectedValue.ToString();
             Championship.CreateChampionship(myteam, UserId);
-            Champoins_League chp = new Champoins_League(UserId);
+            Champoins_League chp = new Champoins_League(UserId, Setting);
             chp.ShowDialog();
             GridChoosingMyTeam.Visibility = Visibility.Hidden;
             GridEnter.Visibility = Visibility.Visible;
@@ -156,7 +156,7 @@ namespace Football_Championship_System
             {
                 //start a game
                 this.UserId = LINQFactory.GetUserIdByLogin(textBoxLogin.Text);
-                Champoins_League chp = new Champoins_League(userId);
+                Champoins_League chp = new Champoins_League(userId, Setting);
                 chp.ShowDialog();
             }
             else

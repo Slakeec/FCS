@@ -5,19 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Football_Championship_System"
         mc:Ignorable="d"
-        Title="Champoins_League" Height="300" Width="300">
+        Title="Champoins_League" Height="300" Width="300" Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="23*"/>
+            <ColumnDefinition Width="73*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Name="ButtonStartGame" Content="Start the next Game" FontSize="15"></Button>
-        <ListView Name="ListViewTable" Grid.Row="1"></ListView>
-        <Grid Grid.Column="1" Grid.RowSpan="2">
+        <Button Name="ButtonStartGame" Content="Start the next Game" FontSize="15" Grid.ColumnSpan="2"></Button>
+        <ListView Name="ListViewTable" Grid.Row="1" Grid.ColumnSpan="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="№" DisplayMemberBinding="{Binding Position}"/>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Games" DisplayMemberBinding="{Binding Games}"/>
+                    <GridViewColumn Header="Points" DisplayMemberBinding="{Binding Points}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Grid Grid.Column="2" Grid.RowSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition Height="auto"/>

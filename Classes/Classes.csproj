@@ -68,6 +68,10 @@
     <Compile Include="Migrations\201712151833391_DeleteNumberPlayer.Designer.cs">
       <DependentUpon>201712151833391_DeleteNumberPlayer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712152157566_AddPositionTeam.cs" />
+    <Compile Include="Migrations\201712152157566_AddPositionTeam.Designer.cs">
+      <DependentUpon>201712152157566_AddPositionTeam.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -89,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712151833391_DeleteNumberPlayer.resx">
       <DependentUpon>201712151833391_DeleteNumberPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712152157566_AddPositionTeam.resx">
+      <DependentUpon>201712152157566_AddPositionTeam.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

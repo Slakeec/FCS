@@ -54,7 +54,7 @@ namespace Classes
        public List<Team> GetTeamList()
         {
             List<Team> ans = new List<Team>();
-            for (int i =0; i<TeamsId.Count; i++)
+            for (int i=0; i<TeamsId.Count; i++)
             {
                 Team t = GetTeam(TeamsId[i]);
                 if (t==null)

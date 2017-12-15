@@ -64,6 +64,19 @@ namespace Classes
             get { return userId; }
             set { userId = value; }
         }
+        private int number;
+        public int Number
+        {
+            get { return number; }
+            set { number = value; }
+        }
+        private int position;
+        public int Position
+        {
+            get { return position; }
+            set { position = value; }
+        }
+
 
         public Team(string name, int count, List<Player> players)
         {

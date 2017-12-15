@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ServiceClasses;
-
+using Classes;
 namespace Football_Championship_System
 {
     /// <summary>
@@ -26,10 +26,17 @@ namespace Football_Championship_System
             get { return userId; }
             set { userId = value; }
         }
+        private Settings settings;
+        public Settings Settings
+        {
+            get { return settings; }
+            set { settings = value; }
+        }
 
-        public Champoins_League(int userId)
+        public Champoins_League(int userId, Settings settings)
         {
             this.UserId = userId;
+            this.Settings = settings;
             InitializeComponent();
         }
 
@@ -88,6 +95,11 @@ namespace Football_Championship_System
             {
                 ListViewPlayerInfo.ItemsSource = response;
             }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            ListViewTable.ItemsSource = Sorting.Sort(LINQFactory.GetTeamsByUser(UserId));
         }
     }
 }
