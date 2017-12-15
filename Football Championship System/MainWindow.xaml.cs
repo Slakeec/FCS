@@ -128,7 +128,7 @@ namespace Football_Championship_System
             //start game
             string myteam = ComboxTeams.SelectedValue.ToString();
             Championship.CreateChampionship(myteam, UserId);
-            Champoins_League chp = new Champoins_League();
+            Champoins_League chp = new Champoins_League(UserId);
             chp.ShowDialog();
 
         }
@@ -153,7 +153,7 @@ namespace Football_Championship_System
             else if (LINQFactory.HasACareer(textBoxLogin.Text)) //has choosen a team
             {
                 //start a game
-                Champoins_League chp = new Champoins_League();
+                Champoins_League chp = new Champoins_League(userId);
                 chp.ShowDialog();
             }
             else
