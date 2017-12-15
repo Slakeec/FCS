@@ -19,6 +19,10 @@ namespace GameFootball
 
         List<Footballer> Player2SQW;
         List<PictureBox> PictuteBoxesSecondTeam;
+        Dictionary<int, PictureBox> Player2PictBoxes = new Dictionary<int, PictureBox>();
+
+        List<PictureBox> PictureLines;
+        Dictionary<int, PictureBox> PictureBoxesLines = new Dictionary<int, PictureBox>();
 
         int imagecount=0, timer1count=0, timerfortimecount = 0;
         int labelcount = 0;
@@ -34,16 +38,24 @@ namespace GameFootball
         {
             PictureBoxesFirstTeam = new List<PictureBox> { Goalkeeper, CentrDef1, CentrDef2, Mid1, Mid2, Mid3, Mid4, Mid5, leftForw, centralForw, rightForw };
             PlayerSQW = MyRep.FirstTeam;
-            for (int i = 0; i < PlayerSQW.Count ; i++)
+            for (int i = 0; i < PlayerSQW.Count; i++)
             {
-                PlayerSQW[i] = new Footballer(PlayerSQW[i].Name,PlayerSQW[i].GoalsScored, PictureBoxesFirstTeam[i], PictureBoxesFirstTeam[i].Location.X, PictureBoxesFirstTeam[i].Location.Y);
+                PlayerSQW[i] = new Footballer(PlayerSQW[i].Name, PlayerSQW[i].GoalsScored, PictureBoxesFirstTeam[i], PictureBoxesFirstTeam[i].Location.X, PictureBoxesFirstTeam[i].Location.Y);
             }
             PictuteBoxesSecondTeam = new List<PictureBox> { GoalKeeperTeam2, centrDef1Team2, centrDef2Team2, Mid1Team2, Mid2Team2, Mid3Team2, Mid4Team2, Mid5Team2, leftForwTeam2, centralForwTeam2, rightForwTeam2 };
             Player2SQW = MyRep.SecondTeam;
             for (int i = 0; i < Player2SQW.Count; i++)
             {
                 Player2SQW[i] = new Footballer(Player2SQW[i].Name, Player2SQW[i].GoalsScored, PictuteBoxesSecondTeam[i], PictuteBoxesSecondTeam[i].Location.X, PictuteBoxesSecondTeam[i].Location.Y);
-            }         
+                Player2PictBoxes.Add(i, PictuteBoxesSecondTeam[i]);
+            }
+
+            PictureLines = new List<PictureBox> { gorizontalLine, gorizontalLine2, verticalLine, verticalLine2, verticalLine3 };
+            for (int i = 0; i < PictureLines.Count; i++)
+            {
+                PictureBoxesLines.Add(i, PictureLines[i]);
+            }
+                 
 
         }
 
@@ -53,10 +65,11 @@ namespace GameFootball
             //aBall.Location = new Point(aBall.Location.X + MyRep.BallSpeedX, aBall.Location.Y + MyRep.BallSpeedY);
             MyRep.BallMooving(aBall);
             MyRep.CollisionWithBorders(bottomPictBox, highBoundPictBox, leftHighPictBox, leftBottomPictBox, rightHighPictBox, rightBottomPictBox, aBall);
-            MyRep.PlayerTeamMoving(PlayerSQW, isUpPressed, isDownPressed);
             MyRep.CollisionWithPlayers(aBall,PlayerSQW,isUpPressed,isDownPressed);
             MyRep.FirstTeamGoalScored(aBall, secondTeamGoal, PlayerSQW, goalLabel, whoScoredLabel, scoredGoalLabel, ref FirstTeamScore, listViewWhoScored);
+            MyRep.PlayerTeamMoving(PlayerSQW, isUpPressed, isDownPressed);
             MyRep.Player2TeamMoving(Player2SQW, isUpArrowPressed, isDownArrowPressed);
+            MyRep.CompTeamMoving(Player2SQW, Player2PictBoxes, PictureBoxesLines);
             if (timer1count % 5 == 0)
             {
                 MyRep.AccelerationXChangeToNormal();
@@ -107,6 +120,7 @@ namespace GameFootball
         private void TimeTimer_Tick(object sender, EventArgs e)
         {
         }
+
 
         private void BottomPictureBox_Click(object sender, EventArgs e)
         {

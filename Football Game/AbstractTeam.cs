@@ -20,10 +20,16 @@ namespace GameFootball
         {
 
         }
-
+        public AbstractTeam(string name, List<Footballer> team, int goals)
+        {
+            Name = name;
+            Squad = team;
+            GoalsScored = goals;
+        }
         public AbstractTeam(List<Footballer> team)
         {
             Squad = team;
         }
+
     }
 }
