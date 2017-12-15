@@ -87,6 +87,11 @@
             this.centrDef1Team2 = new System.Windows.Forms.PictureBox();
             this.centrDef2Team2 = new System.Windows.Forms.PictureBox();
             this.GoalKeeperTeam2 = new System.Windows.Forms.PictureBox();
+            this.gorizontalLine = new System.Windows.Forms.PictureBox();
+            this.gorizontalLine2 = new System.Windows.Forms.PictureBox();
+            this.verticalLine = new System.Windows.Forms.PictureBox();
+            this.verticalLine2 = new System.Windows.Forms.PictureBox();
+            this.verticalLine3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.secondTeamGoal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.firstTeamGoal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rightForw)).BeginInit();
@@ -125,6 +130,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.centrDef1Team2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.centrDef2Team2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GoalKeeperTeam2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gorizontalLine)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gorizontalLine2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.verticalLine)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.verticalLine2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.verticalLine3)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
@@ -206,7 +216,7 @@
             this.goalLabel.AutoSize = true;
             this.goalLabel.BackColor = System.Drawing.Color.Transparent;
             this.goalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.goalLabel.Location = new System.Drawing.Point(444, 1384);
+            this.goalLabel.Location = new System.Drawing.Point(-15, 1140);
             this.goalLabel.Name = "goalLabel";
             this.goalLabel.Size = new System.Drawing.Size(940, 78);
             this.goalLabel.TabIndex = 31;
@@ -218,7 +228,7 @@
             this.whoScoredLabel.BackColor = System.Drawing.Color.Transparent;
             this.whoScoredLabel.Font = new System.Drawing.Font("Impact", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.whoScoredLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.whoScoredLabel.Location = new System.Drawing.Point(466, 1452);
+            this.whoScoredLabel.Location = new System.Drawing.Point(5, 1199);
             this.whoScoredLabel.Name = "whoScoredLabel";
             this.whoScoredLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.whoScoredLabel.Size = new System.Drawing.Size(935, 117);
@@ -231,7 +241,7 @@
             // 
             this.scoredGoalLabel.BackColor = System.Drawing.Color.Transparent;
             this.scoredGoalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.scoredGoalLabel.Location = new System.Drawing.Point(400, 1569);
+            this.scoredGoalLabel.Location = new System.Drawing.Point(-61, 1316);
             this.scoredGoalLabel.Name = "scoredGoalLabel";
             this.scoredGoalLabel.Size = new System.Drawing.Size(1107, 85);
             this.scoredGoalLabel.TabIndex = 33;
@@ -688,6 +698,51 @@
             this.GoalKeeperTeam2.TabIndex = 51;
             this.GoalKeeperTeam2.TabStop = false;
             // 
+            // gorizontalLine
+            // 
+            this.gorizontalLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
+            this.gorizontalLine.Location = new System.Drawing.Point(333, 628);
+            this.gorizontalLine.Name = "gorizontalLine";
+            this.gorizontalLine.Size = new System.Drawing.Size(60, 19);
+            this.gorizontalLine.TabIndex = 52;
+            this.gorizontalLine.TabStop = false;
+            // 
+            // gorizontalLine2
+            // 
+            this.gorizontalLine2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
+            this.gorizontalLine2.Location = new System.Drawing.Point(294, 1025);
+            this.gorizontalLine2.Name = "gorizontalLine2";
+            this.gorizontalLine2.Size = new System.Drawing.Size(89, 20);
+            this.gorizontalLine2.TabIndex = 53;
+            this.gorizontalLine2.TabStop = false;
+            // 
+            // verticalLine
+            // 
+            this.verticalLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
+            this.verticalLine.Location = new System.Drawing.Point(1392, 1536);
+            this.verticalLine.Name = "verticalLine";
+            this.verticalLine.Size = new System.Drawing.Size(24, 104);
+            this.verticalLine.TabIndex = 54;
+            this.verticalLine.TabStop = false;
+            // 
+            // verticalLine2
+            // 
+            this.verticalLine2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.verticalLine2.Location = new System.Drawing.Point(2183, 1536);
+            this.verticalLine2.Name = "verticalLine2";
+            this.verticalLine2.Size = new System.Drawing.Size(24, 92);
+            this.verticalLine2.TabIndex = 55;
+            this.verticalLine2.TabStop = false;
+            // 
+            // verticalLine3
+            // 
+            this.verticalLine3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.verticalLine3.Location = new System.Drawing.Point(2613, 1536);
+            this.verticalLine3.Name = "verticalLine3";
+            this.verticalLine3.Size = new System.Drawing.Size(11, 92);
+            this.verticalLine3.TabIndex = 56;
+            this.verticalLine3.TabStop = false;
+            // 
             // FootballGameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -747,6 +802,11 @@
             this.Controls.Add(this.ToppictureBox);
             this.Controls.Add(this.labelDoubleDot);
             this.Controls.Add(this.aPitch);
+            this.Controls.Add(this.verticalLine);
+            this.Controls.Add(this.verticalLine2);
+            this.Controls.Add(this.verticalLine3);
+            this.Controls.Add(this.gorizontalLine2);
+            this.Controls.Add(this.gorizontalLine);
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(2558, 1544);
             this.Name = "FootballGameForm";
@@ -795,6 +855,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.centrDef1Team2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.centrDef2Team2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GoalKeeperTeam2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gorizontalLine)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gorizontalLine2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.verticalLine)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.verticalLine2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.verticalLine3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -860,6 +925,11 @@
         private System.Windows.Forms.PictureBox centrDef2Team2;
         private System.Windows.Forms.PictureBox GoalKeeperTeam2;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox gorizontalLine;
+        private System.Windows.Forms.PictureBox gorizontalLine2;
+        private System.Windows.Forms.PictureBox verticalLine;
+        private System.Windows.Forms.PictureBox verticalLine2;
+        private System.Windows.Forms.PictureBox verticalLine3;
     }
 }
 

@@ -52,7 +52,7 @@ namespace GameFootball
 
         public MyRepository()
         {
-            team2 = new Player2Team();
+            team2 = new CompTeam();
             SecondTeam = new List<Footballer>
             {
                 new Footballer("Kostyan",0),
@@ -444,6 +444,36 @@ namespace GameFootball
                 }
             }
         }
+        public void CompTeamMoving(List<Footballer>sqw, Dictionary<int,PictureBox> Players, Dictionary<int,PictureBox> lines)
+        {
+            foreach (var k in lines.Keys)
+            {
+                if (k == 0)
+                {
+                    foreach (var kk in lines.Keys)
+                    {
+                        if (kk == 2)
+                        {
+                            foreach (var kkk in Players.Keys)
+                            {
+                                if (kkk == 10)
+                                {
+                                    //if (aBall.myBall.Location.Y < sqw[10].positionOnTheScreen.Location.Y)
+                                    //{
+                                    //    team2.TeamMovingUp(sqw);
+                                    //}
+                                    //else
+                                    //{
+                                    //    team2.TeamMovingDown(sqw);
+                                    //}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         public void Player2TeamMoving(List<Footballer> sqw, bool isupArrowpressed, bool isdownArrowpressed)
         {
             if (isupArrowpressed)
