@@ -56,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Championship.cs" />
     <Compile Include="Hashing.cs" />
     <Compile Include="LINQFactory.cs" />
     <Compile Include="Program.cs" />

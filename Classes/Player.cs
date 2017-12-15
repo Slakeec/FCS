@@ -20,8 +20,8 @@ namespace Classes
 
         public string Name
         {
-            get { return Name; }
-            set { Name = value; }
+            get { return name; }
+            set { name = value; }
         }
 
 
@@ -50,14 +50,14 @@ namespace Classes
             get { return number; }
             set { number = value; }
         }
-        
+
         [JsonProperty("position")]
         private string position;
 
         public string Position
         {
-            get { return marketPrice; }
-            set { marketPrice = value; }
+            get { return position; }
+            set { position = value; }
         }
 
         private int goals;
