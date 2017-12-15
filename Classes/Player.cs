@@ -43,13 +43,13 @@ namespace Classes
             set { marketPrice = value; }
         }
 
-        [JsonProperty("jerseyNumber")]
-        private int number;
-        public int Number
-        {
-            get { return number; }
-            set { number = value; }
-        }
+        //[JsonProperty("jerseyNumber")]
+        //private int number;
+        //public int Number
+        //{
+        //    get { return number; }
+        //    set { number = value; }
+        //}
 
         [JsonProperty("position")]
         private string position;
@@ -79,7 +79,7 @@ namespace Classes
             this.Goals = 0;
             this.TeamId = idTeam;
             this.Nationlity = nationality;
-            this.Number = number;
+            //this.Number = number;
             this.Position = position;
         }
         public Player()
