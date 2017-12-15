@@ -10,6 +10,7 @@ namespace GameFootball
     {
         public string Name { get; set; }
         public List<Footballer> Squad { get; set; }
+        public int GoalsScored { get; set; }
         //public int movingspeed { get; set; }
 
         public abstract void TeamMovingUp(List<Footballer> sqw);

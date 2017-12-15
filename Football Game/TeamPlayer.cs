@@ -38,10 +38,5 @@ namespace GameFootball
             }
         }
 
-        
-        //public TeamPlayer() : base
-        //{
-        //    Squad = playerTeam;
-        //}
     }
 }

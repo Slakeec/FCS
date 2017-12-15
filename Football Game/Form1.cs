@@ -14,25 +14,36 @@ namespace GameFootball
     {
         MyRepository MyRep=new MyRepository();
         List<Footballer> PlayerSQW;
-        List<PictureBox> PictureBoxes;
+       // AbstractTeam FirstTeam = new TeamPlayer();
+        List<PictureBox> PictureBoxesFirstTeam;
+
+        List<Footballer> Player2SQW;
+        List<PictureBox> PictuteBoxesSecondTeam;
+
         int imagecount=0, timer1count=0, timerfortimecount = 0;
         int labelcount = 0;
         int FirstTeamScore=0;
-        public bool isUpPressed, isDownPressed;
+        public bool isUpPressed, isDownPressed, isUpArrowPressed, isDownArrowPressed;
 
         public FootballGameForm()
         {
             InitializeComponent();
-            PictureBoxes = new List<PictureBox> { Goalkeeper, CentrDef1, CentrDef2, Mid1, Mid2, Mid3, Mid4, Mid5, leftForw, centralForw, rightForw };
-            PlayerSQW = MyRep.FirstTeam;
-            for (int i = 0; i < PlayerSQW.Count ; i++)
-            {
-                PlayerSQW[i] = new Footballer(PlayerSQW[i].Name,PlayerSQW[i].GoalsScored, PictureBoxes[i], PictureBoxes[i].Location.X, PictureBoxes[i].Location.Y);
-            }                  
         }
 
         private void FootballGameForm_Load(object sender, EventArgs e)
         {
+            PictureBoxesFirstTeam = new List<PictureBox> { Goalkeeper, CentrDef1, CentrDef2, Mid1, Mid2, Mid3, Mid4, Mid5, leftForw, centralForw, rightForw };
+            PlayerSQW = MyRep.FirstTeam;
+            for (int i = 0; i < PlayerSQW.Count ; i++)
+            {
+                PlayerSQW[i] = new Footballer(PlayerSQW[i].Name,PlayerSQW[i].GoalsScored, PictureBoxesFirstTeam[i], PictureBoxesFirstTeam[i].Location.X, PictureBoxesFirstTeam[i].Location.Y);
+            }
+            PictuteBoxesSecondTeam = new List<PictureBox> { GoalKeeperTeam2, centrDef1Team2, centrDef2Team2, Mid1Team2, Mid2Team2, Mid3Team2, Mid4Team2, Mid5Team2, leftForwTeam2, centralForwTeam2, rightForwTeam2 };
+            Player2SQW = MyRep.SecondTeam;
+            for (int i = 0; i < Player2SQW.Count; i++)
+            {
+                Player2SQW[i] = new Footballer(Player2SQW[i].Name, Player2SQW[i].GoalsScored, PictuteBoxesSecondTeam[i], PictuteBoxesSecondTeam[i].Location.X, PictuteBoxesSecondTeam[i].Location.Y);
+            }         
 
         }
 
@@ -45,6 +56,7 @@ namespace GameFootball
             MyRep.PlayerTeamMoving(PlayerSQW, isUpPressed, isDownPressed);
             MyRep.CollisionWithPlayers(aBall,PlayerSQW,isUpPressed,isDownPressed);
             MyRep.FirstTeamGoalScored(aBall, secondTeamGoal, PlayerSQW, goalLabel, whoScoredLabel, scoredGoalLabel, ref FirstTeamScore, listViewWhoScored);
+            MyRep.Player2TeamMoving(Player2SQW, isUpArrowPressed, isDownArrowPressed);
             if (timer1count % 5 == 0)
             {
                 MyRep.AccelerationXChangeToNormal();
@@ -92,13 +104,19 @@ namespace GameFootball
         {
         }
 
-        private void PlayerTimer_Tick(object sender, EventArgs e)
+        private void TimeTimer_Tick(object sender, EventArgs e)
         {
-
         }
 
         private void BottomPictureBox_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void TimerForTime_Tick(object sender, EventArgs e)
+        {
+            timerfortimecount++;
+            MyRep.Time.TimeGoing(labelMin, labelSec, labelSecSec,labelDoubleDot);
 
         }
 
@@ -118,6 +136,14 @@ namespace GameFootball
             {
                 isDownPressed = true;
             }
+            if (e.KeyCode == Keys.Up)
+            {
+                isUpArrowPressed = true;
+            }
+            if (e.KeyCode == Keys.Down)
+            {
+                isDownArrowPressed = true;
+            }
         }
 
 
@@ -130,6 +156,14 @@ namespace GameFootball
             if (e.KeyCode == Keys.S)
             {
                 isDownPressed = false;
+            }
+            if (e.KeyCode == Keys.Up)
+            {
+                isUpArrowPressed = false;
+            }
+            if (e.KeyCode == Keys.Down)
+            {
+                isDownArrowPressed = false;
             }
 
         }

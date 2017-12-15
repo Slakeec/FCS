@@ -16,7 +16,7 @@ namespace GameFootball
         public string Position { get; set; }
         public bool LastTouch { get; set; }
         public int GoalsScored { get; set; }
-        public TeamPlayer Team { get; set; }
+        public int LastGoalTime { get; set; }
 
         public Footballer(string name, int goalsscored, PictureBox pictbx, int Xposition, int Yposition)
         {

@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.PlayerTimer = new System.Windows.Forms.Timer(this.components);
+            this.Time_timer = new System.Windows.Forms.Timer(this.components);
             this.ChangImage_timer = new System.Windows.Forms.Timer(this.components);
             this.checktimer = new System.Windows.Forms.Timer(this.components);
             this.firstTeamLabel = new System.Windows.Forms.Label();
@@ -70,6 +70,23 @@
             this.aPitch = new System.Windows.Forms.PictureBox();
             this.listViewWhoScored = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.labelMin = new System.Windows.Forms.Label();
+            this.labelSec = new System.Windows.Forms.Label();
+            this.labelSecSec = new System.Windows.Forms.Label();
+            this.labelTimer = new System.Windows.Forms.Label();
+            this.labelDoubleDot = new System.Windows.Forms.Label();
+            this.TimerForTime = new System.Windows.Forms.Timer(this.components);
+            this.Mid1Team2 = new System.Windows.Forms.PictureBox();
+            this.Mid2Team2 = new System.Windows.Forms.PictureBox();
+            this.Mid3Team2 = new System.Windows.Forms.PictureBox();
+            this.Mid4Team2 = new System.Windows.Forms.PictureBox();
+            this.Mid5Team2 = new System.Windows.Forms.PictureBox();
+            this.rightForwTeam2 = new System.Windows.Forms.PictureBox();
+            this.centralForwTeam2 = new System.Windows.Forms.PictureBox();
+            this.leftForwTeam2 = new System.Windows.Forms.PictureBox();
+            this.centrDef1Team2 = new System.Windows.Forms.PictureBox();
+            this.centrDef2Team2 = new System.Windows.Forms.PictureBox();
+            this.GoalKeeperTeam2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.secondTeamGoal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.firstTeamGoal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rightForw)).BeginInit();
@@ -97,19 +114,29 @@
             ((System.ComponentModel.ISupportInitialize)(this.BottomPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToppictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aPitch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mid1Team2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mid2Team2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mid3Team2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mid4Team2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mid5Team2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rightForwTeam2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.centralForwTeam2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.leftForwTeam2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.centrDef1Team2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.centrDef2Team2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GoalKeeperTeam2)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 25;
+            this.timer1.Interval = 35;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // PlayerTimer
+            // Time_timer
             // 
-            this.PlayerTimer.Enabled = true;
-            this.PlayerTimer.Interval = 10;
-            this.PlayerTimer.Tick += new System.EventHandler(this.PlayerTimer_Tick);
+            this.Time_timer.Enabled = true;
+            this.Time_timer.Interval = 50;
             // 
             // ChangImage_timer
             // 
@@ -179,7 +206,7 @@
             this.goalLabel.AutoSize = true;
             this.goalLabel.BackColor = System.Drawing.Color.Transparent;
             this.goalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.goalLabel.Location = new System.Drawing.Point(1293, 526);
+            this.goalLabel.Location = new System.Drawing.Point(444, 1384);
             this.goalLabel.Name = "goalLabel";
             this.goalLabel.Size = new System.Drawing.Size(940, 78);
             this.goalLabel.TabIndex = 31;
@@ -191,7 +218,7 @@
             this.whoScoredLabel.BackColor = System.Drawing.Color.Transparent;
             this.whoScoredLabel.Font = new System.Drawing.Font("Impact", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.whoScoredLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.whoScoredLabel.Location = new System.Drawing.Point(1315, 594);
+            this.whoScoredLabel.Location = new System.Drawing.Point(466, 1452);
             this.whoScoredLabel.Name = "whoScoredLabel";
             this.whoScoredLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.whoScoredLabel.Size = new System.Drawing.Size(935, 117);
@@ -204,7 +231,7 @@
             // 
             this.scoredGoalLabel.BackColor = System.Drawing.Color.Transparent;
             this.scoredGoalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.scoredGoalLabel.Location = new System.Drawing.Point(1249, 711);
+            this.scoredGoalLabel.Location = new System.Drawing.Point(400, 1569);
             this.scoredGoalLabel.Name = "scoredGoalLabel";
             this.scoredGoalLabel.Size = new System.Drawing.Size(1107, 85);
             this.scoredGoalLabel.TabIndex = 33;
@@ -273,7 +300,7 @@
             // Mid5
             // 
             this.Mid5.BackColor = System.Drawing.Color.Black;
-            this.Mid5.Location = new System.Drawing.Point(1422, 1294);
+            this.Mid5.Location = new System.Drawing.Point(1392, 1294);
             this.Mid5.Name = "Mid5";
             this.Mid5.Size = new System.Drawing.Size(24, 86);
             this.Mid5.TabIndex = 21;
@@ -282,7 +309,7 @@
             // Mid1
             // 
             this.Mid1.BackColor = System.Drawing.Color.Black;
-            this.Mid1.Location = new System.Drawing.Point(1422, 284);
+            this.Mid1.Location = new System.Drawing.Point(1392, 274);
             this.Mid1.Name = "Mid1";
             this.Mid1.Size = new System.Drawing.Size(24, 86);
             this.Mid1.TabIndex = 20;
@@ -291,7 +318,7 @@
             // Mid2
             // 
             this.Mid2.BackColor = System.Drawing.Color.Black;
-            this.Mid2.Location = new System.Drawing.Point(1422, 526);
+            this.Mid2.Location = new System.Drawing.Point(1392, 526);
             this.Mid2.Name = "Mid2";
             this.Mid2.Size = new System.Drawing.Size(24, 86);
             this.Mid2.TabIndex = 19;
@@ -310,7 +337,7 @@
             // 
             this.aBall.BackColor = System.Drawing.Color.Transparent;
             this.aBall.Image = global::Football_Game.Properties.Resources.Ball1;
-            this.aBall.Location = new System.Drawing.Point(2036, 303);
+            this.aBall.Location = new System.Drawing.Point(2552, 1373);
             this.aBall.Name = "aBall";
             this.aBall.Size = new System.Drawing.Size(55, 55);
             this.aBall.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -375,7 +402,7 @@
             // Mid4
             // 
             this.Mid4.BackColor = System.Drawing.Color.Black;
-            this.Mid4.Location = new System.Drawing.Point(1422, 1054);
+            this.Mid4.Location = new System.Drawing.Point(1392, 1054);
             this.Mid4.Name = "Mid4";
             this.Mid4.Size = new System.Drawing.Size(24, 86);
             this.Mid4.TabIndex = 11;
@@ -384,7 +411,7 @@
             // CentrDef2
             // 
             this.CentrDef2.BackColor = System.Drawing.Color.Black;
-            this.CentrDef2.Location = new System.Drawing.Point(860, 1051);
+            this.CentrDef2.Location = new System.Drawing.Point(801, 1051);
             this.CentrDef2.Name = "CentrDef2";
             this.CentrDef2.Size = new System.Drawing.Size(24, 86);
             this.CentrDef2.TabIndex = 10;
@@ -393,7 +420,7 @@
             // CentrDef1
             // 
             this.CentrDef1.BackColor = System.Drawing.Color.Black;
-            this.CentrDef1.Location = new System.Drawing.Point(860, 544);
+            this.CentrDef1.Location = new System.Drawing.Point(801, 544);
             this.CentrDef1.Name = "CentrDef1";
             this.CentrDef1.Size = new System.Drawing.Size(24, 86);
             this.CentrDef1.TabIndex = 9;
@@ -402,7 +429,7 @@
             // Mid3
             // 
             this.Mid3.BackColor = System.Drawing.Color.Black;
-            this.Mid3.Location = new System.Drawing.Point(1422, 791);
+            this.Mid3.Location = new System.Drawing.Point(1392, 791);
             this.Mid3.Name = "Mid3";
             this.Mid3.Size = new System.Drawing.Size(24, 86);
             this.Mid3.TabIndex = 8;
@@ -465,11 +492,12 @@
             // 
             // aPitch
             // 
-            this.aPitch.Image = global::Football_Game.Properties.Resources.MyPitch;
-            this.aPitch.Location = new System.Drawing.Point(52, 1494);
-            this.aPitch.Margin = new System.Windows.Forms.Padding(100);
+            this.aPitch.BackColor = System.Drawing.Color.PaleGreen;
+            this.aPitch.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.aPitch.Location = new System.Drawing.Point(9, 1294);
+            this.aPitch.Margin = new System.Windows.Forms.Padding(5);
             this.aPitch.Name = "aPitch";
-            this.aPitch.Size = new System.Drawing.Size(209, 128);
+            this.aPitch.Size = new System.Drawing.Size(374, 211);
             this.aPitch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.aPitch.TabIndex = 0;
             this.aPitch.TabStop = false;
@@ -481,7 +509,7 @@
             this.listViewWhoScored.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1});
             this.listViewWhoScored.Enabled = false;
-            this.listViewWhoScored.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listViewWhoScored.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.listViewWhoScored.ForeColor = System.Drawing.Color.Black;
             this.listViewWhoScored.Location = new System.Drawing.Point(26, 33);
             this.listViewWhoScored.Name = "listViewWhoScored";
@@ -494,6 +522,172 @@
             // 
             this.columnHeader1.Width = 150;
             // 
+            // labelMin
+            // 
+            this.labelMin.BackColor = System.Drawing.Color.PaleGreen;
+            this.labelMin.Cursor = System.Windows.Forms.Cursors.Default;
+            this.labelMin.Font = new System.Drawing.Font("Cambria", 26.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelMin.Location = new System.Drawing.Point(17, 1401);
+            this.labelMin.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.labelMin.Name = "labelMin";
+            this.labelMin.Size = new System.Drawing.Size(156, 96);
+            this.labelMin.TabIndex = 36;
+            this.labelMin.Text = "0";
+            this.labelMin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // labelSec
+            // 
+            this.labelSec.AutoSize = true;
+            this.labelSec.BackColor = System.Drawing.Color.PaleGreen;
+            this.labelSec.Cursor = System.Windows.Forms.Cursors.Default;
+            this.labelSec.Font = new System.Drawing.Font("Cambria", 26.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelSec.Location = new System.Drawing.Point(197, 1401);
+            this.labelSec.Name = "labelSec";
+            this.labelSec.Size = new System.Drawing.Size(94, 104);
+            this.labelSec.TabIndex = 37;
+            this.labelSec.Text = "0";
+            // 
+            // labelSecSec
+            // 
+            this.labelSecSec.AutoSize = true;
+            this.labelSecSec.BackColor = System.Drawing.Color.PaleGreen;
+            this.labelSecSec.Cursor = System.Windows.Forms.Cursors.Default;
+            this.labelSecSec.Font = new System.Drawing.Font("Cambria", 26.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelSecSec.Location = new System.Drawing.Point(260, 1401);
+            this.labelSecSec.Name = "labelSecSec";
+            this.labelSecSec.Size = new System.Drawing.Size(94, 104);
+            this.labelSecSec.TabIndex = 38;
+            this.labelSecSec.Text = "0";
+            // 
+            // labelTimer
+            // 
+            this.labelTimer.AutoSize = true;
+            this.labelTimer.BackColor = System.Drawing.Color.PaleGreen;
+            this.labelTimer.Cursor = System.Windows.Forms.Cursors.Default;
+            this.labelTimer.Font = new System.Drawing.Font("Cambria", 29.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelTimer.Location = new System.Drawing.Point(15, 1313);
+            this.labelTimer.Name = "labelTimer";
+            this.labelTimer.Size = new System.Drawing.Size(341, 115);
+            this.labelTimer.TabIndex = 39;
+            this.labelTimer.Text = "T I M E";
+            // 
+            // labelDoubleDot
+            // 
+            this.labelDoubleDot.AutoSize = true;
+            this.labelDoubleDot.BackColor = System.Drawing.Color.PaleGreen;
+            this.labelDoubleDot.Cursor = System.Windows.Forms.Cursors.Default;
+            this.labelDoubleDot.Font = new System.Drawing.Font("Cambria", 26.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelDoubleDot.Location = new System.Drawing.Point(147, 1393);
+            this.labelDoubleDot.Name = "labelDoubleDot";
+            this.labelDoubleDot.Size = new System.Drawing.Size(68, 104);
+            this.labelDoubleDot.TabIndex = 40;
+            this.labelDoubleDot.Text = ":";
+            // 
+            // TimerForTime
+            // 
+            this.TimerForTime.Enabled = true;
+            this.TimerForTime.Interval = 50;
+            this.TimerForTime.Tick += new System.EventHandler(this.TimerForTime_Tick);
+            // 
+            // Mid1Team2
+            // 
+            this.Mid1Team2.BackColor = System.Drawing.Color.Maroon;
+            this.Mid1Team2.Location = new System.Drawing.Point(1807, 274);
+            this.Mid1Team2.Name = "Mid1Team2";
+            this.Mid1Team2.Size = new System.Drawing.Size(24, 86);
+            this.Mid1Team2.TabIndex = 41;
+            this.Mid1Team2.TabStop = false;
+            // 
+            // Mid2Team2
+            // 
+            this.Mid2Team2.BackColor = System.Drawing.Color.Maroon;
+            this.Mid2Team2.Location = new System.Drawing.Point(1807, 526);
+            this.Mid2Team2.Name = "Mid2Team2";
+            this.Mid2Team2.Size = new System.Drawing.Size(24, 86);
+            this.Mid2Team2.TabIndex = 42;
+            this.Mid2Team2.TabStop = false;
+            // 
+            // Mid3Team2
+            // 
+            this.Mid3Team2.BackColor = System.Drawing.Color.Maroon;
+            this.Mid3Team2.Location = new System.Drawing.Point(1807, 791);
+            this.Mid3Team2.Name = "Mid3Team2";
+            this.Mid3Team2.Size = new System.Drawing.Size(24, 86);
+            this.Mid3Team2.TabIndex = 43;
+            this.Mid3Team2.TabStop = false;
+            // 
+            // Mid4Team2
+            // 
+            this.Mid4Team2.BackColor = System.Drawing.Color.Maroon;
+            this.Mid4Team2.Location = new System.Drawing.Point(1807, 1051);
+            this.Mid4Team2.Name = "Mid4Team2";
+            this.Mid4Team2.Size = new System.Drawing.Size(24, 86);
+            this.Mid4Team2.TabIndex = 44;
+            this.Mid4Team2.TabStop = false;
+            // 
+            // Mid5Team2
+            // 
+            this.Mid5Team2.BackColor = System.Drawing.Color.Maroon;
+            this.Mid5Team2.Location = new System.Drawing.Point(1807, 1294);
+            this.Mid5Team2.Name = "Mid5Team2";
+            this.Mid5Team2.Size = new System.Drawing.Size(24, 86);
+            this.Mid5Team2.TabIndex = 45;
+            this.Mid5Team2.TabStop = false;
+            // 
+            // rightForwTeam2
+            // 
+            this.rightForwTeam2.BackColor = System.Drawing.Color.Maroon;
+            this.rightForwTeam2.Location = new System.Drawing.Point(1084, 402);
+            this.rightForwTeam2.Name = "rightForwTeam2";
+            this.rightForwTeam2.Size = new System.Drawing.Size(24, 86);
+            this.rightForwTeam2.TabIndex = 46;
+            this.rightForwTeam2.TabStop = false;
+            // 
+            // centralForwTeam2
+            // 
+            this.centralForwTeam2.BackColor = System.Drawing.Color.Maroon;
+            this.centralForwTeam2.Location = new System.Drawing.Point(1084, 793);
+            this.centralForwTeam2.Name = "centralForwTeam2";
+            this.centralForwTeam2.Size = new System.Drawing.Size(24, 86);
+            this.centralForwTeam2.TabIndex = 47;
+            this.centralForwTeam2.TabStop = false;
+            // 
+            // leftForwTeam2
+            // 
+            this.leftForwTeam2.BackColor = System.Drawing.Color.Maroon;
+            this.leftForwTeam2.Location = new System.Drawing.Point(1084, 1184);
+            this.leftForwTeam2.Name = "leftForwTeam2";
+            this.leftForwTeam2.Size = new System.Drawing.Size(24, 86);
+            this.leftForwTeam2.TabIndex = 48;
+            this.leftForwTeam2.TabStop = false;
+            // 
+            // centrDef1Team2
+            // 
+            this.centrDef1Team2.BackColor = System.Drawing.Color.Maroon;
+            this.centrDef1Team2.Location = new System.Drawing.Point(2498, 544);
+            this.centrDef1Team2.Name = "centrDef1Team2";
+            this.centrDef1Team2.Size = new System.Drawing.Size(24, 86);
+            this.centrDef1Team2.TabIndex = 49;
+            this.centrDef1Team2.TabStop = false;
+            // 
+            // centrDef2Team2
+            // 
+            this.centrDef2Team2.BackColor = System.Drawing.Color.Maroon;
+            this.centrDef2Team2.Location = new System.Drawing.Point(2498, 1051);
+            this.centrDef2Team2.Name = "centrDef2Team2";
+            this.centrDef2Team2.Size = new System.Drawing.Size(24, 86);
+            this.centrDef2Team2.TabIndex = 50;
+            this.centrDef2Team2.TabStop = false;
+            // 
+            // GoalKeeperTeam2
+            // 
+            this.GoalKeeperTeam2.BackColor = System.Drawing.Color.Maroon;
+            this.GoalKeeperTeam2.Location = new System.Drawing.Point(2884, 799);
+            this.GoalKeeperTeam2.Name = "GoalKeeperTeam2";
+            this.GoalKeeperTeam2.Size = new System.Drawing.Size(24, 86);
+            this.GoalKeeperTeam2.TabIndex = 51;
+            this.GoalKeeperTeam2.TabStop = false;
+            // 
             // FootballGameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -501,6 +695,21 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(3184, 1669);
+            this.Controls.Add(this.GoalKeeperTeam2);
+            this.Controls.Add(this.centrDef2Team2);
+            this.Controls.Add(this.centrDef1Team2);
+            this.Controls.Add(this.leftForwTeam2);
+            this.Controls.Add(this.centralForwTeam2);
+            this.Controls.Add(this.rightForwTeam2);
+            this.Controls.Add(this.Mid5Team2);
+            this.Controls.Add(this.Mid4Team2);
+            this.Controls.Add(this.Mid3Team2);
+            this.Controls.Add(this.Mid2Team2);
+            this.Controls.Add(this.Mid1Team2);
+            this.Controls.Add(this.labelTimer);
+            this.Controls.Add(this.labelSecSec);
+            this.Controls.Add(this.labelSec);
+            this.Controls.Add(this.labelMin);
             this.Controls.Add(this.listViewWhoScored);
             this.Controls.Add(this.slashLabel);
             this.Controls.Add(this.goalLabel);
@@ -536,6 +745,7 @@
             this.Controls.Add(this.bottomLeftPB);
             this.Controls.Add(this.BottomPictureBox);
             this.Controls.Add(this.ToppictureBox);
+            this.Controls.Add(this.labelDoubleDot);
             this.Controls.Add(this.aPitch);
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(2558, 1544);
@@ -574,6 +784,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.BottomPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ToppictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aPitch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mid1Team2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mid2Team2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mid3Team2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mid4Team2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mid5Team2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rightForwTeam2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.centralForwTeam2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.leftForwTeam2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.centrDef1Team2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.centrDef2Team2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GoalKeeperTeam2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -589,9 +810,8 @@
         private System.Windows.Forms.PictureBox TopRightpictureBox4;
         private System.Windows.Forms.PictureBox BottomRightpictureBox5;
         private System.Windows.Forms.PictureBox aBall;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox Mid3;
-        private System.Windows.Forms.Timer PlayerTimer;
+        private System.Windows.Forms.Timer Time_timer;
         private System.Windows.Forms.Timer ChangImage_timer;
         private System.Windows.Forms.Timer checktimer;
         private System.Windows.Forms.PictureBox CentrDef1;
@@ -622,6 +842,24 @@
         private System.Windows.Forms.Label slashLabel;
         private System.Windows.Forms.ListView listViewWhoScored;
         private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.Label labelMin;
+        private System.Windows.Forms.Label labelSec;
+        private System.Windows.Forms.Label labelSecSec;
+        private System.Windows.Forms.Label labelTimer;
+        private System.Windows.Forms.Label labelDoubleDot;
+        private System.Windows.Forms.Timer TimerForTime;
+        private System.Windows.Forms.PictureBox Mid1Team2;
+        private System.Windows.Forms.PictureBox Mid2Team2;
+        private System.Windows.Forms.PictureBox Mid3Team2;
+        private System.Windows.Forms.PictureBox Mid4Team2;
+        private System.Windows.Forms.PictureBox Mid5Team2;
+        private System.Windows.Forms.PictureBox rightForwTeam2;
+        private System.Windows.Forms.PictureBox centralForwTeam2;
+        private System.Windows.Forms.PictureBox leftForwTeam2;
+        private System.Windows.Forms.PictureBox centrDef1Team2;
+        private System.Windows.Forms.PictureBox centrDef2Team2;
+        private System.Windows.Forms.PictureBox GoalKeeperTeam2;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

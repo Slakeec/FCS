@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
+using Football_Game;
+using Football_Game.TimeFolder;
 
 namespace GameFootball
 {
@@ -12,24 +14,26 @@ namespace GameFootball
     {
         public int countForAcceleration = 0;
 
-        public int BallSpeedY = 5;
+        public int BallSpeedY = 7;
 
-        public int PlusBallSpeedY1 = 1;
-        public int PlusBallSpeedY2 = 5;
-        public int PlusBallSpeedY3 = 10;
-        public int PlusBallSpeedY4 = 15;
+        public int PlusBallSpeedY1 = 2;
+        public int PlusBallSpeedY2 = 7;
+        public int PlusBallSpeedY3 = 13;
+        public int PlusBallSpeedY4 = 20;
 
-        public int BallSpeedX = 9;
+        public int BallSpeedX = 12;
 
-        const int PlusBallSpeedXClone = 9;
-        public int PlusBallSpeedX1 = 7;
-        public int PlusBallSpeedX2 = 12;
-        public int PlusBallSpeedX3 = 15;
-        public int PlusBallSpeedX4 = 20;
+        const int PlusBallSpeedXClone = 12;
+        public int PlusBallSpeedX1 = 9;
+        public int PlusBallSpeedX2 = 16;
+        public int PlusBallSpeedX3 = 20;
+        public int PlusBallSpeedX4 = 26;
         public int PlayerSpeed = 9;
 
         Random r = new Random();
         AbstractTeam team1 = new TeamPlayer();
+        AbstractTeam team2;
+        public AbstractTime Time; //= new Timer60(0,0);
         Ball aBall = new Ball();
 
         int countForlabel;
@@ -43,10 +47,27 @@ namespace GameFootball
         string toScoreString;
 
         public List<Footballer> FirstTeam;
+        public List<Footballer> SecondTeam;
         public List<string> WhoScoredList=new List<string>();
 
         public MyRepository()
         {
+            team2 = new Player2Team();
+            SecondTeam = new List<Footballer>
+            {
+                new Footballer("Kostyan",0),
+                new Footballer("Mihan",0),
+                new Footballer("Fedya",0),
+                new Footballer("Igor-Mudak",0),
+                new Footballer("Artyom",0),
+                new Footballer("Dima",0),
+                new Footballer("Leha",0),
+                new Footballer("Kirill",0),
+                new Footballer("Lut",0),
+                new Footballer("Sanya",0),
+                new Footballer("Desinov Valentin",0)
+            };
+            Time = new Timer90(0, 0);
             FirstTeam = new List<Footballer>
             {
                 new Footballer("SevaGoal",0),
@@ -121,6 +142,7 @@ namespace GameFootball
             if (ball.Bounds.IntersectsWith(goal.Bounds))
             {
                 teamScore++;
+                team1.GoalsScored = teamScore;
                 TeamsReset(squad, ball);
                 
                 foreach (var player in squad)
@@ -128,8 +150,16 @@ namespace GameFootball
                     if (player.LastTouch == true)
                     {
                         player.GoalsScored++;
-                        toScoreString = $"{player.Name} scored {player.GoalsScored} goals";
-                        WhoScoredList.Add(player.Name);
+                        player.LastGoalTime = Time.Min;
+                        toScoreString = $"{player.LastGoalTime}' {player.Name}  {team1.GoalsScored}-0 ";
+                        WhoScoredList.Add(toScoreString);
+                        foreach (var str in WhoScoredList)
+                        {
+                            if (toScoreString.Length > 21)
+                            {
+                                whoScoredListView.Font = new System.Drawing.Font("Cambria", 10);
+                            }
+                        }
                         whoScoredListView.Items.Add(toScoreString);
 
                         if (countForlabel == 1)
@@ -412,6 +442,18 @@ namespace GameFootball
                     }
                     DoBallAcceleration(isUpPressed, isDownPressed);
                 }
+            }
+        }
+        public void Player2TeamMoving(List<Footballer> sqw, bool isupArrowpressed, bool isdownArrowpressed)
+        {
+            if (isupArrowpressed)
+            {
+                team2.TeamMovingUp(sqw);
+            }
+
+            if (isdownArrowpressed)
+            {
+                team2.TeamMovingDown(sqw);
             }
         }
 
