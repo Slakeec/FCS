@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Classes
 {
@@ -22,7 +23,7 @@ namespace Classes
             get { return teamNames; }
             set { teamNames = value; }
         }
-        private static int cnt = 15;
+        private static int cnt = 16;
         public static int Cnt
         {
             get { return cnt; }
@@ -31,14 +32,23 @@ namespace Classes
 
         public static Team GetTeam(int TeamId)
         {
-            using (var client = new HttpClient())
+            try
             {
-                string Baseurl = " http://api.football-data.org/v1/teams/";
-                String EndUrl = "/players";
-                String url = Baseurl + TeamId + EndUrl;
-                string result = client.GetStringAsync(url).Result;
-                return JsonConvert.DeserializeObject<Team>(result);
+                using (var client = new HttpClient())
+                {
+                    string Baseurl = " http://api.football-data.org/v1/teams/";
+                    String EndUrl = "/players";
+                    String url = Baseurl + TeamId + EndUrl;
+                    string result = client.GetStringAsync(url).Result;
+                    return JsonConvert.DeserializeObject<Team>(result);
+                }
             }
+            catch(Exception)
+            {
+                return null;
+                
+            }
+            
         }
 
        public List<Team> GetTeamList()
@@ -47,6 +57,10 @@ namespace Classes
             for (int i =0; i<TeamsId.Count; i++)
             {
                 Team t = GetTeam(TeamsId[i]);
+                if (t==null)
+                {
+                    return null;
+                }
                 t.Name = TeamNames[i];
                 ans.Add(t);
             }
@@ -56,11 +70,11 @@ namespace Classes
         {
             TeamsId = new List<int>
             {
-                62,57,64,65,66,73,78,81,86,94,95,98,100,108,109
+                57,61,62,64,65,66,73,78,81,86,94,95,98,100,108,109
             };
             TeamNames = new List<string>
             {
-                "Everton","Arsenal","Liverpool","Manchester City","Manchester United","Tottenham","Atletico Madrid",
+                "Arsenal","Chelsea","Everton","Liverpool","Manchester City","Manchester United","Tottenham","Atletico Madrid",
                 "Barselona","Real Madrid", "Villyereal","Valencia","Milan","Roma","Inter","Juventus"
             };
         }

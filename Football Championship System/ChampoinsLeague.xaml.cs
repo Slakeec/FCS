@@ -71,5 +71,23 @@ namespace Football_Championship_System
                 ListViewTeamInfo.ItemsSource = response;
             }
         }
+
+        private void ButtonTopScorersOK_Click(object sender, RoutedEventArgs e)
+        {
+            ListViewTopScorers.ItemsSource = LINQStat.GetTopScorers(UserId);
+        }
+
+        private void ButtonPlayerInfoOK_Click(object sender, RoutedEventArgs e)
+        {
+            List<string> response = LINQStat.GetPlayerInfo(UserId, TextBoxPlayerInfo.Text);
+            if (response == null)
+            {
+                MessageBox.Show("Incorrect player entered", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                ListViewPlayerInfo.ItemsSource = response;
+            }
+        }
     }
 }

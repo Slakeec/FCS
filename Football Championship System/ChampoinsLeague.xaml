@@ -44,7 +44,7 @@
                 <Label Content="Enter Player Name" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
                 <TextBox Name="TextBoxPlayerInfo" Text="" Grid.Row="1"></TextBox>
                 <ListView Name="ListViewPlayerInfo" Grid.Row="2"></ListView>
-                <Button Name="ButtonPlayerInfoOK" Content="Search" Grid.Row="3"></Button>
+                <Button Name="ButtonPlayerInfoOK" Content="Search" Grid.Row="3" Click="ButtonPlayerInfoOK_Click"></Button>
             </Grid>
             <Grid Visibility="Hidden" Name="GridTopScorer">
                 <Grid.RowDefinitions>
@@ -54,7 +54,7 @@
                 </Grid.RowDefinitions>
                 <Label Content="Top Scorers" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
                 <ListView Name="ListViewTopScorers" Grid.Row="1"></ListView>
-                <Button Name="ButtonTopScorersOK" Content="Find top Scorers" Grid.Row="2"></Button>
+                <Button Name="ButtonTopScorersOK" Content="Find top Scorers" Grid.Row="2" Click="ButtonTopScorersOK_Click"></Button>
             </Grid>
             <Grid Grid.Row="1">
                 <Grid.RowDefinitions>
