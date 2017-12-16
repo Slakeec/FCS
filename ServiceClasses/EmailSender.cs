@@ -18,7 +18,7 @@ namespace ServiceClasses
             using (SmtpClient smtpclient = new SmtpClient())
             {
                 mailMessage.Subject = "Поздравляем, вы прошли чемпионат!";
-                mailMessage.Body = "Вы набрали "+score+"очков!";
+                mailMessage.Body = "Вы набрали " + score + "очков!";
 
                 smtpclient.Host = "smtp.gmail.com";
                 smtpclient.Port = 587;
@@ -29,5 +29,6 @@ namespace ServiceClasses
 
                 smtpclient.Send(mailMessage);
             }
+        }
     }
 }

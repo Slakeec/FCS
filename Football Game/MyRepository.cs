@@ -62,59 +62,89 @@ namespace GameFootball
 
         public MyRepository()
         {
-
+            FirstTeam = new List<Footballer>
+            {
+                new Footballer("1",0),
+                new Footballer("2",0),
+                new Footballer("3",0),
+                new Footballer("4",0),
+                new Footballer("5",0),
+                new Footballer("6",0),
+                new Footballer("7",0),
+                new Footballer("8",0),
+                new Footballer("9",0),
+                new Footballer("10",0),
+                new Footballer("11",0)
+            };
+            SecondTeam = new List<Footballer>
+            {
+                new Footballer("1(2)",0),
+                new Footballer("2(2)",0),
+                new Footballer("3(2)",0),
+                new Footballer("4(2)",0),
+                new Footballer("5(2)",0),
+                new Footballer("6(2)",0),
+                new Footballer("7(2)",0),
+                new Footballer("8(2)",0),
+                new Footballer("9(2)",0),
+                new Footballer("10(2)",0),
+                new Footballer("11(2)",0)
+            };
+            team1 = new TeamPlayer("Chelsea", FirstTeam);
+            team2 = new Player2Team("Arsenal", SecondTeam);
+            Time = new Timer60(0, 0);
+            Speeds = new List<int> { PlusBallSpeedXClone, PlusBallSpeedX1, PlusBallSpeedX2, PlusBallSpeedX3, PlusBallSpeedX4, PlusBallSpeedY1, PlusBallSpeedY2, PlusBallSpeedY3, PlusBallSpeedY4 };
         }
         public MyRepository(List<string> players1, List<string> players2)
         {
-            Speeds = new List<int> { PlusBallSpeedXClone, PlusBallSpeedX1, PlusBallSpeedX2, PlusBallSpeedX3, PlusBallSpeedX4, PlusBallSpeedY1, PlusBallSpeedY2, PlusBallSpeedY3, PlusBallSpeedY4 };
 
-            FirstTeam = new List<Footballer>();
-            foreach (var player in players1)
-            {
-                FirstTeam.Add(new Footballer(player, 0));
-            }
-            SecondTeam = new List<Footballer>();
-            foreach (var player in players2)
-            {
-                SecondTeam.Add(new Footballer(player, 0));
-            }
+            //FirstTeam = new List<Footballer>();
+            //foreach (var player in players1)
+            //{
+            //    FirstTeam.Add(new Footballer(player, 0));
+            //}
+            //SecondTeam = new List<Footballer>();
+            //foreach (var player in players2)
+            //{
+            //    SecondTeam.Add(new Footballer(player, 0));
+            //}
 
         }
         public MyRepository(string FirstTeamName, string SecondTeamName,List<string> players1, List<string> players2, int time) : this(players1,players2)
         {
-            team1 = new TeamPlayer(FirstTeamName, FirstTeam);
-            team2 = new Player2Team(SecondTeamName, SecondTeam);
-            if (time == 60)
-            {
-                Time = new Timer60(0, 0);
-            }
-            else if (time == 90)
-            {
-                Time = new Timer90(0, 0);
-            }
-            else
-            {
-                Time = new Timer180(0, 0);
-            }
+            //team1 = new TeamPlayer(FirstTeamName, FirstTeam);
+            //team2 = new Player2Team(SecondTeamName, SecondTeam);
+            //if (time == 60)
+            //{
+            //    Time = new Timer60(0, 0);
+            //}
+            //else if (time == 90)
+            //{
+            //    Time = new Timer90(0, 0);
+            //}
+            //else
+            //{
+            //    Time = new Timer180(0, 0);
+            //}
         }
         public MyRepository(Match match, List<string>players1, List<string>players2, Settings settings) : this(players1,players2)
         {
-            this.match = match;
-            if (settings.Time==60)
-            {
-                Time = new Timer60(0, 0);
-            }
-            else if (settings.Time==90)
-            {
-                Time = new Timer90(0, 0);
-            }
-            else
-            {
-                Time = new Timer180(0, 0);
-            }
+            //this.match = match;
+            //if (settings.Time==60)
+            //{
+            //    Time = new Timer60(0, 0);
+            //}
+            //else if (settings.Time==90)
+            //{
+            //    Time = new Timer90(0, 0);
+            //}
+            //else
+            //{
+            //    Time = new Timer180(0, 0);
+            //}
             
-            team1 = new TeamPlayer(match.TeamName1, FirstTeam);
-            team2 = new CompTeam(match.TeamName2,settings.Level*2,SecondTeam);
+            //team1 = new TeamPlayer(match.TeamName1, FirstTeam);
+            //team2 = new CompTeam(match.TeamName2,settings.Level*2,SecondTeam);
 
         }
 
