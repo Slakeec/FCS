@@ -31,12 +31,17 @@ namespace GameFootball
         int FirstTeamScore=0,SecondTeamScore=0;
         bool isUpPressed, isDownPressed, isUpArrowPressed, isDownArrowPressed;
 
+        public FootballGameForm(string name1, string name2, List<string> players1, List<string> players2,
+                            int time, int difficulty, bool isMulti)
+        {
+            MyRep = new MyRepository(name1, name2, players1, players2, time, difficulty, isMulti);
+            InitializeComponent();
+
+        }
         public FootballGameForm()
         {
             InitializeComponent();
-            
         }
-
         private void FootballGameForm_Load(object sender, EventArgs e)
         {
             firstTeamLabel.Text = MyRep.team1.Name;

@@ -35,12 +35,11 @@ namespace Football_Championship_System
 
         private void ButtonOK_Click(object sender, RoutedEventArgs e)
         {
-            FootballGameForm f = new FootballGameForm();
             string name1 = ComboBoxFirstTeam.SelectedValue.ToString();
             string name2 = ComboBoxSecondTeam.SelectedValue.ToString();
-            f.MyRep = new MyRepository(name1,name2,MultiPlayerServise.GetSquadFromName(name1),
-                                      MultiPlayerServise.GetSquadFromName(name2),int.Parse(ComboBoxTime.SelectedValue.ToString()));
-            f.ShowDialog();
+            FootballGameForm f = new FootballGameForm(name1, name2, MultiPlayerServise.GetNames(MultiPlayerServise.GetSquadFromName(name1)),
+                                      MultiPlayerServise.GetNames(MultiPlayerServise.GetSquadFromName(name2)), int.Parse(ComboBoxTime.SelectedValue.ToString()),0,true);
+            f.Show();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
