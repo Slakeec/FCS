@@ -87,8 +87,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MultiPlayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MultiPlayer.xaml.cs">
+      <DependentUpon>MultiPlayer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -120,6 +127,10 @@
     <ProjectReference Include="..\Classes\Classes.csproj">
       <Project>{f60491b5-f5a4-4930-92ba-6ed77283afc1}</Project>
       <Name>Classes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Football Game\Football Game.csproj">
+      <Project>{64b4a333-5c5e-4088-b55d-016babc1a9b5}</Project>
+      <Name>Football Game</Name>
     </ProjectReference>
     <ProjectReference Include="..\ServiceClasses\ServiceClasses.csproj">
       <Project>{1d593d69-3946-4ad0-a33b-bd4ad55ea9f8}</Project>

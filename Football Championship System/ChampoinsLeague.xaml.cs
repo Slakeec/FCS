@@ -99,6 +99,12 @@ namespace Football_Championship_System
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            int round = LINQFactory.Round(UserId);
+            if (round==Repository.Cnt)
+            {
+                ButtonStartGame.Content = "Tournament ended!";
+                ButtonStartGame.IsEnabled = true;
+            }
             ListViewTable.ItemsSource = Sorting.Sort(LINQFactory.GetTeamsByUser(UserId));
             ListViewResults.ItemsSource = LINQFactory.GetResults(UserId, LINQFactory.Round(UserId) - 1);
         }

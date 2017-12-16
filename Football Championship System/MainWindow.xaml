@@ -29,7 +29,7 @@
             <TextBox Name="textBoxLogin" Text="" Grid.Column="1" VerticalAlignment="Center" Grid.ColumnSpan="2" FontSize="16"></TextBox>
             <PasswordBox Name="passwordBox" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"></PasswordBox>
             <Button Grid.Row="2" Name="ButtonSettings" Content="Settings" FontSize="20" Margin="3" Click="ButtonSettings_Click"/>
-            <Button Grid.Row="2" Grid.Column="1" Name="ButtonRegistration" Content="Registration" FontSize="20" Margin="3" VerticalAlignment="Bottom" Click="ButtonRegistration_Click"></Button>
+            <Button Grid.Row="2" Grid.Column="1" Name="ButtonRegistration" Content="Registration" FontSize="20" Margin="3" Click="ButtonRegistration_Click"></Button>
             <Button Grid.Row="2" Grid.Column="2" Name="ButtomEnter" Content="Enter" FontSize="20" Margin="3" Click="ButtomEnter_Click"/>
         </Grid>
         <Grid Grid.Row="1" Margin="5" Visibility="Hidden" Name="GridRegistration">
@@ -100,6 +100,14 @@
             <Button Name="ButtonBackFromChoosing" Grid.Row="1" Content="Back" FontSize="20" VerticalAlignment="Bottom" Margin="3,0,3,3" Click="ButtonBackFromChoosing_Click"></Button>
             <Button Name="ButtonOKFromChoosing" Grid.Row="1" Grid.Column="1" Content="Start" FontSize="20" VerticalAlignment="Center" Margin="3" Click="ButtonOKFromChoosing_Click"></Button>
         </Grid>
-        <Button Name="ButtonExit" Grid.Row="2" Margin="5" Content="EXIT" FontSize="30" Click="ButtonExit_Click"></Button>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Name="ButtonMultyplayer" Margin="5" Content="Multiplayer" FontSize="30" Click="ButtonMultyplayer_Click"></Button>
+            <Button Name="ButtonExit" Grid.Column="1" Margin="5" Content="EXIT" FontSize="30" Click="ButtonExit_Click"></Button>
+        </Grid>
+        
     </Grid>
 </Window>

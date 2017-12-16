@@ -175,5 +175,10 @@ namespace Football_Championship_System
         {
             ComboxTeams.ItemsSource = new Repository().TeamNames;
         }
+
+        private void ButtonMultyplayer_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
