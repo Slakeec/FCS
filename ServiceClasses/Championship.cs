@@ -312,6 +312,8 @@ namespace ServiceClasses
         }
         public static void SaveMyMatch(Match match, int round, int userId)
         {
+            match.GoalTeamOne = match.ScorersOne.Count;
+            match.GoalTeamTwo = match.ScorersTwo.Count;
             LINQFactory.MakeMatch(match.TeamOne, match.TeamTwo,
                                   match.PlayersOne, match.PlayersTwo,
                                   match.GoalTeamOne, match.GoalTeamTwo,

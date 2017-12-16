@@ -61,8 +61,10 @@ namespace GameFootball
         public Match match;
 
         public MyRepository(string name1, string name2, List<string>players1, List<string>players2,
-                            int time, int difficulty, bool isMulti)
+                            int time, int difficulty, bool isMulti, List<string> FirstScoredPlayers, List<string> SecondScoredPlayers)
         {
+            ScoredFirstTeam = FirstScoredPlayers;
+            ScoredSecondTeam= SecondScoredPlayers;
             FirstTeam = new List<Footballer>();
             foreach (var player in players1)
             {

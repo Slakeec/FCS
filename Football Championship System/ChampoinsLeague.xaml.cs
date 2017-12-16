@@ -118,7 +118,8 @@ namespace Football_Championship_System
             Match match = Championship.playRound(userId, round);
             //Game
             FootballGameForm f = new FootballGameForm(match.TeamName1, match.TeamName2, LINQFactory.GetNamesById(match.PlayersOne),
-                                                     LINQFactory.GetNamesById(match.PlayersTwo), settings.Time, settings.Level, false);
+                                                     LINQFactory.GetNamesById(match.PlayersTwo), settings.Time, settings.Level, false,
+                                                     match.ScorersOne, match.ScorersTwo);
             f.Show();
             Championship.SaveMyMatch(match,round,userId);
             ListViewTable.ItemsSource = Sorting.Sort(LINQFactory.GetTeamsByUser(UserId));

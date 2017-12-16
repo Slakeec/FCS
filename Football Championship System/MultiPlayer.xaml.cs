@@ -37,9 +37,10 @@ namespace Football_Championship_System
         {
             string name1 = ComboBoxFirstTeam.SelectedValue.ToString();
             string name2 = ComboBoxSecondTeam.SelectedValue.ToString();
-            MyRepository MyR= new MyRepository(name1, name2, MultiPlayerServise.GetNames(MultiPlayerServise.GetSquadFromName(name1)),
-                                      MultiPlayerServise.GetNames(MultiPlayerServise.GetSquadFromName(name2)), int.Parse(ComboBoxTime.SelectedValue.ToString()),0,true);
-            FootballGameForm f = new FootballGameForm(MyR);
+            List<string> FirstScorers = new List<string>();
+            List<string> SecondScorers = new List<string>();
+            FootballGameForm f = new FootballGameForm(name1, name2, MultiPlayerServise.GetNames(MultiPlayerServise.GetSquadFromName(name1)),
+                                      MultiPlayerServise.GetNames(MultiPlayerServise.GetSquadFromName(name2)), int.Parse(ComboBoxTime.SelectedValue.ToString()), 0, true,FirstScorers, SecondScorers);
             f.Show();
         }
 
