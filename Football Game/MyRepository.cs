@@ -13,7 +13,6 @@ namespace GameFootball
     public class MyRepository
     {
         //public int countForAcceleration = 0;
-
         public int BallSpeedY = 9;
 
         public int PlusBallSpeedY1 = 2;
@@ -84,7 +83,19 @@ namespace GameFootball
         public MyRepository(string FirstTeamName, string SecondTeamName,List<string> players1, List<string> players2, int time) : this(players1,players2)
         {
             team1 = new TeamPlayer(FirstTeamName, FirstTeam);
-            team2 = new Player2Team(match.TeamName2, SecondTeam);
+            team2 = new Player2Team(SecondTeamName, SecondTeam);
+            if (time == 60)
+            {
+                Time = new Timer60(0, 0);
+            }
+            else if (time == 90)
+            {
+                Time = new Timer90(0, 0);
+            }
+            else
+            {
+                Time = new Timer180(0, 0);
+            }
         }
         public MyRepository(Match match, List<string>players1, List<string>players2, Settings settings) : this(players1,players2)
         {
@@ -116,6 +127,7 @@ namespace GameFootball
         {
             Time.TimeGoing(timeLabels, firstscore, secondScore, time, ref AddedTime, team1.Name,team2.Name);
             timeLabels[3].Visible = true;
+            
         }
 
         public void CollisionWithBorders(PictureBox bottom, PictureBox top, PictureBox topLeft, PictureBox bottomLeft, PictureBox topRight, PictureBox bottomRight, PictureBox ball)

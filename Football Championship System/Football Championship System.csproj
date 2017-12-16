@@ -128,9 +128,9 @@
       <Project>{f60491b5-f5a4-4930-92ba-6ed77283afc1}</Project>
       <Name>Classes</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Football Game\Football Game.csproj">
+    <ProjectReference Include="..\Football Game\GameFootball.csproj">
       <Project>{64b4a333-5c5e-4088-b55d-016babc1a9b5}</Project>
-      <Name>Football Game</Name>
+      <Name>GameFootball</Name>
     </ProjectReference>
     <ProjectReference Include="..\ServiceClasses\ServiceClasses.csproj">
       <Project>{1d593d69-3946-4ad0-a33b-bd4ad55ea9f8}</Project>

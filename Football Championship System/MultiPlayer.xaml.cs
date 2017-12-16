@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using Football_Game;
 using GameFootball;
 
+
 namespace Football_Championship_System
 {
     /// <summary>
@@ -34,7 +35,6 @@ namespace Football_Championship_System
         private void ButtonOK_Click(object sender, RoutedEventArgs e)
         {
             FootballGameForm f = new FootballGameForm();
-            
         }
     }
 }

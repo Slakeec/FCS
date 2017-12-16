@@ -34,6 +34,7 @@ namespace GameFootball
         public FootballGameForm()
         {
             InitializeComponent();
+            
         }
 
         private void FootballGameForm_Load(object sender, EventArgs e)
