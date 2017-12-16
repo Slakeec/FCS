@@ -178,7 +178,8 @@ namespace Football_Championship_System
 
         private void ButtonMultyplayer_Click(object sender, RoutedEventArgs e)
         {
-
+            MultiPlayer mp = new MultiPlayer();
+            mp.Show();
         }
     }
 }

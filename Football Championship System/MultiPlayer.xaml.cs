@@ -13,8 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Football_Game;
 using GameFootball;
-
-
+using Classes;
+using ServiceClasses;
+using System.Windows.Forms;
 namespace Football_Championship_System
 {
     /// <summary>
@@ -35,6 +36,20 @@ namespace Football_Championship_System
         private void ButtonOK_Click(object sender, RoutedEventArgs e)
         {
             FootballGameForm f = new FootballGameForm();
+            string name1 = ComboBoxFirstTeam.SelectedValue.ToString();
+            string name2 = ComboBoxSecondTeam.SelectedValue.ToString();
+            f.MyRep = new MyRepository(name1,name2,MultiPlayerServise.GetSquadFromName(name1),
+                                      MultiPlayerServise.GetSquadFromName(name2),int.Parse(ComboBoxTime.SelectedValue.ToString()));
+            f.ShowDialog();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            ComboBoxFirstTeam.ItemsSource = (new Repository()).TeamNames;
+            ComboBoxSecondTeam.ItemsSource = (new Repository()).TeamNames;
+            ComboBoxColorFirst.ItemsSource = (new Repository()).Colors;
+            ComboBoxColorSecond.ItemsSource = (new Repository()).Colors;
+            ComboBoxTime.ItemsSource = (new Repository()).Time;
         }
     }
 }

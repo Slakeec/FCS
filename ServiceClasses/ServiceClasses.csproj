@@ -45,9 +45,17 @@
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Simplify.Resources">
+      <HintPath>..\packages\Simplify.Resources.1.0.0\lib\net40\Simplify.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Simplify.Windows.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=76e7d56d397d79b9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Simplify.Windows.Forms.1.0.0\lib\net40\Simplify.Windows.Forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,9 +65,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Championship.cs" />
+    <Compile Include="EmailSender.cs" />
     <Compile Include="Hashing.cs" />
     <Compile Include="LINQFactory.cs" />
     <Compile Include="LINQStat.cs" />
+    <Compile Include="MultiPlayerServise.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sorting.cs" />

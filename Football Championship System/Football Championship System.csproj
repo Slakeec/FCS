@@ -47,9 +47,17 @@
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Simplify.Resources">
+      <HintPath>..\packages\Simplify.Resources.1.0.0\lib\net40\Simplify.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Simplify.Windows.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=76e7d56d397d79b9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Simplify.Windows.Forms.1.0.0\lib\net40\Simplify.Windows.Forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
