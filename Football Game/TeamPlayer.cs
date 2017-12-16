@@ -9,17 +9,17 @@ namespace GameFootball
 {
     public class TeamPlayer : AbstractTeam
     {
-        //public string Name { get; set; }
-        //public List<Footballer> Squad { get; set; }
-        public const int playerSpeed = 9;
+        public const int playerSpeed = 11;
+
 
         public TeamPlayer()
         {
 
         }
 
-        public TeamPlayer(List<Footballer> team) : base(team)
+        public TeamPlayer(string name,List<Footballer> team) : base(team)
         {
+            Name = name;
             Squad = team;
         }
 
@@ -38,5 +38,14 @@ namespace GameFootball
             }
         }
 
+        public override void TeamMovingUp()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void TeamMovingDown()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

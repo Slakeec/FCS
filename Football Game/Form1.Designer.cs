@@ -92,6 +92,7 @@
             this.verticalLine = new System.Windows.Forms.PictureBox();
             this.verticalLine2 = new System.Windows.Forms.PictureBox();
             this.verticalLine3 = new System.Windows.Forms.PictureBox();
+            this.labelAddedTime = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.secondTeamGoal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.firstTeamGoal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rightForw)).BeginInit();
@@ -156,7 +157,7 @@
             // checktimer
             // 
             this.checktimer.Enabled = true;
-            this.checktimer.Interval = 30;
+            this.checktimer.Interval = 10;
             this.checktimer.Tick += new System.EventHandler(this.checktimer_Tick);
             // 
             // firstTeamLabel
@@ -216,7 +217,7 @@
             this.goalLabel.AutoSize = true;
             this.goalLabel.BackColor = System.Drawing.Color.Transparent;
             this.goalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.goalLabel.Location = new System.Drawing.Point(-15, 1140);
+            this.goalLabel.Location = new System.Drawing.Point(1126, 435);
             this.goalLabel.Name = "goalLabel";
             this.goalLabel.Size = new System.Drawing.Size(940, 78);
             this.goalLabel.TabIndex = 31;
@@ -228,7 +229,7 @@
             this.whoScoredLabel.BackColor = System.Drawing.Color.Transparent;
             this.whoScoredLabel.Font = new System.Drawing.Font("Impact", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.whoScoredLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.whoScoredLabel.Location = new System.Drawing.Point(5, 1199);
+            this.whoScoredLabel.Location = new System.Drawing.Point(1146, 494);
             this.whoScoredLabel.Name = "whoScoredLabel";
             this.whoScoredLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.whoScoredLabel.Size = new System.Drawing.Size(935, 117);
@@ -241,7 +242,7 @@
             // 
             this.scoredGoalLabel.BackColor = System.Drawing.Color.Transparent;
             this.scoredGoalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.scoredGoalLabel.Location = new System.Drawing.Point(-61, 1316);
+            this.scoredGoalLabel.Location = new System.Drawing.Point(1080, 611);
             this.scoredGoalLabel.Name = "scoredGoalLabel";
             this.scoredGoalLabel.Size = new System.Drawing.Size(1107, 85);
             this.scoredGoalLabel.TabIndex = 33;
@@ -347,7 +348,7 @@
             // 
             this.aBall.BackColor = System.Drawing.Color.Transparent;
             this.aBall.Image = global::Football_Game.Properties.Resources.Ball1;
-            this.aBall.Location = new System.Drawing.Point(2552, 1373);
+            this.aBall.Location = new System.Drawing.Point(1586, 700);
             this.aBall.Name = "aBall";
             this.aBall.Size = new System.Drawing.Size(55, 55);
             this.aBall.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -504,7 +505,7 @@
             // 
             this.aPitch.BackColor = System.Drawing.Color.PaleGreen;
             this.aPitch.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aPitch.Location = new System.Drawing.Point(9, 1294);
+            this.aPitch.Location = new System.Drawing.Point(9, 1228);
             this.aPitch.Margin = new System.Windows.Forms.Padding(5);
             this.aPitch.Name = "aPitch";
             this.aPitch.Size = new System.Drawing.Size(374, 211);
@@ -537,7 +538,7 @@
             this.labelMin.BackColor = System.Drawing.Color.PaleGreen;
             this.labelMin.Cursor = System.Windows.Forms.Cursors.Default;
             this.labelMin.Font = new System.Drawing.Font("Cambria", 26.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelMin.Location = new System.Drawing.Point(17, 1401);
+            this.labelMin.Location = new System.Drawing.Point(17, 1335);
             this.labelMin.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.labelMin.Name = "labelMin";
             this.labelMin.Size = new System.Drawing.Size(156, 96);
@@ -551,7 +552,7 @@
             this.labelSec.BackColor = System.Drawing.Color.PaleGreen;
             this.labelSec.Cursor = System.Windows.Forms.Cursors.Default;
             this.labelSec.Font = new System.Drawing.Font("Cambria", 26.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelSec.Location = new System.Drawing.Point(197, 1401);
+            this.labelSec.Location = new System.Drawing.Point(197, 1335);
             this.labelSec.Name = "labelSec";
             this.labelSec.Size = new System.Drawing.Size(94, 104);
             this.labelSec.TabIndex = 37;
@@ -563,7 +564,7 @@
             this.labelSecSec.BackColor = System.Drawing.Color.PaleGreen;
             this.labelSecSec.Cursor = System.Windows.Forms.Cursors.Default;
             this.labelSecSec.Font = new System.Drawing.Font("Cambria", 26.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelSecSec.Location = new System.Drawing.Point(260, 1401);
+            this.labelSecSec.Location = new System.Drawing.Point(260, 1335);
             this.labelSecSec.Name = "labelSecSec";
             this.labelSecSec.Size = new System.Drawing.Size(94, 104);
             this.labelSecSec.TabIndex = 38;
@@ -575,7 +576,7 @@
             this.labelTimer.BackColor = System.Drawing.Color.PaleGreen;
             this.labelTimer.Cursor = System.Windows.Forms.Cursors.Default;
             this.labelTimer.Font = new System.Drawing.Font("Cambria", 29.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelTimer.Location = new System.Drawing.Point(15, 1313);
+            this.labelTimer.Location = new System.Drawing.Point(15, 1247);
             this.labelTimer.Name = "labelTimer";
             this.labelTimer.Size = new System.Drawing.Size(341, 115);
             this.labelTimer.TabIndex = 39;
@@ -587,7 +588,7 @@
             this.labelDoubleDot.BackColor = System.Drawing.Color.PaleGreen;
             this.labelDoubleDot.Cursor = System.Windows.Forms.Cursors.Default;
             this.labelDoubleDot.Font = new System.Drawing.Font("Cambria", 26.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelDoubleDot.Location = new System.Drawing.Point(147, 1393);
+            this.labelDoubleDot.Location = new System.Drawing.Point(147, 1327);
             this.labelDoubleDot.Name = "labelDoubleDot";
             this.labelDoubleDot.Size = new System.Drawing.Size(68, 104);
             this.labelDoubleDot.TabIndex = 40;
@@ -743,6 +744,20 @@
             this.verticalLine3.TabIndex = 56;
             this.verticalLine3.TabStop = false;
             // 
+            // labelAddedTime
+            // 
+            this.labelAddedTime.AutoSize = true;
+            this.labelAddedTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.labelAddedTime.Cursor = System.Windows.Forms.Cursors.Default;
+            this.labelAddedTime.Font = new System.Drawing.Font("Cambria", 29.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelAddedTime.ForeColor = System.Drawing.Color.Maroon;
+            this.labelAddedTime.Location = new System.Drawing.Point(12, 1444);
+            this.labelAddedTime.Name = "labelAddedTime";
+            this.labelAddedTime.Size = new System.Drawing.Size(365, 115);
+            this.labelAddedTime.TabIndex = 57;
+            this.labelAddedTime.Text = "+ 9 min";
+            this.labelAddedTime.Visible = false;
+            // 
             // FootballGameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -750,6 +765,11 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(3184, 1669);
+            this.Controls.Add(this.labelDoubleDot);
+            this.Controls.Add(this.labelSecSec);
+            this.Controls.Add(this.labelSec);
+            this.Controls.Add(this.labelMin);
+            this.Controls.Add(this.labelAddedTime);
             this.Controls.Add(this.GoalKeeperTeam2);
             this.Controls.Add(this.centrDef2Team2);
             this.Controls.Add(this.centrDef1Team2);
@@ -762,9 +782,6 @@
             this.Controls.Add(this.Mid2Team2);
             this.Controls.Add(this.Mid1Team2);
             this.Controls.Add(this.labelTimer);
-            this.Controls.Add(this.labelSecSec);
-            this.Controls.Add(this.labelSec);
-            this.Controls.Add(this.labelMin);
             this.Controls.Add(this.listViewWhoScored);
             this.Controls.Add(this.slashLabel);
             this.Controls.Add(this.goalLabel);
@@ -800,7 +817,6 @@
             this.Controls.Add(this.bottomLeftPB);
             this.Controls.Add(this.BottomPictureBox);
             this.Controls.Add(this.ToppictureBox);
-            this.Controls.Add(this.labelDoubleDot);
             this.Controls.Add(this.aPitch);
             this.Controls.Add(this.verticalLine);
             this.Controls.Add(this.verticalLine2);
@@ -930,6 +946,7 @@
         private System.Windows.Forms.PictureBox verticalLine;
         private System.Windows.Forms.PictureBox verticalLine2;
         private System.Windows.Forms.PictureBox verticalLine3;
+        private System.Windows.Forms.Label labelAddedTime;
     }
 }
 

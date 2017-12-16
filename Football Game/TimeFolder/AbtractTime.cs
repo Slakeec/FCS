@@ -20,9 +20,27 @@ namespace Football_Game
             Sec = sec;
             Speed = speed;
         }
-
-        public virtual void TimeGoing( Label min, Label sec, Label secsec, Label dots)
+        public void TimerItself(Label min, Label sec, Label secsec, Label dots)
         {
+        }
+
+        public virtual void TimeGoing(List<Label> labelsTime,int firstScore, int secondScore, Timer timer, ref int minsAdd, string FirstTeamName, string SecondTeamName)
+        {
+            Label min = labelsTime[0];
+            Label sec = labelsTime[1];
+            Label secsec = labelsTime[2];
+            Label dots = labelsTime[3];
+            Label addedTime = labelsTime[4];
+            Label gameOverlabel = labelsTime[5];
+            Label winningTeam = labelsTime[6];
+
+            if (Min == 88)
+            {
+                minsAdd = Math.Min(9, firstScore + secondScore);
+                addedTime.Text = $"+{minsAdd} min";
+                addedTime.Visible = true;
+            }
+
             Sec += Speed;
             if (Sec == 60)
             {
@@ -45,6 +63,26 @@ namespace Football_Game
             else
             {
                 dots.Visible = true;
+            }
+
+            if (Min == 90+minsAdd)
+            {
+                timer.Enabled = false;
+                gameOverlabel.Text = "GAME OVER";
+                gameOverlabel.Visible = true;
+                if (firstScore > secondScore)
+                {
+                    winningTeam.Text = FirstTeamName;
+                }
+                else if (firstScore == secondScore)
+                {
+                    winningTeam.Text = "DRAW";
+                }
+                else
+                {
+                    winningTeam.Text = SecondTeamName;
+                }
+                winningTeam.Visible = true;
             }
         }
     }
