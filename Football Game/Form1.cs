@@ -24,6 +24,8 @@ namespace GameFootball
         List<PictureBox> PictureLines;
         Dictionary<int, PictureBox> PictureBoxesLines = new Dictionary<int, PictureBox>();
 
+        List<Label> TimeLabels;
+
         int imagecount=0, timer1count=0, timerfortimecount = 0;
         int labelcount = 0;
         int FirstTeamScore=0,SecondTeamScore=0;
@@ -36,6 +38,8 @@ namespace GameFootball
 
         private void FootballGameForm_Load(object sender, EventArgs e)
         {
+            firstTeamLabel.Text = MyRep.team1.Name;
+            secondTeamLabel.Text = MyRep.team2.Name;
             PictureBoxesFirstTeam = new List<PictureBox> { Goalkeeper, CentrDef1, CentrDef2, Mid1, Mid2, Mid3, Mid4, Mid5, leftForw, centralForw, rightForw };
             PlayerSQW = MyRep.FirstTeam;
             for (int i = 0; i < PlayerSQW.Count; i++)
@@ -55,25 +59,36 @@ namespace GameFootball
             {
                 PictureBoxesLines.Add(i, PictureLines[i]);
             }
-                 
 
+            TimeLabels = new List<Label> { labelMin, labelSec, labelSecSec, labelDoubleDot, labelAddedTime,goalLabel, whoScoredLabel };
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1count++;
-            //aBall.Location = new Point(aBall.Location.X + MyRep.BallSpeedX, aBall.Location.Y + MyRep.BallSpeedY);
-            MyRep.BallMooving(aBall);
-            MyRep.CollisionWithBorders(bottomPictBox, highBoundPictBox, leftHighPictBox, leftBottomPictBox, rightHighPictBox, rightBottomPictBox, aBall);
-            MyRep.CollisionWithPlayers(aBall,PlayerSQW,isUpPressed,isDownPressed);
-            MyRep.FirstTeamGoalScored(aBall, secondTeamGoal, PlayerSQW, firstTeamGoal, Player2SQW, goalLabel, whoScoredLabel, scoredGoalLabel, ref FirstTeamScore, ref SecondTeamScore, listViewWhoScored);
-            MyRep.PlayerTeamMoving(PlayerSQW, isUpPressed, isDownPressed);
-            MyRep.Player2TeamMoving(Player2SQW, isUpArrowPressed, isDownArrowPressed);
-            MyRep.CompTeamMoving(Player2SQW, Player2PictBoxes, PictureBoxesLines,aBall);
-            if (timer1count % 5 == 0)
+            if (TimerForTime.Enabled)
             {
-                MyRep.AccelerationXChangeToNormal();
+                MyRep.BallMooving(aBall);
+                MyRep.TeamGoalScored(aBall, secondTeamGoal, PlayerSQW, firstTeamGoal, Player2SQW, goalLabel, whoScoredLabel, scoredGoalLabel, ref FirstTeamScore, ref SecondTeamScore, listViewWhoScored);
+                MyRep.PlayerTeamMoving(PlayerSQW, isUpPressed, isDownPressed);
+                MyRep.Player2TeamMoving(Player2SQW, isUpArrowPressed, isDownArrowPressed);
+                MyRep.CompTeamMoving(Player2SQW, Player2PictBoxes, PictureBoxesLines, aBall);
+                if (timer1count % 5 == 0)
+                {
+                    MyRep.AccelerationXChangeToNormal();
+                }
             }
+            else
+            {
+                MyRep.TeamsLeaving();
+            }
+
+        }
+        private void checktimer_Tick(object sender, EventArgs e)
+        {
+            MyRep.CollisionWithBorders(bottomPictBox, highBoundPictBox, leftHighPictBox, leftBottomPictBox, rightHighPictBox, rightBottomPictBox, aBall);
+            MyRep.CollisionWithPlayers(aBall, PlayerSQW, isUpPressed, isDownPressed);
+            MyRep.CollisionWithRightTeam(aBall, isUpArrowPressed, isDownArrowPressed);
         }
         private void ChangImage_timer_Tick(object sender, EventArgs e)
         {
@@ -113,9 +128,11 @@ namespace GameFootball
                 }
             }
         }
-
-        private void checktimer_Tick(object sender, EventArgs e)
+        private void TimerForTime_Tick(object sender, EventArgs e)
         {
+            timerfortimecount++;
+            MyRep.TimeShowing(TimeLabels,FirstTeamScore,SecondTeamScore,TimerForTime);
+
         }
 
         private void TimeTimer_Tick(object sender, EventArgs e)
@@ -128,12 +145,6 @@ namespace GameFootball
 
         }
 
-        private void TimerForTime_Tick(object sender, EventArgs e)
-        {
-            timerfortimecount++;
-            MyRep.Time.TimeGoing(labelMin, labelSec, labelSecSec,labelDoubleDot);
-
-        }
 
         private void aBall_Click(object sender, EventArgs e)
         {
