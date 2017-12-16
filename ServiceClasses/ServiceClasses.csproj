@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Championship.cs" />
+    <Compile Include="EmailSender.cs" />
     <Compile Include="Hashing.cs" />
     <Compile Include="LINQFactory.cs" />
     <Compile Include="LINQStat.cs" />
