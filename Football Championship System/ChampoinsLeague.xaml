@@ -15,9 +15,19 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Button Name="ButtonStartGame" Content="Start the next Game" FontSize="15" Grid.ColumnSpan="2" Click="ButtonStartGame_Click"></Button>
-        <ListView Name="ListViewTable" Grid.Row="1" Grid.ColumnSpan="2">
+        <ListView Name="ListViewResults" Grid.Row="1">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Team1" DisplayMemberBinding="{Binding TeamOne.Name}"></GridViewColumn>
+                    <GridViewColumn Header="Score" DisplayMemberBinding="{Binding Score}"></GridViewColumn>
+                    <GridViewColumn Header="Team2" DisplayMemberBinding="{Binding TeamTwo.Name}"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView Name="ListViewTable" Grid.Row="2" Grid.ColumnSpan="2">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="№" DisplayMemberBinding="{Binding Position}"/>
@@ -27,7 +37,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Grid Grid.Column="2" Grid.RowSpan="2">
+        <Grid Grid.Column="2" Grid.RowSpan="3">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition Height="auto"/>

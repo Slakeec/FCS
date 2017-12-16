@@ -74,6 +74,7 @@ namespace ServiceClasses
             {
                 context.Teams.First(t => t.Id == teamId).Games++;
                 context.Teams.First(t => t.Id == teamId).Points += 3;
+                context.SaveChanges();
             }
         }
         public static void TeamDraw(int teamId)
@@ -82,6 +83,7 @@ namespace ServiceClasses
             {
                 context.Teams.First(t => t.Id == teamId).Games++;
                 context.Teams.First(t => t.Id == teamId).Points += 1;
+                context.SaveChanges();
             }
         }
         public static void TeamLose(int teamId)
@@ -89,6 +91,7 @@ namespace ServiceClasses
             using (var context = new Context())
             {
                 context.Teams.First(t => t.Id == teamId).Games++;
+                context.SaveChanges();
             }
         }
         public static void PlayerGame(int playerId)
@@ -96,6 +99,7 @@ namespace ServiceClasses
             using (var context = new Context())
             {
                 context.Players.First(p => p.Id == playerId).Games++;
+                context.SaveChanges();
             }
         }
         public static void PlayerScore(int playerId)
@@ -103,6 +107,7 @@ namespace ServiceClasses
             using (var context = new Context())
             {
                 context.Players.First(p => p.Id == playerId).Goals++;
+                context.SaveChanges();
             }
         }
         public static int Round(int userId)
@@ -117,6 +122,23 @@ namespace ServiceClasses
             using (var context = new Context())
             {
                 context.Players.First(p => p.Name == name).Goals++;
+                context.SaveChanges();
+            }
+        }
+        public static void MakeMatch(Team team1, Team team2, List<Player>players1, List<Player>players2,
+             int goal1, int goal2, int round, int userId)
+        {
+            using (var context = new Context())
+            {
+                context.Matches.Add(new Match(team1, team2, players1, players2, goal1, goal2, round, userId));
+                context.SaveChanges();
+            }
+        }
+        public static List<Match> GetResults(int userId, int round)
+        {
+            using (var context = new Context())
+            {
+                return context.Matches.Where(m => m.UserId == userId && m.Round == round).ToList();
             }
         }
     }

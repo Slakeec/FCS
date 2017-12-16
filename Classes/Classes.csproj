@@ -76,6 +76,10 @@
     <Compile Include="Migrations\201712161155018_MatchDeleted.Designer.cs">
       <DependentUpon>201712161155018_MatchDeleted.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712161516146_MatchAdded.cs" />
+    <Compile Include="Migrations\201712161516146_MatchAdded.Designer.cs">
+      <DependentUpon>201712161516146_MatchAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -103,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712161155018_MatchDeleted.resx">
       <DependentUpon>201712161155018_MatchDeleted.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712161516146_MatchAdded.resx">
+      <DependentUpon>201712161516146_MatchAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

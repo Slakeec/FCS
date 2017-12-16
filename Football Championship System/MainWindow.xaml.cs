@@ -127,7 +127,11 @@ namespace Football_Championship_System
             }
             //start game
             string myteam = ComboxTeams.SelectedValue.ToString();
-            Championship.CreateChampionship(myteam, UserId);
+            if (Championship.CreateChampionship(myteam, UserId)==false)
+            {
+                MessageBox.Show("Check your internet connection and restart program", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
             Champoins_League chp = new Champoins_League(UserId, Setting);
             chp.ShowDialog();
             GridChoosingMyTeam.Visibility = Visibility.Hidden;

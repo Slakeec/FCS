@@ -100,14 +100,17 @@ namespace Football_Championship_System
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             ListViewTable.ItemsSource = Sorting.Sort(LINQFactory.GetTeamsByUser(UserId));
+            ListViewResults.ItemsSource = LINQFactory.GetResults(UserId, LINQFactory.Round(UserId) - 1);
         }
 
         private void ButtonStartGame_Click(object sender, RoutedEventArgs e)
         {
-            Match match = Championship.playRound(userId, LINQFactory.Round(UserId));
+            int round = LINQFactory.Round(UserId);
+            Match match = Championship.playRound(userId, round);
             //Game
-            Championship.SaveMyMatch(match);
+            Championship.SaveMyMatch(match,round,userId);
             ListViewTable.ItemsSource = Sorting.Sort(LINQFactory.GetTeamsByUser(UserId));
+            ListViewResults.ItemsSource = LINQFactory.GetResults(UserId, LINQFactory.Round(UserId) - 1);
         }
     }
 }

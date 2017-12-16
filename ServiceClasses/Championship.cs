@@ -9,7 +9,7 @@ namespace ServiceClasses
 {
     public class Championship
     {
-        public static void CreateChampionship(string myTeam, int UserId)
+        public static bool CreateChampionship(string myTeam, int UserId)
         {
             using (var context = new Context())
             {
@@ -17,6 +17,10 @@ namespace ServiceClasses
                 for (int i=0; i<Repository.Cnt; i++)
                 {
                     Team t = Repository.GetTeam(new Repository().TeamsId[i]);
+                    if (t==null)
+                    {
+                        return false;
+                    }
                     t.Number = draw[i];
                     t.Name = new Repository().TeamNames[i];
                     t.Rating = new Repository().TeamRatings[i];
@@ -26,6 +30,7 @@ namespace ServiceClasses
                     context.SaveChanges();
                 }
             }
+            return true;
         }
         public static List<int> MakeDraw()
         {
@@ -69,7 +74,7 @@ namespace ServiceClasses
                     Team team2 = LINQFactory.GetTeamByUserAndNumber(userId, sop);
                     List<Player> players1 = LINQFactory.GetPlayersByTeam(team1.Id);
                     List<Player> players2 = LINQFactory.GetPlayersByTeam(team2.Id);
-                    Match match = new Match(team1, team2, players1, players2);
+                    Match match = new Match(team1, team2, players1, players2, round);
                     mathes.Add(match);
 
                 }
@@ -101,6 +106,12 @@ namespace ServiceClasses
                 {
                     forward.Add(player);
                 }
+            }
+            while (midfields.Count<5)
+            {
+                Player p = defenders.Last();
+                defenders.Remove(p);
+                midfields.Add(p);
             }
             Random rand = new Random();
             int ind = rand.Next(keepers.Count);
@@ -225,8 +236,8 @@ namespace ServiceClasses
                 if (LINQFactory.IsMyTeam(matches[i].TeamOne.Id) || LINQFactory.IsMyTeam(matches[i].TeamTwo.Id))
                 {
                     myMatch = matches[i];
-                    myMatch.TeamOne.Players = Championship.GetSquad(myMatch.TeamOne.Players);
-                    myMatch.TeamTwo.Players = Championship.GetSquad(myMatch.TeamTwo.Players);
+                    myMatch.TeamOne.Players = Championship.GetSquad(myMatch.PlayersOne);
+                    myMatch.TeamTwo.Players = Championship.GetSquad(myMatch.PlayersTwo);
                 }
                 else
                 {
@@ -255,6 +266,9 @@ namespace ServiceClasses
                     List<Player> squad2 = Championship.GetSquad(matches[i].PlayersTwo);
                     List<int> Scorers1 = Championship.GetScorers(squad1, goal1);
                     List<int> SCorers2 = Championship.GetScorers(squad2, goal2);
+                    LINQFactory.MakeMatch(matches[i].TeamOne, matches[i].TeamTwo,
+                                          matches[i].PlayersOne, matches[i].PlayersTwo,
+                                          goal1, goal2, round, userId);
                     foreach (var player in squad1)
                     {
                         LINQFactory.PlayerGame(player.Id);
@@ -275,8 +289,27 @@ namespace ServiceClasses
             }
             return myMatch;
         }
-        public static void SaveMyMatch(Match match)
+        public static void SaveMyMatch(Match match, int round, int userId)
         {
+            LINQFactory.MakeMatch(match.TeamOne, match.TeamTwo,
+                                  match.PlayersOne, match.PlayersTwo,
+                                  match.GoalTeamOne, match.GoalTeamTwo,
+                                  round, userId);
+            if (match.GoalTeamOne>match.GoalTeamTwo)
+            {
+                LINQFactory.TeamWin(match.TeamOne.Id);
+                LINQFactory.TeamLose(match.TeamTwo.Id);
+            }
+            else if (match.GoalTeamOne==match.GoalTeamTwo)
+            {
+                LINQFactory.TeamDraw(match.TeamOne.Id);
+                LINQFactory.TeamDraw(match.TeamTwo.Id);
+            }
+            else
+            {
+                LINQFactory.TeamLose(match.TeamOne.Id);
+                LINQFactory.TeamWin(match.TeamTwo.Id);
+            }
             foreach (var player in match.PlayersOne)
             {
                 LINQFactory.PlayerGame(player.Id);
