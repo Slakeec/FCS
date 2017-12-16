@@ -29,12 +29,24 @@ namespace Classes
             get { return teamRatings; }
             set { teamRatings = value; }
         }
+        private List<string> colors;
+        public List<string> Colors
+        {
+            get { return colors; }
+            set { colors = value; }
+        }
 
         private static int cnt = 16;
         public static int Cnt
         {
             get { return cnt; }
             set { cnt = value; }
+        }
+        private List<string> time;
+        public List<string> Time
+        {
+            get { return time; }
+            set { time = value; }
         }
 
         public static Team GetTeam(int TeamId)
@@ -87,6 +99,14 @@ namespace Classes
             TeamRatings = new List<int>
             {
                 1800,2000,1200,1800,2700,2300,1700,2000,2700,3000,1000,2000,1500,2300,2300,2500
+            };
+            Colors = new List<string>
+            {
+                "Gold","Orange","Maroon","Blue","Black"
+            };
+            Time = new List<string>
+            {
+                "60","90","180"
             };
         }
     }

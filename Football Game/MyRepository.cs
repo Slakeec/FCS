@@ -84,7 +84,7 @@ namespace GameFootball
         public MyRepository(string FirstTeamName, string SecondTeamName,List<string> players1, List<string> players2, int time) : this(players1,players2)
         {
             team1 = new TeamPlayer(FirstTeamName, FirstTeam);
-            team2 = new Player2Team(match.TeamName2, SecondTeam);
+            team2 = new Player2Team(SecondTeamName, SecondTeam);
         }
         public MyRepository(Match match, List<string>players1, List<string>players2, Settings settings) : this(players1,players2)
         {
