@@ -275,7 +275,7 @@
             // 
             this.secondTeamGoal.BackColor = System.Drawing.Color.White;
             this.secondTeamGoal.Location = new System.Drawing.Point(1118, 268);
-            this.secondTeamGoal.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.secondTeamGoal.Margin = new System.Windows.Forms.Padding(1);
             this.secondTeamGoal.Name = "secondTeamGoal";
             this.secondTeamGoal.Size = new System.Drawing.Size(8, 171);
             this.secondTeamGoal.TabIndex = 30;
@@ -285,7 +285,7 @@
             // 
             this.firstTeamGoal.BackColor = System.Drawing.Color.White;
             this.firstTeamGoal.Location = new System.Drawing.Point(150, 267);
-            this.firstTeamGoal.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.firstTeamGoal.Margin = new System.Windows.Forms.Padding(1);
             this.firstTeamGoal.Name = "firstTeamGoal";
             this.firstTeamGoal.Size = new System.Drawing.Size(8, 171);
             this.firstTeamGoal.TabIndex = 29;
@@ -295,7 +295,7 @@
             // 
             this.rightForw.BackColor = System.Drawing.Color.Black;
             this.rightForw.Location = new System.Drawing.Point(819, 497);
-            this.rightForw.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.rightForw.Margin = new System.Windows.Forms.Padding(1);
             this.rightForw.Name = "rightForw";
             this.rightForw.Size = new System.Drawing.Size(9, 36);
             this.rightForw.TabIndex = 28;
@@ -305,7 +305,7 @@
             // 
             this.centralForw.BackColor = System.Drawing.Color.Black;
             this.centralForw.Location = new System.Drawing.Point(819, 333);
-            this.centralForw.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.centralForw.Margin = new System.Windows.Forms.Padding(1);
             this.centralForw.Name = "centralForw";
             this.centralForw.Size = new System.Drawing.Size(9, 36);
             this.centralForw.TabIndex = 27;
@@ -315,7 +315,7 @@
             // 
             this.leftForw.BackColor = System.Drawing.Color.Black;
             this.leftForw.Location = new System.Drawing.Point(819, 169);
-            this.leftForw.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.leftForw.Margin = new System.Windows.Forms.Padding(1);
             this.leftForw.Name = "leftForw";
             this.leftForw.Size = new System.Drawing.Size(9, 36);
             this.leftForw.TabIndex = 26;
@@ -325,7 +325,7 @@
             // 
             this.Mid5.BackColor = System.Drawing.Color.Black;
             this.Mid5.Location = new System.Drawing.Point(522, 543);
-            this.Mid5.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Mid5.Margin = new System.Windows.Forms.Padding(1);
             this.Mid5.Name = "Mid5";
             this.Mid5.Size = new System.Drawing.Size(9, 36);
             this.Mid5.TabIndex = 21;
@@ -335,7 +335,7 @@
             // 
             this.Mid1.BackColor = System.Drawing.Color.Black;
             this.Mid1.Location = new System.Drawing.Point(522, 115);
-            this.Mid1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Mid1.Margin = new System.Windows.Forms.Padding(1);
             this.Mid1.Name = "Mid1";
             this.Mid1.Size = new System.Drawing.Size(9, 36);
             this.Mid1.TabIndex = 20;
@@ -345,7 +345,7 @@
             // 
             this.Mid2.BackColor = System.Drawing.Color.Black;
             this.Mid2.Location = new System.Drawing.Point(522, 221);
-            this.Mid2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Mid2.Margin = new System.Windows.Forms.Padding(1);
             this.Mid2.Name = "Mid2";
             this.Mid2.Size = new System.Drawing.Size(9, 36);
             this.Mid2.TabIndex = 19;
@@ -355,7 +355,7 @@
             // 
             this.Goalkeeper.BackColor = System.Drawing.Color.Black;
             this.Goalkeeper.Location = new System.Drawing.Point(185, 335);
-            this.Goalkeeper.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Goalkeeper.Margin = new System.Windows.Forms.Padding(1);
             this.Goalkeeper.Name = "Goalkeeper";
             this.Goalkeeper.Size = new System.Drawing.Size(9, 36);
             this.Goalkeeper.TabIndex = 18;
@@ -366,7 +366,7 @@
             this.aBall.BackColor = System.Drawing.Color.Transparent;
             this.aBall.Image = global::Football_Game.Properties.Resources.Ball1;
             this.aBall.Location = new System.Drawing.Point(595, 294);
-            this.aBall.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.aBall.Margin = new System.Windows.Forms.Padding(1);
             this.aBall.Name = "aBall";
             this.aBall.Size = new System.Drawing.Size(21, 23);
             this.aBall.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -378,7 +378,7 @@
             // 
             this.rightBottomPictBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.rightBottomPictBox.Location = new System.Drawing.Point(1106, 441);
-            this.rightBottomPictBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.rightBottomPictBox.Margin = new System.Windows.Forms.Padding(1);
             this.rightBottomPictBox.Name = "rightBottomPictBox";
             this.rightBottomPictBox.Size = new System.Drawing.Size(9, 182);
             this.rightBottomPictBox.TabIndex = 17;
@@ -388,7 +388,7 @@
             // 
             this.rightHighPictBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.rightHighPictBox.Location = new System.Drawing.Point(1106, 84);
-            this.rightHighPictBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.rightHighPictBox.Margin = new System.Windows.Forms.Padding(1);
             this.rightHighPictBox.Name = "rightHighPictBox";
             this.rightHighPictBox.Size = new System.Drawing.Size(9, 182);
             this.rightHighPictBox.TabIndex = 16;
@@ -398,7 +398,7 @@
             // 
             this.leftHighPictBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.leftHighPictBox.Location = new System.Drawing.Point(160, 83);
-            this.leftHighPictBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.leftHighPictBox.Margin = new System.Windows.Forms.Padding(1);
             this.leftHighPictBox.Name = "leftHighPictBox";
             this.leftHighPictBox.Size = new System.Drawing.Size(9, 182);
             this.leftHighPictBox.TabIndex = 15;
@@ -408,7 +408,7 @@
             // 
             this.leftBottomPictBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.leftBottomPictBox.Location = new System.Drawing.Point(160, 441);
-            this.leftBottomPictBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.leftBottomPictBox.Margin = new System.Windows.Forms.Padding(1);
             this.leftBottomPictBox.Name = "leftBottomPictBox";
             this.leftBottomPictBox.Size = new System.Drawing.Size(9, 182);
             this.leftBottomPictBox.TabIndex = 14;
@@ -418,7 +418,7 @@
             // 
             this.bottomPictBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.bottomPictBox.Location = new System.Drawing.Point(160, 621);
-            this.bottomPictBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.bottomPictBox.Margin = new System.Windows.Forms.Padding(1);
             this.bottomPictBox.Name = "bottomPictBox";
             this.bottomPictBox.Size = new System.Drawing.Size(955, 10);
             this.bottomPictBox.TabIndex = 13;
@@ -428,7 +428,7 @@
             // 
             this.highBoundPictBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.highBoundPictBox.Location = new System.Drawing.Point(160, 74);
-            this.highBoundPictBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.highBoundPictBox.Margin = new System.Windows.Forms.Padding(1);
             this.highBoundPictBox.Name = "highBoundPictBox";
             this.highBoundPictBox.Size = new System.Drawing.Size(955, 10);
             this.highBoundPictBox.TabIndex = 12;
@@ -438,7 +438,7 @@
             // 
             this.Mid4.BackColor = System.Drawing.Color.Black;
             this.Mid4.Location = new System.Drawing.Point(522, 442);
-            this.Mid4.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Mid4.Margin = new System.Windows.Forms.Padding(1);
             this.Mid4.Name = "Mid4";
             this.Mid4.Size = new System.Drawing.Size(9, 36);
             this.Mid4.TabIndex = 11;
@@ -448,7 +448,7 @@
             // 
             this.CentrDef2.BackColor = System.Drawing.Color.Black;
             this.CentrDef2.Location = new System.Drawing.Point(300, 441);
-            this.CentrDef2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.CentrDef2.Margin = new System.Windows.Forms.Padding(1);
             this.CentrDef2.Name = "CentrDef2";
             this.CentrDef2.Size = new System.Drawing.Size(9, 36);
             this.CentrDef2.TabIndex = 10;
@@ -458,7 +458,7 @@
             // 
             this.CentrDef1.BackColor = System.Drawing.Color.Black;
             this.CentrDef1.Location = new System.Drawing.Point(300, 228);
-            this.CentrDef1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.CentrDef1.Margin = new System.Windows.Forms.Padding(1);
             this.CentrDef1.Name = "CentrDef1";
             this.CentrDef1.Size = new System.Drawing.Size(9, 36);
             this.CentrDef1.TabIndex = 9;
@@ -468,7 +468,7 @@
             // 
             this.Mid3.BackColor = System.Drawing.Color.Black;
             this.Mid3.Location = new System.Drawing.Point(522, 332);
-            this.Mid3.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Mid3.Margin = new System.Windows.Forms.Padding(1);
             this.Mid3.Name = "Mid3";
             this.Mid3.Size = new System.Drawing.Size(9, 36);
             this.Mid3.TabIndex = 8;
@@ -478,7 +478,7 @@
             // 
             this.BottomRightpictureBox5.BackColor = System.Drawing.Color.White;
             this.BottomRightpictureBox5.Location = new System.Drawing.Point(1106, 441);
-            this.BottomRightpictureBox5.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.BottomRightpictureBox5.Margin = new System.Windows.Forms.Padding(1);
             this.BottomRightpictureBox5.Name = "BottomRightpictureBox5";
             this.BottomRightpictureBox5.Size = new System.Drawing.Size(19, 180);
             this.BottomRightpictureBox5.TabIndex = 6;
@@ -488,7 +488,7 @@
             // 
             this.TopRightpictureBox4.BackColor = System.Drawing.Color.White;
             this.TopRightpictureBox4.Location = new System.Drawing.Point(1106, 84);
-            this.TopRightpictureBox4.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.TopRightpictureBox4.Margin = new System.Windows.Forms.Padding(1);
             this.TopRightpictureBox4.Name = "TopRightpictureBox4";
             this.TopRightpictureBox4.Size = new System.Drawing.Size(19, 180);
             this.TopRightpictureBox4.TabIndex = 5;
@@ -498,7 +498,7 @@
             // 
             this.TopLeftPB.BackColor = System.Drawing.Color.White;
             this.TopLeftPB.Location = new System.Drawing.Point(150, 84);
-            this.TopLeftPB.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.TopLeftPB.Margin = new System.Windows.Forms.Padding(1);
             this.TopLeftPB.Name = "TopLeftPB";
             this.TopLeftPB.Size = new System.Drawing.Size(19, 180);
             this.TopLeftPB.TabIndex = 4;
@@ -508,7 +508,7 @@
             // 
             this.bottomLeftPB.BackColor = System.Drawing.Color.White;
             this.bottomLeftPB.Location = new System.Drawing.Point(150, 441);
-            this.bottomLeftPB.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.bottomLeftPB.Margin = new System.Windows.Forms.Padding(1);
             this.bottomLeftPB.Name = "bottomLeftPB";
             this.bottomLeftPB.Size = new System.Drawing.Size(19, 180);
             this.bottomLeftPB.TabIndex = 3;
@@ -518,7 +518,7 @@
             // 
             this.BottomPictureBox.BackColor = System.Drawing.Color.White;
             this.BottomPictureBox.Location = new System.Drawing.Point(150, 621);
-            this.BottomPictureBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.BottomPictureBox.Margin = new System.Windows.Forms.Padding(1);
             this.BottomPictureBox.Name = "BottomPictureBox";
             this.BottomPictureBox.Size = new System.Drawing.Size(975, 21);
             this.BottomPictureBox.TabIndex = 2;
@@ -529,7 +529,7 @@
             // 
             this.ToppictureBox.BackColor = System.Drawing.Color.White;
             this.ToppictureBox.Location = new System.Drawing.Point(150, 63);
-            this.ToppictureBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ToppictureBox.Margin = new System.Windows.Forms.Padding(1);
             this.ToppictureBox.Name = "ToppictureBox";
             this.ToppictureBox.Size = new System.Drawing.Size(975, 21);
             this.ToppictureBox.TabIndex = 1;
@@ -540,7 +540,7 @@
             this.aPitch.BackColor = System.Drawing.Color.PaleGreen;
             this.aPitch.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.aPitch.Location = new System.Drawing.Point(3, 515);
-            this.aPitch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.aPitch.Margin = new System.Windows.Forms.Padding(2);
             this.aPitch.Name = "aPitch";
             this.aPitch.Size = new System.Drawing.Size(143, 91);
             this.aPitch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -557,7 +557,7 @@
             this.listViewWhoScored.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.listViewWhoScored.ForeColor = System.Drawing.Color.Black;
             this.listViewWhoScored.Location = new System.Drawing.Point(10, 14);
-            this.listViewWhoScored.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.listViewWhoScored.Margin = new System.Windows.Forms.Padding(1);
             this.listViewWhoScored.Name = "listViewWhoScored";
             this.listViewWhoScored.Size = new System.Drawing.Size(136, 232);
             this.listViewWhoScored.TabIndex = 35;
@@ -643,7 +643,7 @@
             // 
             this.Mid1Team2.BackColor = System.Drawing.Color.Maroon;
             this.Mid1Team2.Location = new System.Drawing.Point(678, 115);
-            this.Mid1Team2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Mid1Team2.Margin = new System.Windows.Forms.Padding(1);
             this.Mid1Team2.Name = "Mid1Team2";
             this.Mid1Team2.Size = new System.Drawing.Size(9, 36);
             this.Mid1Team2.TabIndex = 41;
@@ -653,7 +653,7 @@
             // 
             this.Mid2Team2.BackColor = System.Drawing.Color.Maroon;
             this.Mid2Team2.Location = new System.Drawing.Point(678, 221);
-            this.Mid2Team2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Mid2Team2.Margin = new System.Windows.Forms.Padding(1);
             this.Mid2Team2.Name = "Mid2Team2";
             this.Mid2Team2.Size = new System.Drawing.Size(9, 36);
             this.Mid2Team2.TabIndex = 42;
@@ -663,7 +663,7 @@
             // 
             this.Mid3Team2.BackColor = System.Drawing.Color.Maroon;
             this.Mid3Team2.Location = new System.Drawing.Point(678, 332);
-            this.Mid3Team2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Mid3Team2.Margin = new System.Windows.Forms.Padding(1);
             this.Mid3Team2.Name = "Mid3Team2";
             this.Mid3Team2.Size = new System.Drawing.Size(9, 36);
             this.Mid3Team2.TabIndex = 43;
@@ -673,7 +673,7 @@
             // 
             this.Mid4Team2.BackColor = System.Drawing.Color.Maroon;
             this.Mid4Team2.Location = new System.Drawing.Point(678, 441);
-            this.Mid4Team2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Mid4Team2.Margin = new System.Windows.Forms.Padding(1);
             this.Mid4Team2.Name = "Mid4Team2";
             this.Mid4Team2.Size = new System.Drawing.Size(9, 36);
             this.Mid4Team2.TabIndex = 44;
@@ -683,7 +683,7 @@
             // 
             this.Mid5Team2.BackColor = System.Drawing.Color.Maroon;
             this.Mid5Team2.Location = new System.Drawing.Point(678, 543);
-            this.Mid5Team2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Mid5Team2.Margin = new System.Windows.Forms.Padding(1);
             this.Mid5Team2.Name = "Mid5Team2";
             this.Mid5Team2.Size = new System.Drawing.Size(9, 36);
             this.Mid5Team2.TabIndex = 45;
@@ -693,7 +693,7 @@
             // 
             this.rightForwTeam2.BackColor = System.Drawing.Color.Maroon;
             this.rightForwTeam2.Location = new System.Drawing.Point(406, 169);
-            this.rightForwTeam2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.rightForwTeam2.Margin = new System.Windows.Forms.Padding(1);
             this.rightForwTeam2.Name = "rightForwTeam2";
             this.rightForwTeam2.Size = new System.Drawing.Size(9, 36);
             this.rightForwTeam2.TabIndex = 46;
@@ -703,7 +703,7 @@
             // 
             this.centralForwTeam2.BackColor = System.Drawing.Color.Maroon;
             this.centralForwTeam2.Location = new System.Drawing.Point(406, 333);
-            this.centralForwTeam2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.centralForwTeam2.Margin = new System.Windows.Forms.Padding(1);
             this.centralForwTeam2.Name = "centralForwTeam2";
             this.centralForwTeam2.Size = new System.Drawing.Size(9, 36);
             this.centralForwTeam2.TabIndex = 47;
@@ -713,7 +713,7 @@
             // 
             this.leftForwTeam2.BackColor = System.Drawing.Color.Maroon;
             this.leftForwTeam2.Location = new System.Drawing.Point(406, 497);
-            this.leftForwTeam2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.leftForwTeam2.Margin = new System.Windows.Forms.Padding(1);
             this.leftForwTeam2.Name = "leftForwTeam2";
             this.leftForwTeam2.Size = new System.Drawing.Size(9, 36);
             this.leftForwTeam2.TabIndex = 48;
@@ -723,7 +723,7 @@
             // 
             this.centrDef1Team2.BackColor = System.Drawing.Color.Maroon;
             this.centrDef1Team2.Location = new System.Drawing.Point(937, 228);
-            this.centrDef1Team2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.centrDef1Team2.Margin = new System.Windows.Forms.Padding(1);
             this.centrDef1Team2.Name = "centrDef1Team2";
             this.centrDef1Team2.Size = new System.Drawing.Size(9, 36);
             this.centrDef1Team2.TabIndex = 49;
@@ -733,7 +733,7 @@
             // 
             this.centrDef2Team2.BackColor = System.Drawing.Color.Maroon;
             this.centrDef2Team2.Location = new System.Drawing.Point(937, 441);
-            this.centrDef2Team2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.centrDef2Team2.Margin = new System.Windows.Forms.Padding(1);
             this.centrDef2Team2.Name = "centrDef2Team2";
             this.centrDef2Team2.Size = new System.Drawing.Size(9, 36);
             this.centrDef2Team2.TabIndex = 50;
@@ -743,7 +743,7 @@
             // 
             this.GoalKeeperTeam2.BackColor = System.Drawing.Color.Maroon;
             this.GoalKeeperTeam2.Location = new System.Drawing.Point(1082, 335);
-            this.GoalKeeperTeam2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.GoalKeeperTeam2.Margin = new System.Windows.Forms.Padding(1);
             this.GoalKeeperTeam2.Name = "GoalKeeperTeam2";
             this.GoalKeeperTeam2.Size = new System.Drawing.Size(9, 36);
             this.GoalKeeperTeam2.TabIndex = 51;
@@ -753,7 +753,7 @@
             // 
             this.gorizontalLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
             this.gorizontalLine.Location = new System.Drawing.Point(125, 263);
-            this.gorizontalLine.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.gorizontalLine.Margin = new System.Windows.Forms.Padding(1);
             this.gorizontalLine.Name = "gorizontalLine";
             this.gorizontalLine.Size = new System.Drawing.Size(22, 8);
             this.gorizontalLine.TabIndex = 52;
@@ -763,7 +763,7 @@
             // 
             this.gorizontalLine2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
             this.gorizontalLine2.Location = new System.Drawing.Point(110, 430);
-            this.gorizontalLine2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.gorizontalLine2.Margin = new System.Windows.Forms.Padding(1);
             this.gorizontalLine2.Name = "gorizontalLine2";
             this.gorizontalLine2.Size = new System.Drawing.Size(33, 8);
             this.gorizontalLine2.TabIndex = 53;
@@ -773,7 +773,7 @@
             // 
             this.verticalLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
             this.verticalLine.Location = new System.Drawing.Point(522, 644);
-            this.verticalLine.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.verticalLine.Margin = new System.Windows.Forms.Padding(1);
             this.verticalLine.Name = "verticalLine";
             this.verticalLine.Size = new System.Drawing.Size(9, 44);
             this.verticalLine.TabIndex = 54;
@@ -783,7 +783,7 @@
             // 
             this.verticalLine2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.verticalLine2.Location = new System.Drawing.Point(819, 644);
-            this.verticalLine2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.verticalLine2.Margin = new System.Windows.Forms.Padding(1);
             this.verticalLine2.Name = "verticalLine2";
             this.verticalLine2.Size = new System.Drawing.Size(9, 39);
             this.verticalLine2.TabIndex = 55;
@@ -793,7 +793,7 @@
             // 
             this.verticalLine3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(0)))));
             this.verticalLine3.Location = new System.Drawing.Point(980, 644);
-            this.verticalLine3.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.verticalLine3.Margin = new System.Windows.Forms.Padding(1);
             this.verticalLine3.Name = "verticalLine3";
             this.verticalLine3.Size = new System.Drawing.Size(4, 39);
             this.verticalLine3.TabIndex = 56;
@@ -823,7 +823,7 @@
             this.listViewMatchStat.Enabled = false;
             this.listViewMatchStat.Font = new System.Drawing.Font("Cambria", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.listViewMatchStat.Location = new System.Drawing.Point(544, 213);
-            this.listViewMatchStat.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.listViewMatchStat.Margin = new System.Windows.Forms.Padding(1);
             this.listViewMatchStat.Name = "listViewMatchStat";
             this.listViewMatchStat.Size = new System.Drawing.Size(163, 199);
             this.listViewMatchStat.TabIndex = 58;
@@ -901,14 +901,13 @@
             this.Controls.Add(this.verticalLine3);
             this.Controls.Add(this.gorizontalLine2);
             this.Controls.Add(this.gorizontalLine);
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(522, 327);
             this.Name = "FootballGameForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.TopMost = true;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FootballGameForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FootballGameForm_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FootballGameForm_KeyUp);

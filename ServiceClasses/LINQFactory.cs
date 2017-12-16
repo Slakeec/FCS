@@ -177,6 +177,19 @@ namespace ServiceClasses
                 return players;
             }
         }
+        public static List<string> GetNamesById(List<int> ids)
+        {
+            using (var context = new Context())
+            {
+                List<string> players = new List<string>();
+                foreach (int id in ids)
+                {
+                    string p = context.Players.First(pl => pl.Id == id).Name;
+                    players.Add(p);
+                }
+                return players;
+            }
+        }
         public static string GetTeamNameById(int teamId)
         {
             using (var context = new Context())

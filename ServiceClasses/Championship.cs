@@ -74,7 +74,7 @@ namespace ServiceClasses
                     Team team2 = LINQFactory.GetTeamByUserAndNumber(userId, sop);
                     List<int> players1 = LINQFactory.GetPlayersId(team1.Id);
                     List<int> players2 = LINQFactory.GetPlayersId(team2.Id);
-                    Match match = new Match(team1.Id, team2.Id,players1, players2, round);
+                    Match match = new Match(team1.Id, team2.Id,players1, players2, round, team1.Name, team2.Name);
                     mathes.Add(match);
 
                 }
@@ -236,6 +236,27 @@ namespace ServiceClasses
                 if (LINQFactory.IsMyTeam(matches[i].TeamOne) || LINQFactory.IsMyTeam(matches[i].TeamTwo))
                 {
                     myMatch = matches[i];
+                    if (LINQFactory.IsMyTeam(myMatch.TeamTwo))
+                    {
+                        var temp = myMatch.FormOne;
+                        myMatch.FormOne = myMatch.FormTwo;
+                        myMatch.FormTwo = temp;
+                        var temp1 = myMatch.GoalTeamOne;
+                        myMatch.GoalTeamOne = myMatch.GoalTeamTwo;
+                        myMatch.GoalTeamTwo = temp1;
+                        var temp2 = myMatch.PlayersOne;
+                        myMatch.PlayersOne = myMatch.PlayersTwo;
+                        myMatch.PlayersTwo = temp2;
+                        var temp3 = myMatch.ScorersOne;
+                        myMatch.ScorersOne = myMatch.ScorersTwo;
+                        myMatch.ScorersTwo = temp3;
+                        var temp4 = myMatch.TeamName1;
+                        myMatch.TeamName1 = myMatch.TeamName2;
+                        myMatch.TeamName2 = temp4;
+                        var temp5 = myMatch.TeamOne;
+                        myMatch.TeamOne = myMatch.TeamTwo;
+                        myMatch.TeamTwo = temp5;
+                    }
                     myMatch.PlayersOne = Championship.GetSquad(LINQFactory.GetPlayersById(myMatch.PlayersOne));
                     myMatch.PlayersTwo = Championship.GetSquad(LINQFactory.GetPlayersById(myMatch.PlayersTwo));
                 }

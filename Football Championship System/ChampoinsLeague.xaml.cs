@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ServiceClasses;
 using Classes;
+using System.Windows.Forms;
+using Football_Game;
+using GameFootball;
 namespace Football_Championship_System
 {
     /// <summary>
@@ -71,7 +74,7 @@ namespace Football_Championship_System
             List<string> response = LINQStat.GetTeamInfo(UserId, TextBoxTeamInfo.Text);
             if (response==null)
             {
-                MessageBox.Show("Incorrect team entered", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                System.Windows.MessageBox.Show("Incorrect team entered", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {
@@ -89,7 +92,7 @@ namespace Football_Championship_System
             List<string> response = LINQStat.GetPlayerInfo(UserId, TextBoxPlayerInfo.Text);
             if (response == null)
             {
-                MessageBox.Show("Incorrect player entered", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                System.Windows.MessageBox.Show("Incorrect player entered", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {
@@ -114,6 +117,9 @@ namespace Football_Championship_System
             int round = LINQFactory.Round(UserId);
             Match match = Championship.playRound(userId, round);
             //Game
+            FootballGameForm f = new FootballGameForm(match.TeamName1, match.TeamName2, LINQFactory.GetNamesById(match.PlayersOne),
+                                                     LINQFactory.GetNamesById(match.PlayersTwo), settings.Time, settings.Level, false);
+            f.Show();
             Championship.SaveMyMatch(match,round,userId);
             ListViewTable.ItemsSource = Sorting.Sort(LINQFactory.GetTeamsByUser(UserId));
             ListViewResults.ItemsSource = LINQFactory.GetResults(UserId, LINQFactory.Round(UserId) - 1);

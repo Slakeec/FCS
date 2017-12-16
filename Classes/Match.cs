@@ -106,7 +106,7 @@ namespace Classes
             set { round = value; }
         }
 
-        public Match(int team1, int team2, List<int>players1, List<int>players2, int round)
+        public Match(int team1, int team2, List<int>players1, List<int>players2, int round, string teamName1, string teamName2)
         {
             this.TeamOne = team1;
             this.TeamTwo = team2;
@@ -117,6 +117,8 @@ namespace Classes
             this.GoalTeamOne = 0;
             this.goalTeamTwo = 0;
             this.Round = round;
+            this.TeamName1 = teamName1;
+            this.TeamName2 = teamName2;
         }
         public Match(int team1, int team2, List<int>players1, List<int>players2,
             int goal1, int goal2, int round, int userId, string name1, string name2)
