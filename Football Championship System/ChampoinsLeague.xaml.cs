@@ -101,5 +101,13 @@ namespace Football_Championship_System
         {
             ListViewTable.ItemsSource = Sorting.Sort(LINQFactory.GetTeamsByUser(UserId));
         }
+
+        private void ButtonStartGame_Click(object sender, RoutedEventArgs e)
+        {
+            Match match = Championship.playRound(userId, LINQFactory.Round(UserId));
+            //Game
+            Championship.SaveMyMatch(match);
+            ListViewTable.ItemsSource = Sorting.Sort(LINQFactory.GetTeamsByUser(UserId));
+        }
     }
 }

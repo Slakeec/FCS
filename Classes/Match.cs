@@ -69,8 +69,17 @@ namespace Classes
             get { return formTwo; }
             set { formTwo = value; }
         }
+        public Match(Team team1, Team team2, List<Player>players1, List<Player>players2)
+        {
+            this.TeamOne = team1;
+            this.TeamTwo = team2;
+            this.PlayersOne = players1;
+            this.PlayersTwo = players2;
+        }
+        public Match()
+        {
 
-
+        }
 
 
     }

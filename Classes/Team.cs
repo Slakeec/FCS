@@ -76,6 +76,12 @@ namespace Classes
             get { return position; }
             set { position = value; }
         }
+        private int rating;
+        public int Rating
+        {
+            get { return rating; }
+            set { rating = value; }
+        }
 
 
         public Team(string name, int count, List<Player> players)

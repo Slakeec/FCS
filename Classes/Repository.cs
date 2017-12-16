@@ -23,6 +23,13 @@ namespace Classes
             get { return teamNames; }
             set { teamNames = value; }
         }
+        private List<int> teamRatings;
+        public List<int> TeamRatings 
+        {
+            get { return teamRatings; }
+            set { teamRatings = value; }
+        }
+
         private static int cnt = 16;
         public static int Cnt
         {
@@ -76,6 +83,10 @@ namespace Classes
             {
                 "Arsenal","Chelsea","Everton","Liverpool","Manchester City","Manchester United","Tottenham","Atletico Madrid",
                 "Barselona","Real Madrid", "Villyereal","Valencia","Milan","Roma","Inter","Juventus"
+            };
+            TeamRatings = new List<int>
+            {
+                1800,2000,1200,1800,2700,2300,1700,2000,2700,2000,3000,1000,1500,2300,2300,2500
             };
         }
     }

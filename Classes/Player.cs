@@ -66,6 +66,12 @@ namespace Classes
             get { return goals; }
             set { goals = value; }
         }
+        private int games;
+        public int Games
+        {
+            get { return games; }
+            set { games = value; }
+        }
 
         private int teamId;
         public int TeamId
@@ -77,6 +83,7 @@ namespace Classes
         {
             this.Name = name;            
             this.Goals = 0;
+            this.Games = 0;
             this.TeamId = idTeam;
             this.Nationlity = nationality;
             //this.Number = number;

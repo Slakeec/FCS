@@ -16,7 +16,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Name="ButtonStartGame" Content="Start the next Game" FontSize="15" Grid.ColumnSpan="2"></Button>
+        <Button Name="ButtonStartGame" Content="Start the next Game" FontSize="15" Grid.ColumnSpan="2" Click="ButtonStartGame_Click"></Button>
         <ListView Name="ListViewTable" Grid.Row="1" Grid.ColumnSpan="2">
             <ListView.View>
                 <GridView>
