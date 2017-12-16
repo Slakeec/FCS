@@ -47,7 +47,7 @@ namespace GameFootball
 
         string toScoreString;
         bool StatisticShown = false;
-        bool GameEnded = false;
+        bool? GameEnded = false;
 
         public List<Footballer> FirstTeam;
         public List<Footballer> SecondTeam;
@@ -60,6 +60,88 @@ namespace GameFootball
         public List<int> Speeds;
         public Match match;
 
+        public MyRepository(string name1, string name2, List<string>players1, List<string>players2,
+                            int time, int difficulty, bool isMulti)
+        {
+            FirstTeam = new List<Footballer>();
+            foreach (var player in players1)
+            {
+                FirstTeam.Add(new Footballer(player, 0));
+            }
+            SecondTeam = new List<Footballer>();
+            foreach (var player in players2)
+            {
+                SecondTeam.Add(new Footballer(player, 0));
+            }
+            team1 = new TeamPlayer(name1, FirstTeam);
+            if (isMulti)
+            {
+                team2 = new Player2Team(name2, SecondTeam);
+            }
+            else
+            {
+                team2 = new CompTeam(name2, difficulty*2, SecondTeam);
+            }
+            if (time==60)
+            {
+                Time = new Timer60(0, 0);
+            }
+            else if (time==90)
+            {
+                Time = new Timer90(0, 0);
+            }
+            else
+            {
+                Time = new Timer180(0, 0); 
+            }
+            //FirstTeam = new List<Footballer>
+            //{
+            //    new Footballer("1",0),
+            //    new Footballer("2",0),
+            //    new Footballer("3",0),
+            //    new Footballer("4",0),
+            //    new Footballer("5",0),
+            //    new Footballer("6",0),
+            //    new Footballer("7",0),
+            //    new Footballer("8",0),
+            //    new Footballer("9",0),
+            //    new Footballer("10",0),
+            //    new Footballer("11",0)
+            //};
+            //SecondTeam = new List<Footballer>
+            //{
+            //    new Footballer("1(2)",0),
+            //    new Footballer("2(2)",0),
+            //    new Footballer("3(2)",0),
+            //    new Footballer("4(2)",0),
+            //    new Footballer("5(2)",0),
+            //    new Footballer("6(2)",0),
+            //    new Footballer("7(2)",0),
+            //    new Footballer("8(2)",0),
+            //    new Footballer("9(2)",0),
+            //    new Footballer("10(2)",0),
+            //    new Footballer("11(2)",0)
+            //};
+            //team1 = new TeamPlayer("Chelsea", FirstTeam);
+            //team2 = new Player2Team("Arsenal", SecondTeam);
+            //Time = new Timer60(0, 0);
+            Speeds = new List<int> { PlusBallSpeedXClone, PlusBallSpeedX1, PlusBallSpeedX2, PlusBallSpeedX3, PlusBallSpeedX4, PlusBallSpeedY1, PlusBallSpeedY2, PlusBallSpeedY3, PlusBallSpeedY4 };
+        }
+        public MyRepository(List<string> players1, List<string> players2)
+        {
+
+            //FirstTeam = new List<Footballer>();
+            //foreach (var player in players1)
+            //{
+            //    FirstTeam.Add(new Footballer(player, 0));
+            //}
+            //SecondTeam = new List<Footballer>();
+            //foreach (var player in players2)
+            //{
+            //    SecondTeam.Add(new Footballer(player, 0));
+            //}
+
+        }
         public MyRepository()
         {
             FirstTeam = new List<Footballer>
@@ -94,21 +176,6 @@ namespace GameFootball
             team2 = new Player2Team("Arsenal", SecondTeam);
             Time = new Timer60(0, 0);
             Speeds = new List<int> { PlusBallSpeedXClone, PlusBallSpeedX1, PlusBallSpeedX2, PlusBallSpeedX3, PlusBallSpeedX4, PlusBallSpeedY1, PlusBallSpeedY2, PlusBallSpeedY3, PlusBallSpeedY4 };
-        }
-        public MyRepository(List<string> players1, List<string> players2)
-        {
-
-            //FirstTeam = new List<Footballer>();
-            //foreach (var player in players1)
-            //{
-            //    FirstTeam.Add(new Footballer(player, 0));
-            //}
-            //SecondTeam = new List<Footballer>();
-            //foreach (var player in players2)
-            //{
-            //    SecondTeam.Add(new Footballer(player, 0));
-            //}
-
         }
         public MyRepository(string FirstTeamName, string SecondTeamName,List<string> players1, List<string> players2, int time) : this(players1,players2)
         {
@@ -217,7 +284,7 @@ namespace GameFootball
                 //match.GoalTeamTwo = team2.GoalsScored;
                 //match.ScorersOne = ScoredFirstTeam;
                 //match.ScorersTwo = ScoredSecondTeam;
-                GameEnded = false;
+                GameEnded = null;
             }
         }
 
@@ -294,6 +361,9 @@ namespace GameFootball
                 MatchStat.Items.Add(ShortsOnTarget);
                 StatisticShown = true;
             }
+
+
+
         }
 
         public void LabelAnimation(List<Label> TeamLabels, Timer timer1, int labelcount)
