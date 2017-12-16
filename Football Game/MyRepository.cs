@@ -47,7 +47,7 @@ namespace GameFootball
 
         string toScoreString;
         bool StatisticShown = false;
-        bool? GameEnded = false;
+        bool GameEnded = false;
 
         public List<Footballer> FirstTeam;
         public List<Footballer> SecondTeam;
@@ -213,11 +213,11 @@ namespace GameFootball
         {
             if (GameEnded==true)
             {
-                match.GoalTeamOne = team1.GoalsScored;
-                match.GoalTeamTwo = team2.GoalsScored;
-                match.ScorersOne = ScoredFirstTeam;
-                match.ScorersTwo = ScoredSecondTeam;
-                GameEnded = null;
+                //match.GoalTeamOne = team1.GoalsScored;
+                //match.GoalTeamTwo = team2.GoalsScored;
+                //match.ScorersOne = ScoredFirstTeam;
+                //match.ScorersTwo = ScoredSecondTeam;
+                GameEnded = false;
             }
         }
 
@@ -294,9 +294,6 @@ namespace GameFootball
                 MatchStat.Items.Add(ShortsOnTarget);
                 StatisticShown = true;
             }
-
-
-
         }
 
         public void LabelAnimation(List<Label> TeamLabels, Timer timer1, int labelcount)
