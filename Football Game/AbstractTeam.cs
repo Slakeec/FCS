@@ -12,6 +12,9 @@ namespace GameFootball
         public string Name { get; set; }
         public List<Footballer> Squad { get; set; }
         public int GoalsScored { get; set; }
+        public int AllTouches { get; set; }
+        public int GoalKeeperTouches { get; set; }
+        public int TotalShots { get; set; }
 
         public virtual void TeamMovingUp(List<Footballer> sqw)
         { }
@@ -145,6 +148,15 @@ namespace GameFootball
             {
                 if (Ball.Bounds.IntersectsWith(player.positionOnTheScreen.Bounds))
                 {
+                    if (Ball.Bounds.IntersectsWith(Squad[0].positionOnTheScreen.Bounds))
+                    {
+                        GoalKeeperTouches++;
+                    }
+                    if (Ball.Bounds.IntersectsWith(Squad[8].positionOnTheScreen.Bounds) || Ball.Bounds.IntersectsWith(Squad[9].positionOnTheScreen.Bounds) || Ball.Bounds.IntersectsWith(Squad[10].positionOnTheScreen.Bounds))
+                    {
+                        TotalShots++;
+                    }
+                    AllTouches++;
                     foreach (var playerToTouch in Squad)
                     {
                         if (player == playerToTouch)
@@ -160,19 +172,34 @@ namespace GameFootball
                 }
             }
         }
+        public virtual void TeamLeavingDown(int compspeed)
+        {
+            foreach (var player in Squad)
+            {
+                player.positionOnTheScreen.Location = new System.Drawing.Point(player.positionOnTheScreen.Location.X, player.positionOnTheScreen.Location.Y + compspeed);
+            }
+        }
 
         public AbstractTeam()
         {
-
+            AllTouches = 0;
+            GoalKeeperTouches = 0;
+            TotalShots = 0;
         }
-        public AbstractTeam(string name, List<Footballer> team, int goals)
+        public AbstractTeam(string name, List<Footballer> team, int goals) 
         {
+            AllTouches = 0;
+            GoalKeeperTouches = 0;
+            TotalShots = 0;
             Name = name;
             Squad = team;
             GoalsScored = goals;
         }
         public AbstractTeam(List<Footballer> team)
         {
+            AllTouches = 0;
+            GoalKeeperTouches = 0;
+            TotalShots = 0;
             Squad = team;
         }
 

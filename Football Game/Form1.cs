@@ -12,9 +12,8 @@ namespace GameFootball
 {
     public partial class FootballGameForm : Form
     {
-        MyRepository MyRep=new MyRepository();
+        public MyRepository MyRep = new MyRepository();
         List<Footballer> PlayerSQW;
-       // AbstractTeam FirstTeam = new TeamPlayer();
         List<PictureBox> PictureBoxesFirstTeam;
 
         List<Footballer> Player2SQW;
@@ -26,10 +25,11 @@ namespace GameFootball
 
         List<Label> TimeLabels;
 
-        int imagecount=0, timer1count=0, timerfortimecount = 0;
-        int labelcount = 0;
+        List<Label> TeamsLabels;
+
+        int imagecount = 0, timer1count = 0;
         int FirstTeamScore=0,SecondTeamScore=0;
-        public bool isUpPressed, isDownPressed, isUpArrowPressed, isDownArrowPressed;
+        bool isUpPressed, isDownPressed, isUpArrowPressed, isDownArrowPressed;
 
         public FootballGameForm()
         {
@@ -60,7 +60,8 @@ namespace GameFootball
                 PictureBoxesLines.Add(i, PictureLines[i]);
             }
 
-            TimeLabels = new List<Label> { labelMin, labelSec, labelSecSec, labelDoubleDot, labelAddedTime,goalLabel, whoScoredLabel };
+            TimeLabels = new List<Label> { labelMin, labelSec, labelSecSec, labelDoubleDot, labelAddedTime,goalLabel, scoredGoalLabel };
+            TeamsLabels = new List<Label> { firstTeamLabel, firstTeamScoreLabel, slashLabel, secondTeamScoreLabel, secondTeamLabel, goalLabel,whoScoredLabel,scoredGoalLabel };
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -80,7 +81,12 @@ namespace GameFootball
             }
             else
             {
-                MyRep.TeamsLeaving();
+                if (goalLabel.Visible == false)
+                {
+                    MyRep.TeamsLeaving();
+                    MyRep.ShowStatistics(listViewMatchStat, TeamsLabels);
+                    MyRep.GameEnd();
+                }
             }
 
         }
@@ -98,42 +104,39 @@ namespace GameFootball
             else
                 aBall.Image = Football_Game.Properties.Resources.MyBall2;
 
-            if (goalLabel.Visible)
-            {
-                firstTeamScoreLabel.Text = FirstTeamScore.ToString();
-                secondTeamScoreLabel.Text = SecondTeamScore.ToString();
-                timer1.Enabled = false;
-                labelcount++;     
-                if (labelcount % 30 != 0)
-                {
-                    if (labelcount % 2 == 0)
-                    {
-                        goalLabel.ForeColor = Color.Red;
-                        whoScoredLabel.ForeColor = Color.Red;
-                        scoredGoalLabel.ForeColor = Color.Red;
-                    }
-                    else
-                    {
-                        goalLabel.ForeColor = Color.Yellow;                       
-                        scoredGoalLabel.ForeColor = Color.Yellow;
-                    }
-                }
-                else
-                {
-                    timer1.Enabled = true;
-                    labelcount = 0;
-                    goalLabel.Visible = false;
-                    whoScoredLabel.Visible = false;
-                    scoredGoalLabel.Visible = false;
-                }
-            }
+            MyRep.LabelAnimation(TeamsLabels, timer1, imagecount);
         }
+
         private void TimerForTime_Tick(object sender, EventArgs e)
         {
-            timerfortimecount++;
             MyRep.TimeShowing(TimeLabels,FirstTeamScore,SecondTeamScore,TimerForTime);
 
         }
+        private void goalLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void whoScoredLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void scoredGoalLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void firstTeamLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void firstTeamScoreLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
         private void TimeTimer_Tick(object sender, EventArgs e)
         {

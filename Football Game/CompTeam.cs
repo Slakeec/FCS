@@ -19,8 +19,9 @@ namespace Football_Game
 
         }
 
-        public CompTeam(int compSpeed, List<Footballer> team) : base(team)
+        public CompTeam(string name,int compSpeed, List<Footballer> team) : base(team)
         {
+            Name = name;
             Squad = team;
             CompSpeed = compSpeed;
         }

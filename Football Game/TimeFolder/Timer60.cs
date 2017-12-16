@@ -10,7 +10,7 @@ namespace Football_Game.TimeFolder
     class Timer60 : AbstractTime
     {
 
-        public Timer60(int min, int sec) : base(min, sec,6)
+        public Timer60(int min, int sec) : base(min, sec,20)
         {
         }
 

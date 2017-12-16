@@ -93,6 +93,8 @@
             this.verticalLine2 = new System.Windows.Forms.PictureBox();
             this.verticalLine3 = new System.Windows.Forms.PictureBox();
             this.labelAddedTime = new System.Windows.Forms.Label();
+            this.listViewMatchStat = new System.Windows.Forms.ListView();
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.secondTeamGoal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.firstTeamGoal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rightForw)).BeginInit();
@@ -162,74 +164,71 @@
             // 
             // firstTeamLabel
             // 
-            this.firstTeamLabel.AutoSize = true;
-            this.firstTeamLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.firstTeamLabel.Font = new System.Drawing.Font("Britannic Bold", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstTeamLabel.Location = new System.Drawing.Point(736, 9);
+            this.firstTeamLabel.Location = new System.Drawing.Point(426, 9);
             this.firstTeamLabel.Name = "firstTeamLabel";
-            this.firstTeamLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.firstTeamLabel.Size = new System.Drawing.Size(621, 135);
+            this.firstTeamLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.firstTeamLabel.Size = new System.Drawing.Size(954, 135);
             this.firstTeamLabel.TabIndex = 22;
             this.firstTeamLabel.Text = "First Team";
-            this.firstTeamLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.firstTeamLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.firstTeamLabel.Click += new System.EventHandler(this.firstTeamLabel_Click);
             // 
             // secondTeamScoreLabel
             // 
             this.secondTeamScoreLabel.AutoSize = true;
-            this.secondTeamScoreLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.secondTeamScoreLabel.Font = new System.Drawing.Font("Britannic Bold", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.secondTeamScoreLabel.Location = new System.Drawing.Point(1723, 9);
+            this.secondTeamScoreLabel.Location = new System.Drawing.Point(1746, 9);
             this.secondTeamScoreLabel.Name = "secondTeamScoreLabel";
             this.secondTeamScoreLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.secondTeamScoreLabel.Size = new System.Drawing.Size(132, 135);
+            this.secondTeamScoreLabel.Size = new System.Drawing.Size(130, 133);
             this.secondTeamScoreLabel.TabIndex = 23;
             this.secondTeamScoreLabel.Text = "0";
-            this.secondTeamScoreLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // firstTeamScoreLabel
             // 
             this.firstTeamScoreLabel.AutoSize = true;
-            this.firstTeamScoreLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.firstTeamScoreLabel.Font = new System.Drawing.Font("Britannic Bold", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstTeamScoreLabel.Location = new System.Drawing.Point(1359, 9);
+            this.firstTeamScoreLabel.Location = new System.Drawing.Point(1382, 9);
             this.firstTeamScoreLabel.Name = "firstTeamScoreLabel";
             this.firstTeamScoreLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.firstTeamScoreLabel.Size = new System.Drawing.Size(132, 135);
+            this.firstTeamScoreLabel.Size = new System.Drawing.Size(130, 133);
             this.firstTeamScoreLabel.TabIndex = 24;
             this.firstTeamScoreLabel.Text = "0";
             this.firstTeamScoreLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.firstTeamScoreLabel.Click += new System.EventHandler(this.firstTeamScoreLabel_Click);
             // 
             // secondTeamLabel
             // 
             this.secondTeamLabel.AutoSize = true;
-            this.secondTeamLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.secondTeamLabel.Font = new System.Drawing.Font("Britannic Bold", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.secondTeamLabel.Location = new System.Drawing.Point(1861, 9);
+            this.secondTeamLabel.Location = new System.Drawing.Point(1884, 9);
             this.secondTeamLabel.Name = "secondTeamLabel";
             this.secondTeamLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.secondTeamLabel.Size = new System.Drawing.Size(763, 135);
+            this.secondTeamLabel.Size = new System.Drawing.Size(761, 133);
             this.secondTeamLabel.TabIndex = 25;
             this.secondTeamLabel.Text = "Second Team";
             this.secondTeamLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // goalLabel
             // 
-            this.goalLabel.AutoSize = true;
             this.goalLabel.BackColor = System.Drawing.Color.Transparent;
             this.goalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.goalLabel.Location = new System.Drawing.Point(1126, 435);
+            this.goalLabel.Location = new System.Drawing.Point(977, 490);
             this.goalLabel.Name = "goalLabel";
-            this.goalLabel.Size = new System.Drawing.Size(940, 78);
+            this.goalLabel.Size = new System.Drawing.Size(1253, 110);
             this.goalLabel.TabIndex = 31;
             this.goalLabel.Text = "GOOOOOOOOAAAAAAAL!!!";
+            this.goalLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.goalLabel.Visible = false;
+            this.goalLabel.Click += new System.EventHandler(this.goalLabel_Click);
             // 
             // whoScoredLabel
             // 
             this.whoScoredLabel.BackColor = System.Drawing.Color.Transparent;
             this.whoScoredLabel.Font = new System.Drawing.Font("Impact", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.whoScoredLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.whoScoredLabel.Location = new System.Drawing.Point(1146, 494);
+            this.whoScoredLabel.Location = new System.Drawing.Point(1178, 580);
             this.whoScoredLabel.Name = "whoScoredLabel";
             this.whoScoredLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.whoScoredLabel.Size = new System.Drawing.Size(935, 117);
@@ -237,28 +236,29 @@
             this.whoScoredLabel.Text = "Valya";
             this.whoScoredLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.whoScoredLabel.Visible = false;
+            this.whoScoredLabel.Click += new System.EventHandler(this.whoScoredLabel_Click);
             // 
             // scoredGoalLabel
             // 
             this.scoredGoalLabel.BackColor = System.Drawing.Color.Transparent;
             this.scoredGoalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.scoredGoalLabel.Location = new System.Drawing.Point(1080, 611);
+            this.scoredGoalLabel.Location = new System.Drawing.Point(964, 678);
             this.scoredGoalLabel.Name = "scoredGoalLabel";
-            this.scoredGoalLabel.Size = new System.Drawing.Size(1107, 85);
+            this.scoredGoalLabel.Size = new System.Drawing.Size(1378, 130);
             this.scoredGoalLabel.TabIndex = 33;
             this.scoredGoalLabel.Text = "scored a screamer!!!";
             this.scoredGoalLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.scoredGoalLabel.Visible = false;
+            this.scoredGoalLabel.Click += new System.EventHandler(this.scoredGoalLabel_Click);
             // 
             // slashLabel
             // 
             this.slashLabel.AutoSize = true;
-            this.slashLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.slashLabel.Font = new System.Drawing.Font("Britannic Bold", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slashLabel.Location = new System.Drawing.Point(1551, 9);
+            this.slashLabel.Location = new System.Drawing.Point(1574, 9);
             this.slashLabel.Name = "slashLabel";
             this.slashLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.slashLabel.Size = new System.Drawing.Size(121, 135);
+            this.slashLabel.Size = new System.Drawing.Size(119, 133);
             this.slashLabel.TabIndex = 34;
             this.slashLabel.Text = "--";
             this.slashLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -758,6 +758,26 @@
             this.labelAddedTime.Text = "+ 9 min";
             this.labelAddedTime.Visible = false;
             // 
+            // listViewMatchStat
+            // 
+            this.listViewMatchStat.BackgroundImage = global::Football_Game.Properties.Resources.greenback;
+            this.listViewMatchStat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listViewMatchStat.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader2});
+            this.listViewMatchStat.Enabled = false;
+            this.listViewMatchStat.Font = new System.Drawing.Font("Cambria", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listViewMatchStat.Location = new System.Drawing.Point(1452, 507);
+            this.listViewMatchStat.Name = "listViewMatchStat";
+            this.listViewMatchStat.Size = new System.Drawing.Size(431, 471);
+            this.listViewMatchStat.TabIndex = 58;
+            this.listViewMatchStat.UseCompatibleStateImageBehavior = false;
+            this.listViewMatchStat.View = System.Windows.Forms.View.List;
+            this.listViewMatchStat.Visible = false;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Width = 150;
+            // 
             // FootballGameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -765,6 +785,9 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(3184, 1669);
+            this.Controls.Add(this.listViewMatchStat);
+            this.Controls.Add(this.whoScoredLabel);
+            this.Controls.Add(this.goalLabel);
             this.Controls.Add(this.labelDoubleDot);
             this.Controls.Add(this.labelSecSec);
             this.Controls.Add(this.labelSec);
@@ -784,9 +807,7 @@
             this.Controls.Add(this.labelTimer);
             this.Controls.Add(this.listViewWhoScored);
             this.Controls.Add(this.slashLabel);
-            this.Controls.Add(this.goalLabel);
             this.Controls.Add(this.scoredGoalLabel);
-            this.Controls.Add(this.whoScoredLabel);
             this.Controls.Add(this.secondTeamGoal);
             this.Controls.Add(this.firstTeamGoal);
             this.Controls.Add(this.rightForw);
@@ -947,6 +968,8 @@
         private System.Windows.Forms.PictureBox verticalLine2;
         private System.Windows.Forms.PictureBox verticalLine3;
         private System.Windows.Forms.Label labelAddedTime;
+        private System.Windows.Forms.ListView listViewMatchStat;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }
 

@@ -11,14 +11,14 @@ namespace GameFootball
     {
         public const int playerSpeed = 11;
 
-
         public TeamPlayer()
         {
-
+            AllTouches = 0;
         }
 
         public TeamPlayer(string name,List<Footballer> team) : base(team)
         {
+            AllTouches = 0;
             Name = name;
             Squad = team;
         }
@@ -37,6 +37,7 @@ namespace GameFootball
                 player.positionOnTheScreen.Location = new System.Drawing.Point(player.positionOnTheScreen.Location.X, player.positionOnTheScreen.Location.Y + playerSpeed);
             }
         }
+        
 
         public override void TeamMovingUp()
         {

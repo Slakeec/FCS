@@ -68,11 +68,14 @@ namespace Football_Game
             if (Min == 90+minsAdd)
             {
                 timer.Enabled = false;
+                gameOverlabel.TextAlign= System.Drawing.ContentAlignment.MiddleCenter;
+                gameOverlabel.Font = new System.Drawing.Font("Impact", 30F);
+                gameOverlabel.ForeColor = System.Drawing.Color.Maroon;
                 gameOverlabel.Text = "GAME OVER";
                 gameOverlabel.Visible = true;
                 if (firstScore > secondScore)
                 {
-                    winningTeam.Text = FirstTeamName;
+                    winningTeam.Text = FirstTeamName+" IS THE WINNER";
                 }
                 else if (firstScore == secondScore)
                 {
@@ -80,8 +83,10 @@ namespace Football_Game
                 }
                 else
                 {
-                    winningTeam.Text = SecondTeamName;
+                    winningTeam.Text = SecondTeamName+" IS THE WINNER";
                 }
+                winningTeam.Font = new System.Drawing.Font("Impact", 30F);
+                winningTeam.ForeColor = System.Drawing.Color.Black;
                 winningTeam.Visible = true;
             }
         }
