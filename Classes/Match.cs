@@ -20,9 +20,22 @@ namespace Classes
             get { return userId; }
             set { userId = value; }
         }
+        private string teamName1;
+        public string TeamName1
+        {
+            get { return teamName1; }
+            set { teamName1 = value; }
+        }
+        private string teamName2;
+        public string TeamName2
+        {
+            get { return teamName2; }
+            set { teamName2 = value; }
+        }
+
         [JsonProperty("teamOne")]
-        private Team teamOne;
-        public Team TeamOne
+        private int teamOne;
+        public int TeamOne
         {
             get { return teamOne; }
             set { teamOne = value; }
@@ -34,8 +47,8 @@ namespace Classes
             set { goalTeamOne = value; }
         }
         [JsonProperty("playersOne")]
-        private List<Player>playersOne;
-        public List<Player>PlayersOne 
+        private List<int>playersOne;
+        public List<int>PlayersOne 
         {
             get { return playersOne; }
             set { playersOne = value; }
@@ -54,8 +67,8 @@ namespace Classes
             set { formOne = value; }
         }
         [JsonProperty("teamTwo")]
-        private Team teamTwo;
-        public Team TeamTwo
+        private int teamTwo;
+        public int TeamTwo
         {
             get { return teamTwo; }
             set { teamTwo = value; }
@@ -67,8 +80,8 @@ namespace Classes
             set { goalTeamTwo = value; }
         }
         [JsonProperty("playersTwo")]
-        private List<Player> playersTwo;
-        public List<Player> PlayersTwo
+        private List<int> playersTwo;
+        public List<int> PlayersTwo
         {
             get { return playersTwo; }
             set { playersTwo = value; }
@@ -93,7 +106,7 @@ namespace Classes
             set { round = value; }
         }
 
-        public Match(Team team1, Team team2, List<Player>players1, List<Player>players2, int round)
+        public Match(int team1, int team2, List<int>players1, List<int>players2, int round)
         {
             this.TeamOne = team1;
             this.TeamTwo = team2;
@@ -105,8 +118,8 @@ namespace Classes
             this.goalTeamTwo = 0;
             this.Round = round;
         }
-        public Match(Team team1, Team team2, List<Player>players1, List<Player>players2,
-            int goal1, int goal2, int round, int userId)
+        public Match(int team1, int team2, List<int>players1, List<int>players2,
+            int goal1, int goal2, int round, int userId, string name1, string name2)
         {
             this.UserId = userId;
             this.Round = round;
@@ -116,6 +129,8 @@ namespace Classes
             this.PlayersTwo = players2;
             this.GoalTeamOne = goal1;
             this.GoalTeamTwo = goal2;
+            this.TeamName1 = name1;
+            this.TeamName2 = name2;
         }
         public string Score
         {

@@ -80,6 +80,14 @@
     <Compile Include="Migrations\201712161516146_MatchAdded.Designer.cs">
       <DependentUpon>201712161516146_MatchAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712161615290_MatchClassChanged.cs" />
+    <Compile Include="Migrations\201712161615290_MatchClassChanged.Designer.cs">
+      <DependentUpon>201712161615290_MatchClassChanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712161650499_addTeamNametoMatch.cs" />
+    <Compile Include="Migrations\201712161650499_addTeamNametoMatch.Designer.cs">
+      <DependentUpon>201712161650499_addTeamNametoMatch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -110,6 +118,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712161516146_MatchAdded.resx">
       <DependentUpon>201712161516146_MatchAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712161615290_MatchClassChanged.resx">
+      <DependentUpon>201712161615290_MatchClassChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712161650499_addTeamNametoMatch.resx">
+      <DependentUpon>201712161650499_addTeamNametoMatch.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

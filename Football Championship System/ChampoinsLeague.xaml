@@ -21,9 +21,9 @@
         <ListView Name="ListViewResults" Grid.Row="1">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Team1" DisplayMemberBinding="{Binding TeamOne.Name}"></GridViewColumn>
+                    <GridViewColumn Header="Team1" DisplayMemberBinding="{Binding TeamName1}"></GridViewColumn>
                     <GridViewColumn Header="Score" DisplayMemberBinding="{Binding Score}"></GridViewColumn>
-                    <GridViewColumn Header="Team2" DisplayMemberBinding="{Binding TeamTwo.Name}"></GridViewColumn>
+                    <GridViewColumn Header="Team2" DisplayMemberBinding="{Binding TeamName2}"></GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>

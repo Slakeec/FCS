@@ -125,12 +125,14 @@ namespace ServiceClasses
                 context.SaveChanges();
             }
         }
-        public static void MakeMatch(Team team1, Team team2, List<Player>players1, List<Player>players2,
+        public static void MakeMatch(int team1, int team2, List<int>players1, List<int>players2,
              int goal1, int goal2, int round, int userId)
         {
             using (var context = new Context())
             {
-                context.Matches.Add(new Match(team1, team2, players1, players2, goal1, goal2, round, userId));
+                string name1 = LINQFactory.GetTeamNameById(team1);
+                string name2 = LINQFactory.GetTeamNameById(team2);
+                context.Matches.Add(new Match(team1, team2, players1, players2, goal1, goal2, round, userId, name1, name2));
                 context.SaveChanges();
             }
         }
@@ -139,6 +141,47 @@ namespace ServiceClasses
             using (var context = new Context())
             {
                 return context.Matches.Where(m => m.UserId == userId && m.Round == round).ToList();
+            }
+        }
+        public static List<int> GetPlayersId(int teamId)
+        {
+            using (var context = new Context())
+            {
+                List<Player> players = context.Players.Where(p => p.TeamId == teamId).ToList();
+                List<int> ans = new List<int>();
+                for (int i=0; i<players.Count; i++)
+                {
+                    ans.Add(players[i].Id);
+                }
+                return ans;
+            }
+
+        }
+        public static int GetRatingById(int teamId)
+        {
+            using (var context = new Context())
+            {
+                return context.Teams.First(t => t.Id == teamId).Rating;
+            }
+        }
+        public static List<Player> GetPlayersById(List<int>ids)
+        {
+            using (var context = new Context())
+            {
+                List<Player> players = new List<Player>();
+                foreach (int id in ids)
+                {
+                    Player p = context.Players.First(pl => pl.Id == id);
+                    players.Add(p);
+                }
+                return players;
+            }
+        }
+        public static string GetTeamNameById(int teamId)
+        {
+            using (var context = new Context())
+            {
+                return context.Teams.First(t => t.Id == teamId).Name;
             }
         }
     }
