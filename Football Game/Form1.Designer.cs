@@ -911,6 +911,7 @@
             this.Text = "Form1";
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FootballGameForm_FormClosing);
             this.Load += new System.EventHandler(this.FootballGameForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FootballGameForm_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FootballGameForm_KeyUp);
