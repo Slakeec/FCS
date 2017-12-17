@@ -102,16 +102,23 @@ namespace Football_Championship_System
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            int round = LINQFactory.Round(userId);
             ComboBoxColorFirst.ItemsSource = (new Repository()).Colors;
-            ComboBoxCOlorSecond.ItemsSource = (new Repository()).Colors;
-            int round = LINQFactory.Round(UserId);
+            ComboBoxCOlorSecond.ItemsSource = (new Repository()).Colors; ListViewTable.ItemsSource = Sorting.Sort(LINQFactory.GetTeamsByUser(UserId));
+            ListViewResults.ItemsSource = LINQFactory.GetResults(UserId, LINQFactory.Round(UserId) - 1);
             if (round==Repository.Cnt)
             {
                 ButtonStartGame.Content = "Tournament ended!";
-                ButtonStartGame.IsEnabled = true;
+                ButtonStartGame.IsEnabled = false;
+                LabelTeam1.Content = "";
+                LabelTeam2.Content = "";
             }
-            ListViewTable.ItemsSource = Sorting.Sort(LINQFactory.GetTeamsByUser(UserId));
-            ListViewResults.ItemsSource = LINQFactory.GetResults(UserId, LINQFactory.Round(UserId) - 1);
+            else
+            {
+                List<string> Teams = LINQFactory.GetMyMatch(userId, round);
+                LabelTeam1.Content = Teams[0];
+                LabelTeam2.Content = Teams[1];
+            }
         }
 
         private void ButtonStartGame_Click(object sender, RoutedEventArgs e)
@@ -135,6 +142,20 @@ namespace Football_Championship_System
             Championship.SaveMyMatch(match,round,userId);
             ListViewTable.ItemsSource = Sorting.Sort(LINQFactory.GetTeamsByUser(UserId));
             ListViewResults.ItemsSource = LINQFactory.GetResults(UserId, LINQFactory.Round(UserId) - 1);
+            if (round==15)
+            {
+                ButtonStartGame.Content = "Tournament ended!";
+                ButtonStartGame.IsEnabled =false ;
+                LabelTeam1.Content = "";
+                LabelTeam2.Content = "";
+            }
+            else
+            {
+                List<string> Teams = LINQFactory.GetMyMatch(userId, round+1);
+                LabelTeam1.Content = Teams[0];
+                LabelTeam2.Content = Teams[1];
+            }
+            
         }
     }
 }

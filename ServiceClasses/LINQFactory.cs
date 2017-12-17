@@ -9,6 +9,32 @@ namespace ServiceClasses
 {
     public class LINQFactory
     {
+        public static List<string> GetMyMatch(int userId, int round)
+        {
+            using (var context = new Context())
+            {
+                int number = context.Teams.First(t => t.UserId == userId && t.MyTeam == true).Number;
+                int sop = Repository.Cnt + 1 - number;
+                for (int j=1; j<round; j++)
+                {
+                    if (sop==Repository.Cnt)
+                    {
+                        sop = 1;
+                    }
+                    sop++;
+                }
+                if (sop==number)
+                {
+                    sop = Repository.Cnt;
+                }
+                string name1 = context.Teams.First(t => t.UserId == userId && t.MyTeam == true).Name;
+                string name2 = context.Teams.First(t => t.UserId == userId && t.Number == sop).Name;
+                return new List<string>
+                {
+                    name1,name2
+                };
+            }
+        }
         public static bool IsLogin(string login)
         {
             using (var context = new Context())
@@ -117,11 +143,11 @@ namespace ServiceClasses
                 return context.Teams.First(t => t.UserId == userId).Games + 1;
             }
         }
-        public static void PlayerScoreByName(string name)
+        public static void PlayerScoreByName(string name, int teamId)
         {
             using (var context = new Context())
             {
-                context.Players.First(p => p.Name == name).Goals++;
+                context.Players.First(p => p.Name == name && p.TeamId==teamId).Goals++;
                 context.SaveChanges();
             }
         }
@@ -195,6 +221,38 @@ namespace ServiceClasses
             using (var context = new Context())
             {
                 return context.Teams.First(t => t.Id == teamId).Name;
+            }
+        }
+        public static void RatingCalculator(int teamId1, int teamId2, int result)
+        {
+            using (var context = new Context())
+            {
+                if (result==1)
+                {
+                    int rating1 = context.Teams.First(t => t.Id == teamId1).Rating;
+                    int rating2 = context.Teams.First(t => t.Id == teamId2).Rating;
+                    int plus = (int)Math.Round(75.0 * rating2 / rating1);
+                    context.Teams.First(t => t.Id == teamId1).Rating += plus;
+                    context.SaveChanges();
+                }
+                if (result == 0)
+                {
+                    int rating1 = context.Teams.First(t => t.Id == teamId1).Rating;
+                    int rating2 = context.Teams.First(t => t.Id == teamId2).Rating;
+                    int plus = rating1 == rating2 ? 0 :
+                               rating1 > rating2 ? (int)Math.Round(37.5 * rating2 / rating1) :
+                               (int)Math.Round(-37.5 * rating2 / rating1);
+                    context.Teams.First(t => t.Id == teamId1).Rating += plus;
+                    context.SaveChanges();
+                }
+                if (result==-1)
+                {
+                    int rating1 = context.Teams.First(t => t.Id == teamId1).Rating;
+                    int rating2 = context.Teams.First(t => t.Id == teamId2).Rating;
+                    int plus = (int)Math.Round(-75.0 * rating1 / rating2);
+                    context.Teams.First(t => t.Id == teamId1).Rating += plus;
+                    context.SaveChanges();
+                }
             }
         }
     }

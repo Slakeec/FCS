@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Football_Championship_System"
         mc:Ignorable="d"
-        Title="Champoins_League" Height="300" Width="300" Loaded="Window_Loaded">
+        Title="Champoins_League" Height="600" Width="600" Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50*"/>
@@ -23,6 +23,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -31,6 +32,8 @@
             <Label Content="Choose colors of the forms" Grid.ColumnSpan="2"></Label>
             <ComboBox Name="ComboBoxColorFirst" Grid.Row="1"></ComboBox>
             <ComboBox Name="ComboBoxCOlorSecond" Grid.Row="1" Grid.Column="1"></ComboBox>
+            <Label Name="LabelTeam1" Grid.Row="2" HorizontalAlignment="Center"></Label>
+            <Label Name="LabelTeam2" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center"></Label>
         </Grid>
         <ListView Name="ListViewResults" Grid.Row="2" Grid.ColumnSpan="2">
             <ListView.View>
@@ -44,7 +47,7 @@
         <ListView Name="ListViewTable" Grid.Row="3" Grid.ColumnSpan="2">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="№" DisplayMemberBinding="{Binding Position}"/>
+                    <GridViewColumn Header="№" Width="50" DisplayMemberBinding="{Binding Position}"/>
                     <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}"/>
                     <GridViewColumn Header="Games" DisplayMemberBinding="{Binding Games}"/>
                     <GridViewColumn Header="Points" DisplayMemberBinding="{Binding Points}"/>
