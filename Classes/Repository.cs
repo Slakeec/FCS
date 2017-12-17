@@ -77,6 +77,7 @@ namespace Classes
                 using (var client = new HttpClient())
                 {
                     //f0e05ec6c77f4a3bbb0b345c9f0d99aa token
+                    client.DefaultRequestHeaders.Add("x-auth-token", "f0e05ec6c77f4a3bbb0b345c9f0d99aa");
                     string Baseurl = " http://api.football-data.org/v1/teams/";
                     
                     String url = Baseurl + TeamId;
