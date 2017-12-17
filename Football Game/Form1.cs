@@ -165,14 +165,14 @@ namespace Football_Game
             //MyRepository.PressPause(timer1, TimerForTime, pictureBoxPause);
             if (!MyRepository.isPausePressed)
             {
-                pictureBoxPause.ImageLocation = "../../Resources/PlayIcon.png";
+                pictureBoxPause.Image = Football_Game.Properties.Resources.PlayIcon;
                 timer1.Enabled = false;
                 TimerForTime.Enabled = false;
                 MyRepository.isPausePressed = true;
             }
             else
             {
-                pictureBoxPause.ImageLocation = "../../Resources/PauseIcon.png";
+                pictureBoxPause.Image = Football_Game.Properties.Resources.PauseIcon;
                 timer1.Enabled = true;
                 TimerForTime.Enabled = true;
                 MyRepository.isPausePressed = false;
