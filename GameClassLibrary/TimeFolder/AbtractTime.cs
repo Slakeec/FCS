@@ -67,6 +67,7 @@ namespace Football_Game
 
             if (Min == 90+minsAdd)
             {
+                MyRepository.GameEnded = true;
                 timer.Enabled = false;
                 gameOverlabel.TextAlign= System.Drawing.ContentAlignment.MiddleCenter;
                 gameOverlabel.Font = new System.Drawing.Font("Impact", 30F);

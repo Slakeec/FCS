@@ -365,6 +365,7 @@
             // 
             // listViewMatchStat
             // 
+            this.listViewMatchStat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(212)))), ((int)(((byte)(50)))));
             this.listViewMatchStat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listViewMatchStat.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             columnHeader2});
@@ -491,7 +492,7 @@
             // 
             // listViewWhoScored
             // 
-            this.listViewWhoScored.BackColor = System.Drawing.Color.White;
+            this.listViewWhoScored.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(212)))), ((int)(((byte)(50)))));
             this.listViewWhoScored.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1});
             this.listViewWhoScored.Enabled = false;
