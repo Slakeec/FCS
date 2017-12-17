@@ -21,6 +21,13 @@ namespace Classes
             get { return name; }
             set { name = value; }
         }
+        [JsonProperty("crestUrl")]
+        private string picture;
+        public string Picture
+        {
+            get { return picture; }
+            set { picture = value; }
+        }
 
         [JsonProperty("count")]
         private int count;

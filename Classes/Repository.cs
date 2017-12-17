@@ -70,8 +70,30 @@ namespace Classes
             }
             
         }
+        public static string GetTeamPicture(int TeamId)
+        {
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    //f0e05ec6c77f4a3bbb0b345c9f0d99aa token
+                    string Baseurl = " http://api.football-data.org/v1/teams/";
+                    
+                    String url = Baseurl + TeamId;
+                    string result = client.GetStringAsync(url).Result;
+                    Team pictureExample= JsonConvert.DeserializeObject<Team>(result);
+                    return pictureExample.Picture;
+                }
+            }
+            catch (Exception)
+            {
+                return null;
 
-       public List<Team> GetTeamList()
+            }
+
+        }
+
+        public List<Team> GetTeamList()
         {
             List<Team> ans = new List<Team>();
             for (int i=0; i<TeamsId.Count; i++)
