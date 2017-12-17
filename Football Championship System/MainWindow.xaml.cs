@@ -192,5 +192,10 @@ namespace Football_Championship_System
             MultiPlayer mp = new MultiPlayer(SP);
             mp.Show();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

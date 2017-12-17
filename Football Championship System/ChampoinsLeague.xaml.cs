@@ -15,7 +15,6 @@ using ServiceClasses;
 using Classes;
 using System.Windows.Forms;
 using Football_Game;
-using GameFootball;
 using System.Media;
 namespace Football_Championship_System
 {
@@ -86,6 +85,10 @@ namespace Football_Championship_System
             }
             else
             {
+                //ImageSourceConverter conv = new ImageSourceConverter();
+                //string file = LINQFactory.GetPhoto(UserId, TextBoxTeamInfo.Text);
+                //ImageSource image = (ImageSource)conv.ConvertFromString(file);
+                //ImageTeam.Source = image; 
                 ListViewTeamInfo.ItemsSource = response;
             }
         }
