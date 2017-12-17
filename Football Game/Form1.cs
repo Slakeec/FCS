@@ -28,7 +28,7 @@ namespace Football_Game
 
         List<Label> TeamsLabels;
 
-        int imagecount = 0, timer1count = 0;
+        int imagecount = 0, timer1count = 0, labelcount = 0;
         int FirstTeamScore=0,SecondTeamScore=0;
         bool isUpPressed, isDownPressed, isUpArrowPressed, isDownArrowPressed;
 
@@ -116,9 +116,9 @@ namespace Football_Game
                 aBall.Image = Football_Game.Properties.Resources.Ball1;
             else
                 aBall.Image = Football_Game.Properties.Resources.MyBall2;
-            if (!MyRepository.GameEnded)
+            if (!MyRepository.GameEnded && int.Parse(labelMin.Text)<90)
             {
-                MyRep.LabelAnimation(TeamsLabels, timer1, imagecount);
+                MyRep.LabelAnimation(TeamsLabels, timer1);
             }
         }
 

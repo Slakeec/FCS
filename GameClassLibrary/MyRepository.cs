@@ -32,6 +32,7 @@ namespace Football_Game
         public int PlusBallSpeedX4 = 26;
         public int PlayerSpeed = 9;
 
+        public int labelcount = 0;
         public int AddedTime = 0;
 
         Random r = new Random();
@@ -53,10 +54,10 @@ namespace Football_Game
 
         string toScoreString;
 
-        bool StatisticShown = false;
+        public bool StatisticShown = false;
         public static bool GameEnded = false;
         public static bool isPausePressed = false;
-        bool GoalNowScored = false;
+        public bool GoalNowScored = false;
         bool LabelsMoved;
         static bool FinalWhistlePlayed;
 
@@ -301,28 +302,6 @@ namespace Football_Game
                 BallSpeedX = Math.Abs(BallSpeedX);
         }
 
-        public void DoLabelAnimation(int count, Label goalscoredLabel, Label whoscoredLabel)
-        {
-            if (count % 200 != 0)
-            {
-                if (count % 2 == 0)
-                {
-                    goalscoredLabel.ForeColor = Color.Red;
-                    whoscoredLabel.ForeColor = Color.Red;
-                }
-                else
-                {
-                    goalscoredLabel.ForeColor = Color.Yellow;
-                    whoscoredLabel.ForeColor = Color.Yellow;
-                }
-            }
-            else
-            {
-                goalscoredLabel.Visible = false;
-                whoscoredLabel.Visible = false;
-            }
-        }
-
         public void TeamsReset(List<Footballer> squad,PictureBox ball, List<Footballer> squad2)
         {
             foreach (var player in squad)
@@ -354,17 +333,35 @@ namespace Football_Game
             {               
                 if (!LabelsMoved)
                 {
-                    GO.Location = new Point(GO.Location.X+20, GO.Location.Y - 200);
-                    winner.Location = new Point(winner.Location.X, winner.Location.Y - 200);
-                    GO.Visible = true;
-                    winner.Visible = true;
-                    LabelsMoved = true;
-                }
-                //match.GoalTeamOne = team1.GoalsScored;
-                //match.GoalTeamTwo = team2.GoalsScored;
-                //match.ScorersOne = ScoredFirstTeam;
-                //match.ScorersTwo = ScoredSecondTeam;
-                
+                    //gameOverlabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+                    //gameOverlabel.Font = new System.Drawing.Font("Impact", 30F);
+                    //gameOverlabel.ForeColor = System.Drawing.Color.Maroon;
+                    //gameOverlabel.Text = "GAME OVER";
+                    //gameOverlabel.Visible = true;
+                    //if (firstScore > secondScore)
+                    //{
+                    //    winningTeam.Text = FirstTeamName + " IS THE WINNER";
+                    //}
+                    //else if (firstScore == secondScore)
+                    //{
+                    //    winningTeam.Text = "DRAW";
+                    //}
+                    //else
+                    //{
+                    //    winningTeam.Text = SecondTeamName + " IS THE WINNER";
+                    //}
+                    //winningTeam.Font = new System.Drawing.Font("Impact", 30F);
+                    //winningTeam.ForeColor = System.Drawing.Color.Black;
+                    //gameOverlabel.Location = new Point(gameOverlabel.Location.X + 20, gameOverlabel.Location.Y - 200);
+                    //winningTeam.Location = new Point(winningTeam.Location.X, winningTeam.Location.Y - 200);
+                    //gameOverlabel.Visible = true;
+                    //winningTeam.Visible = true;
+                    //GO.Location = new Point(GO.Location.X+20, GO.Location.Y - 200);
+                    //winner.Location = new Point(winner.Location.X, winner.Location.Y - 200);
+                    //GO.Visible = true;
+                    //winner.Visible = true;
+                    //LabelsMoved = true;
+                }                
             }
         }
 
@@ -476,19 +473,19 @@ namespace Football_Game
 
         }
 
-        public void LabelAnimation(List<Label> TeamLabels, Timer timer1, int labelcount)
+        public void LabelAnimation(List<Label> TeamLabels, Timer timer1)
         {
             Label firstTeamScoreLabel = TeamLabels[1];
             Label secondTeamScoreLabel = TeamLabels[3];
-            Label whoScoredLabel = TeamLabels[6];
             Label goalLabel = TeamLabels[5];
-            Label scoredGoalLabel = TeamLabels[7];   
+            Label whoScoredLabel = TeamLabels[6];
+            Label scoredGoalLabel = TeamLabels[7];
             if (GoalNowScored)
             {
+                labelcount++;
                 firstTeamScoreLabel.Text = team1.GoalsScored.ToString();
                 secondTeamScoreLabel.Text = team2.GoalsScored.ToString();
                 timer1.Enabled = false;
-                labelcount++;
                 if (labelcount % 30 != 0)
                 {
                     if (labelcount % 2 == 0)

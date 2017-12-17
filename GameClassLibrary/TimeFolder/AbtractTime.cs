@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -88,6 +89,9 @@ namespace Football_Game
                 }
                 winningTeam.Font = new System.Drawing.Font("Impact", 30F);
                 winningTeam.ForeColor = System.Drawing.Color.Black;
+                gameOverlabel.Location = new Point(gameOverlabel.Location.X + 20, gameOverlabel.Location.Y - 200);
+                winningTeam.Location = new Point(winningTeam.Location.X, winningTeam.Location.Y - 200);
+                gameOverlabel.Visible = true;
                 winningTeam.Visible = true;
             }
         }

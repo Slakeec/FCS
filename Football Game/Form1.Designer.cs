@@ -96,6 +96,7 @@
             this.verticalLine3 = new System.Windows.Forms.PictureBox();
             this.gorizontalLine2 = new System.Windows.Forms.PictureBox();
             this.gorizontalLine = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPause)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GoalKeeperTeam2)).BeginInit();
@@ -498,7 +499,7 @@
             this.listViewWhoScored.Enabled = false;
             this.listViewWhoScored.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.listViewWhoScored.ForeColor = System.Drawing.Color.Black;
-            this.listViewWhoScored.Location = new System.Drawing.Point(27, 33);
+            this.listViewWhoScored.Location = new System.Drawing.Point(31, 65);
             this.listViewWhoScored.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listViewWhoScored.Name = "listViewWhoScored";
             this.listViewWhoScored.Size = new System.Drawing.Size(356, 548);
@@ -836,6 +837,16 @@
             this.gorizontalLine.TabIndex = 52;
             this.gorizontalLine.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Cambria", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(95, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(228, 40);
+            this.label1.TabIndex = 60;
+            this.label1.Text = "GOALS TABLE";
+            // 
             // FootballGameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -843,12 +854,11 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(3154, 1643);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.listViewMatchStat);
             this.Controls.Add(this.aBall);
             this.Controls.Add(this.pictureBoxPause);
             this.Controls.Add(this.labelMin);
-            this.Controls.Add(this.whoScoredLabel);
-            this.Controls.Add(this.goalLabel);
             this.Controls.Add(this.labelDoubleDot);
             this.Controls.Add(this.labelSecSec);
             this.Controls.Add(this.labelSec);
@@ -902,6 +912,8 @@
             this.Controls.Add(this.secondTeamScoreLabel);
             this.Controls.Add(this.slashLabel);
             this.Controls.Add(this.secondTeamLabel);
+            this.Controls.Add(this.goalLabel);
+            this.Controls.Add(this.whoScoredLabel);
             this.Controls.Add(this.scoredGoalLabel);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
@@ -1032,6 +1044,7 @@
         private System.Windows.Forms.Label labelAddedTime;
         private System.Windows.Forms.ListView listViewMatchStat;
         private System.Windows.Forms.PictureBox pictureBoxPause;
+        private System.Windows.Forms.Label label1;
     }
 }
 
