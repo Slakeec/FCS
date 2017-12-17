@@ -857,9 +857,9 @@ namespace Football_Game
             {
                 if(ball.Bounds.IntersectsWith(player.positionOnTheScreen.Bounds))
                 {
-                    System.Media.SoundPlayer sp3 = new System.Media.SoundPlayer();
-                    sp3.SoundLocation = "../../Resources/shot.wav";
-                    sp3.Play();
+                    //System.Media.SoundPlayer sp3 = new System.Media.SoundPlayer();
+                    //sp3.SoundLocation = "../../Resources/shot.wav";
+                    //sp3.Play();
                     if (ball.Bounds.IntersectsWith(sqwad[0].positionOnTheScreen.Bounds))
                     {
                         team1.GoalKeeperTouches++;
