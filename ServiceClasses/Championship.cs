@@ -270,16 +270,22 @@ namespace ServiceClasses
                     int goal2 = rand.Next((int)(Math.Round(10.0 * Rating2 / sumRating)));
                     if (goal1>goal2)
                     {
+                        LINQFactory.RatingCalculator(matches[i].TeamOne, matches[i].TeamTwo, 1);
+                        LINQFactory.RatingCalculator(matches[i].TeamTwo, matches[i].TeamOne, -1);
                         LINQFactory.TeamWin(matches[i].TeamOne);
                         LINQFactory.TeamLose(matches[i].TeamTwo);
                     }
                     else if (goal1==goal2)
                     {
+                        LINQFactory.RatingCalculator(matches[i].TeamOne, matches[i].TeamTwo, 0);
+                        LINQFactory.RatingCalculator(matches[i].TeamTwo, matches[i].TeamOne, 0);
                         LINQFactory.TeamDraw(matches[i].TeamOne);
                         LINQFactory.TeamDraw(matches[i].TeamTwo);
                     }
                     else
                     {
+                        LINQFactory.RatingCalculator(matches[i].TeamOne, matches[i].TeamTwo, -1);
+                        LINQFactory.RatingCalculator(matches[i].TeamTwo, matches[i].TeamOne, 1);
                         LINQFactory.TeamLose(matches[i].TeamOne);
                         LINQFactory.TeamWin(matches[i].TeamTwo);
                     }
@@ -312,6 +318,8 @@ namespace ServiceClasses
         }
         public static void SaveMyMatch(Match match, int round, int userId)
         {
+            int team1 = match.TeamOne;
+            int team2 = match.TeamTwo;
             match.GoalTeamOne = match.ScorersOne.Count;
             match.GoalTeamTwo = match.ScorersTwo.Count;
             LINQFactory.MakeMatch(match.TeamOne, match.TeamTwo,
@@ -320,16 +328,22 @@ namespace ServiceClasses
                                   round, userId);
             if (match.GoalTeamOne>match.GoalTeamTwo)
             {
+                LINQFactory.RatingCalculator(team1,team2, 1);
+                LINQFactory.RatingCalculator(team2, team1, -1);
                 LINQFactory.TeamWin(match.TeamOne);
                 LINQFactory.TeamLose(match.TeamTwo);
             }
             else if (match.GoalTeamOne==match.GoalTeamTwo)
             {
+                LINQFactory.RatingCalculator(team1, team2, 0);
+                LINQFactory.RatingCalculator(team2, team1, 0);
                 LINQFactory.TeamDraw(match.TeamOne);
                 LINQFactory.TeamDraw(match.TeamTwo);
             }
             else
             {
+                LINQFactory.RatingCalculator(team1, team2, -1);
+                LINQFactory.RatingCalculator(team2, team1, 1);
                 LINQFactory.TeamLose(match.TeamOne);
                 LINQFactory.TeamWin(match.TeamTwo);
             }
@@ -343,11 +357,11 @@ namespace ServiceClasses
             }
             foreach (var name in match.ScorersOne)
             {
-                LINQFactory.PlayerScoreByName(name);
+                LINQFactory.PlayerScoreByName(name, team1);
             }
             foreach (var name in match.ScorersTwo)
             {
-                LINQFactory.PlayerScoreByName(name);
+                LINQFactory.PlayerScoreByName(name, team2);
             }
         }
     }

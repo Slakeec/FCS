@@ -15,7 +15,8 @@ using ServiceClasses;
 using Classes;
 using System.Windows.Forms;
 using Football_Game;
-using Football_Game;
+using GameFootball;
+using System.Media;
 namespace Football_Championship_System
 {
     /// <summary>
@@ -35,9 +36,16 @@ namespace Football_Championship_System
             get { return settings; }
             set { settings = value; }
         }
-
-        public Champoins_League(int userId, Settings settings)
+        private SoundPlayer sp;
+        public SoundPlayer SP
         {
+            get { return sp; }
+            set { sp = value; }
+        }
+
+        public Champoins_League(int userId, Settings settings, SoundPlayer sp)
+        {
+            this.SP = sp;
             this.UserId = userId;
             this.Settings = settings;
             InitializeComponent();
@@ -102,16 +110,25 @@ namespace Football_Championship_System
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            int round = LINQFactory.Round(userId);
             ComboBoxColorFirst.ItemsSource = (new Repository()).Colors;
-            ComboBoxCOlorSecond.ItemsSource = (new Repository()).Colors;
-            int round = LINQFactory.Round(UserId);
+            ComboBoxCOlorSecond.ItemsSource = (new Repository()).Colors; ListViewTable.ItemsSource = Sorting.Sort(LINQFactory.GetTeamsByUser(UserId));
+            ListViewResults.ItemsSource = LINQFactory.GetResults(UserId, LINQFactory.Round(UserId) - 1);
             if (round==Repository.Cnt)
             {
+
+               
                 ButtonStartGame.Content = "Tournament ended!";
-                ButtonStartGame.IsEnabled = true;
+                ButtonStartGame.IsEnabled = false;
+                LabelTeam1.Content = "";
+                LabelTeam2.Content = "";
             }
-            ListViewTable.ItemsSource = Sorting.Sort(LINQFactory.GetTeamsByUser(UserId));
-            ListViewResults.ItemsSource = LINQFactory.GetResults(UserId, LINQFactory.Round(UserId) - 1);
+            else
+            {
+                List<string> Teams = LINQFactory.GetMyMatch(userId, round);
+                LabelTeam1.Content = Teams[0];
+                LabelTeam2.Content = Teams[1];
+            }
         }
 
         private void ButtonStartGame_Click(object sender, RoutedEventArgs e)
@@ -126,15 +143,34 @@ namespace Football_Championship_System
             int round = LINQFactory.Round(UserId);
             Match match = Championship.playRound(userId, round);
             //Game
+            sp.Stop();
             FootballGameForm f = new FootballGameForm(match.TeamName1, match.TeamName2, LINQFactory.GetNamesById(match.PlayersOne),
                                                      LINQFactory.GetNamesById(match.PlayersTwo), settings.Time, settings.Level, false,
                                                      match.ScorersOne, match.ScorersTwo, color1,color2);
             f.ShowDialog();
+            sp = new SoundPlayer(RandomMusic.GetRandomMusic());
+            sp.Play();
             match.ScorersOne = f.MyRep.ScoredFirstTeam;
             match.ScorersTwo = f.MyRep.ScoredSecondTeam;
             Championship.SaveMyMatch(match,round,userId);
             ListViewTable.ItemsSource = Sorting.Sort(LINQFactory.GetTeamsByUser(UserId));
             ListViewResults.ItemsSource = LINQFactory.GetResults(UserId, LINQFactory.Round(UserId) - 1);
+            if (round==Repository.Cnt-1)
+            {
+                SendToEmail send = new SendToEmail(LINQFactory.GetPointsById(userId));
+                send.Show();
+                ButtonStartGame.Content = "Tournament ended!";
+                ButtonStartGame.IsEnabled =false ;
+                LabelTeam1.Content = "";
+                LabelTeam2.Content = "";
+            }
+            else
+            {
+                List<string> Teams = LINQFactory.GetMyMatch(userId, round+1);
+                LabelTeam1.Content = Teams[0];
+                LabelTeam2.Content = Teams[1];
+            }
+            
         }
     }
 }

@@ -16,6 +16,7 @@ using Football_Game;
 using Classes;
 using ServiceClasses;
 using System.Windows.Forms;
+using System.Media;
 namespace Football_Championship_System
 {
     /// <summary>
@@ -23,8 +24,17 @@ namespace Football_Championship_System
     /// </summary>
     public partial class MultiPlayer : Window
     {
-        public MultiPlayer()
+        private SoundPlayer sp;
+
+        public SoundPlayer SP
         {
+            get { return sp; }
+            set { sp = value; }
+        }
+
+        public MultiPlayer(SoundPlayer sp)
+        {
+            this.SP = sp;
             InitializeComponent();
         }
 
@@ -57,9 +67,12 @@ namespace Football_Championship_System
             }
             List<string> FirstScorers = new List<string>();
             List<string> SecondScorers = new List<string>();
+            sp.Stop();
             FootballGameForm f = new FootballGameForm(name1, name2, MultiPlayerServise.GetNames(MultiPlayerServise.GetSquadFromName(name1)),
                                       MultiPlayerServise.GetNames(MultiPlayerServise.GetSquadFromName(name2)), int.Parse(t), 0, true,FirstScorers, SecondScorers, form1, form2);
-            f.Show();
+            f.ShowDialog();
+            sp = new SoundPlayer(RandomMusic.GetRandomMusic());
+            sp.Play();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
