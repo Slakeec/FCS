@@ -362,11 +362,13 @@ namespace ServiceClasses
             }
             foreach (var name in match.ScorersOne)
             {
-                LINQFactory.PlayerScoreByName(name, team1);
+                if (name!="")
+                    LINQFactory.PlayerScoreByName(name, team1);
             }
             foreach (var name in match.ScorersTwo)
             {
-                LINQFactory.PlayerScoreByName(name, team2);
+                if (name!="#")
+                    LINQFactory.PlayerScoreByName(name, team2);
             }
         }
     }
