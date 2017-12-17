@@ -180,6 +180,19 @@ namespace Football_Game
 
         }
 
+        private void FootballGameForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!MyRepository.GameEnded)
+            {
+                if (MessageBox.Show("Вы уверены что хотите закрыть приложение? \nЗакрытие программы во время игры ведет к техническому поражению", "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
+                    e.Cancel = true;
+                else
+                    e.Cancel = false;
+
+                   MyRep.TechLoose();
+            }
+        }
+
         private void TimeTimer_Tick(object sender, EventArgs e)
         {
         }

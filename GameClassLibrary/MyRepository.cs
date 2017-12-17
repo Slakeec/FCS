@@ -354,6 +354,16 @@ namespace Football_Game
                 
             }
         }
+        public void TechLoose()
+        {
+            ScoredFirstTeam.Clear();
+            ScoredSecondTeam.Clear();
+            for (int i = 0; i < 2; i++)
+            {
+                ScoredSecondTeam.Add("#");
+            }
+        }
+
         public static void PressPause(Timer time1, Timer timeTimer, PictureBox pause)
         {
             if (isPausePressed)
