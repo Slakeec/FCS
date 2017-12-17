@@ -196,7 +196,9 @@ namespace Football_Championship_System
         private void ButtonMultyplayer_Click(object sender, RoutedEventArgs e)
         {
             MultiPlayer mp = new MultiPlayer(SP);
-            mp.Show();
+            mp.ShowDialog();
+            SP = new SoundPlayer(RandomMusic.GetRandomMusic());
+            SP.Play();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
