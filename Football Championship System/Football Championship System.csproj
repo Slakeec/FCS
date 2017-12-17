@@ -152,6 +152,7 @@
     <Content Include="Resources\Music\1.wav" />
     <Content Include="Resources\Music\0.wav" />
     <Content Include="Resources\Music\2.wav" />
+    <Content Include="Resources\Music\3.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
