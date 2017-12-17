@@ -37,10 +37,28 @@ namespace Football_Championship_System
         {
             string name1 = ComboBoxFirstTeam.SelectedValue.ToString();
             string name2 = ComboBoxSecondTeam.SelectedValue.ToString();
+            if (name1=="" || name2=="")
+            {
+                System.Windows.MessageBox.Show("Choose teams please!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            string form1 = ComboBoxColorFirst.SelectedValue.ToString();
+            string form2 = ComboBoxColorSecond.SelectedValue.ToString();
+            if (form1=="" || form2=="")
+            {
+                System.Windows.MessageBox.Show("Choose colors please!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            string t = ComboBoxTime.SelectedValue.ToString();
+            if (t=="")
+            {
+                System.Windows.MessageBox.Show("Choose time please!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
             List<string> FirstScorers = new List<string>();
             List<string> SecondScorers = new List<string>();
             FootballGameForm f = new FootballGameForm(name1, name2, MultiPlayerServise.GetNames(MultiPlayerServise.GetSquadFromName(name1)),
-                                      MultiPlayerServise.GetNames(MultiPlayerServise.GetSquadFromName(name2)), int.Parse(ComboBoxTime.SelectedValue.ToString()), 0, true,FirstScorers, SecondScorers);
+                                      MultiPlayerServise.GetNames(MultiPlayerServise.GetSquadFromName(name2)), int.Parse(t), 0, true,FirstScorers, SecondScorers);
             f.Show();
         }
 
