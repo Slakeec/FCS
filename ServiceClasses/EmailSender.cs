@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace ServiceClasses
 {
-    class EmailSender
+    public class EmailSender
     {
-        public void SendEmail(string email, int score)
+        public static void SendEmail(string email, int score)
         {
             MailAddress fromMailAddress = new MailAddress("FCSapi2017@gmail.com", "FCS Team");
             MailAddress ToAdress = new MailAddress(email, "Player");

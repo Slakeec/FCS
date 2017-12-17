@@ -7,9 +7,11 @@ using System.Windows.Forms;
 using System.Drawing;
 using Football_Game;
 using Football_Game.TimeFolder;
-using Classes;
 using System.IO;
-namespace GameFootball
+using Classes;
+using System.Resources;
+
+namespace Football_Game
 {
     public class MyRepository
     {
@@ -46,12 +48,14 @@ namespace GameFootball
         string goallabel3 = "WITH A BANGER!!!";
         string goallabel4 = "FOUND BACK OF THE NET!!!";
 
+
         public string FirstTeamColor;
         public string SecondTeamColor;
 
         string toScoreString;
         bool StatisticShown = false;
         bool? GameEnded = false;
+        public static bool isPausePressed=false;
 
         public List<Footballer> FirstTeam;
         public List<Footballer> SecondTeam;
@@ -337,6 +341,23 @@ namespace GameFootball
                 //match.ScorersOne = ScoredFirstTeam;
                 //match.ScorersTwo = ScoredSecondTeam;
                 GameEnded = null;
+            }
+        }
+        public static void PressPause(Timer time1, Timer timeTimer, PictureBox pause)
+        {
+            if (isPausePressed)
+            {
+                pause.ImageLocation = "../../Resources/PlayIcon.png";
+                time1.Enabled = false;
+                timeTimer.Enabled = false;
+                isPausePressed = true;
+            }
+            if (!isPausePressed)
+            {
+                pause.ImageLocation = "../../Resources/PauseIcon.png";
+                time1.Enabled = true;
+                timeTimer.Enabled = true;
+                isPausePressed = false;
             }
         }
 

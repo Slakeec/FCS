@@ -35,6 +35,13 @@ namespace Football_Championship_System
             get { return userId; }
             set { userId = value; }
         }
+        private SoundPlayer sp;
+
+        public SoundPlayer SP
+        {
+            get { return sp; }
+            set { sp = value; }
+        }
 
         public MainWindow()
         {
@@ -133,7 +140,7 @@ namespace Football_Championship_System
                 MessageBox.Show("Check your internet connection and restart program", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            Champoins_League chp = new Champoins_League(UserId, Setting);
+            Champoins_League chp = new Champoins_League(UserId, Setting, SP);
             chp.ShowDialog();
             GridChoosingMyTeam.Visibility = Visibility.Hidden;
             GridEnter.Visibility = Visibility.Visible;
@@ -161,7 +168,7 @@ namespace Football_Championship_System
             {
                 //start a game
                 this.UserId = LINQFactory.GetUserIdByLogin(textBoxLogin.Text);
-                Champoins_League chp = new Champoins_League(userId, Setting);
+                Champoins_League chp = new Champoins_League(userId, Setting, SP);
                 chp.ShowDialog();
             }
             else
@@ -175,15 +182,14 @@ namespace Football_Championship_System
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
             ComboxTeams.ItemsSource = new Repository().TeamNames;
-            string filepath = "../../Resources/Music/1.wav";
-            SoundPlayer sp = new SoundPlayer(filepath);
-            sp.Play();
+            SP = new SoundPlayer(RandomMusic.GetRandomMusic());
+            SP.Play();
 
         }
 
         private void ButtonMultyplayer_Click(object sender, RoutedEventArgs e)
         {
-            MultiPlayer mp = new MultiPlayer();
+            MultiPlayer mp = new MultiPlayer(SP);
             mp.Show();
         }
     }

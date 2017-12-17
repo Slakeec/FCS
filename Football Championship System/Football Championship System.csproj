@@ -76,6 +76,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="SendToEmail.xaml.cs">
+      <DependentUpon>SendToEmail.xaml</DependentUpon>
+    </Compile>
     <Page Include="ChampoinsLeague.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -96,6 +99,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MultiPlayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SendToEmail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -139,6 +146,10 @@
     <ProjectReference Include="..\Football Game\GameFootball.csproj">
       <Project>{64b4a333-5c5e-4088-b55d-016babc1a9b5}</Project>
       <Name>GameFootball</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GameClassLibrary\GameClassLibrary.csproj">
+      <Project>{380FE2D7-2B4F-40AA-A18B-9E6EA154AC64}</Project>
+      <Name>GameClassLibrary</Name>
     </ProjectReference>
     <ProjectReference Include="..\ServiceClasses\ServiceClasses.csproj">
       <Project>{1d593d69-3946-4ad0-a33b-bd4ad55ea9f8}</Project>
