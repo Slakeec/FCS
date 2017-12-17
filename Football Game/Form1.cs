@@ -91,12 +91,13 @@ namespace Football_Game
             }
             else
             {
-                if (goalLabel.Visible == false)
+                if (MyRepository.GameEnded)
                 {
                     MyRep.TeamsLeaving();
                     MyRep.ShowStatistics(listViewMatchStat, TeamsLabels);
-                    MyRep.GameEnd();
+                    MyRep.GameEnd(goalLabel,scoredGoalLabel);
                     MyRep.WhoScoredMethod(PlayerSQW, Player2SQW);
+                    pictureBoxPause.Visible = false;
                 }
             }
 
@@ -114,8 +115,10 @@ namespace Football_Game
                 aBall.Image = Football_Game.Properties.Resources.Ball1;
             else
                 aBall.Image = Football_Game.Properties.Resources.MyBall2;
-
-            MyRep.LabelAnimation(TeamsLabels, timer1, imagecount);
+            if (!MyRepository.GameEnded)
+            {
+                MyRep.LabelAnimation(TeamsLabels, timer1, imagecount);
+            }
         }
 
         private void TimerForTime_Tick(object sender, EventArgs e)

@@ -53,9 +53,12 @@ namespace Football_Game
         public string SecondTeamColor;
 
         string toScoreString;
+
         bool StatisticShown = false;
-        bool? GameEnded = false;
-        public static bool isPausePressed=false;
+        public static bool GameEnded = false;
+        public static bool isPausePressed = false;
+        bool GoalNowScored = false;
+        bool LabelsMoved;
 
         public List<Footballer> FirstTeam;
         public List<Footballer> SecondTeam;
@@ -332,15 +335,23 @@ namespace Football_Game
         
         }
 
-        public void GameEnd()
+        public void GameEnd(Label GO, Label winner)
         {
             if (GameEnded==true)
             {
+                if (!LabelsMoved)
+                {
+                    GO.Location = new Point(GO.Location.X, GO.Location.Y - 200);
+                    winner.Location = new Point(winner.Location.X, winner.Location.Y - 200);
+                    GO.Visible = true;
+                    winner.Visible = true;
+                    LabelsMoved = true;
+                }
                 //match.GoalTeamOne = team1.GoalsScored;
                 //match.GoalTeamTwo = team2.GoalsScored;
                 //match.ScorersOne = ScoredFirstTeam;
                 //match.ScorersTwo = ScoredSecondTeam;
-                GameEnded = null;
+                
             }
         }
         public static void PressPause(Timer time1, Timer timeTimer, PictureBox pause)
@@ -448,7 +459,7 @@ namespace Football_Game
             Label whoScoredLabel = TeamLabels[6];
             Label goalLabel = TeamLabels[5];
             Label scoredGoalLabel = TeamLabels[7];   
-            if (goalLabel.Visible)
+            if (GoalNowScored)
             {
                 firstTeamScoreLabel.Text = team1.GoalsScored.ToString();
                 secondTeamScoreLabel.Text = team2.GoalsScored.ToString();
@@ -471,6 +482,7 @@ namespace Football_Game
                 else
                 {
                     timer1.Enabled = true;
+                    GoalNowScored = false;
                     labelcount = 0;
                     goalLabel.Visible = false;
                     whoScoredLabel.Visible = false;
@@ -532,6 +544,7 @@ namespace Football_Game
                 {
                     if (player.LastTouch == true)
                     {
+                        GoalNowScored = true;
                         player.GoalsScored++;
                         player.LastGoalTime = Time.Min+1;
                         toScoreString = $"{player.LastGoalTime}' {player.Name}  {team1.GoalsScored}-{team2.GoalsScored}";
