@@ -14,7 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Classes;
 using ServiceClasses;
-
+using System.Media;
+using System.IO;
 namespace Football_Championship_System
 {
     /// <summary>
@@ -174,6 +175,10 @@ namespace Football_Championship_System
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
             ComboxTeams.ItemsSource = new Repository().TeamNames;
+            string filepath = "1.wav";
+            //SoundPlayer sp = new SoundPlayer(filepath);
+            //sp.Play();
+
         }
 
         private void ButtonMultyplayer_Click(object sender, RoutedEventArgs e)
