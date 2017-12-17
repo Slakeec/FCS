@@ -120,7 +120,9 @@ namespace Football_Championship_System
             FootballGameForm f = new FootballGameForm(match.TeamName1, match.TeamName2, LINQFactory.GetNamesById(match.PlayersOne),
                                                      LINQFactory.GetNamesById(match.PlayersTwo), settings.Time, settings.Level, false,
                                                      match.ScorersOne, match.ScorersTwo);
-            f.Show();
+            f.ShowDialog();
+            match.ScorersOne = f.MyRep.ScoredFirstTeam;
+            match.ScorersTwo = f.MyRep.ScoredSecondTeam;
             Championship.SaveMyMatch(match,round,userId);
             ListViewTable.ItemsSource = Sorting.Sort(LINQFactory.GetTeamsByUser(UserId));
             ListViewResults.ItemsSource = LINQFactory.GetResults(UserId, LINQFactory.Round(UserId) - 1);

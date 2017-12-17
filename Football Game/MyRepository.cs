@@ -8,6 +8,7 @@ using System.Drawing;
 using Football_Game;
 using Football_Game.TimeFolder;
 using Classes;
+using System.IO;
 namespace GameFootball
 {
     public class MyRepository
@@ -320,46 +321,48 @@ namespace GameFootball
                 string TotalShots;
                 if (team1.GoalKeeperTouches.ToString().Length>1)
                 {
-                    Saves = $"           {team1.GoalKeeperTouches}       -        {team2.GoalKeeperTouches}";
+                    Saves = $"           {team1.GoalKeeperTouches}       -        {team2.GoalKeeperTouches}      ";
                 }
                 else
                 {
-                    Saves = $"             {team1.GoalKeeperTouches}        -       {team2.GoalKeeperTouches}";
+                    Saves = $"             {team1.GoalKeeperTouches}        -       {team2.GoalKeeperTouches}      ";
                 }
                 string TotalPasses;
                 if (team1.AllTouches.ToString().Length > 2)
                 {
-                    TotalPasses = $"           {team1.AllTouches}      -      {team2.AllTouches}";
+                    TotalPasses = $"           {team1.AllTouches}      -      {team2.AllTouches}      ";
                 }
                 else
                 {
-                    TotalPasses = $"            {team1.AllTouches}      -      {team2.AllTouches}";
+                    TotalPasses = $"            {team1.AllTouches}      -      {team2.AllTouches}      ";
                 }
                 if (team1.TotalShots.ToString().Length > 1)
                 {
-                    TotalShots = $"               {team1.TotalShots}      -      {team2.TotalShots}";
+                    TotalShots = $"               {team1.TotalShots}      -      {team2.TotalShots}      ";
                 }
                 else
                 {
-                    TotalShots = $"                {team1.TotalShots}      -      {team2.TotalShots}";
+                    TotalShots = $"                {team1.TotalShots}      -      {team2.TotalShots}      ";
                 }
                 if ((team2.GoalKeeperTouches + team1.GoalsScored).ToString().Length > 1)
                 {
-                    ShortsOnTarget = $"              {team2.GoalKeeperTouches + team1.GoalsScored}      -      {team1.GoalKeeperTouches + team2.GoalsScored}";
+                    ShortsOnTarget = $"              {team2.GoalKeeperTouches + team1.GoalsScored}      -      {team1.GoalKeeperTouches + team2.GoalsScored}      ";
                 }
                 else
                 {
-                    ShortsOnTarget = $"               {team2.GoalKeeperTouches + team1.GoalsScored}      -      {team1.GoalKeeperTouches + team2.GoalsScored}";
+                    ShortsOnTarget = $"               {team2.GoalKeeperTouches + team1.GoalsScored}      -      {team1.GoalKeeperTouches + team2.GoalsScored}      ";
                 }
-                MatchStat.Items.Add("            POSSESSION");
+                MatchStat.ForeColor = Color.Maroon;
+                MatchStat.BackColor = Color.PaleGreen;
+                MatchStat.Items.Add("            POSSESSION      ");
                 MatchStat.Items.Add(Possession);
-                MatchStat.Items.Add("      GOALKEEPER SAVES");
+                MatchStat.Items.Add("      GOALKEEPER SAVES      ");
                 MatchStat.Items.Add(Saves);
-                MatchStat.Items.Add("          TOTAL PASSES");
+                MatchStat.Items.Add("          TOTAL PASSES      ");
                 MatchStat.Items.Add(TotalPasses);
-                MatchStat.Items.Add("           TOTAL SHOTS");
+                MatchStat.Items.Add("           TOTAL SHOTS      ");
                 MatchStat.Items.Add(TotalShots);
-                MatchStat.Items.Add("        SHOTS ON TARGET");
+                MatchStat.Items.Add("        SHOTS ON TARGET     ");
                 MatchStat.Items.Add(ShortsOnTarget);
                 StatisticShown = true;
             }
@@ -440,6 +443,7 @@ namespace GameFootball
             {
                 if (ball.Bounds.IntersectsWith(goal.Bounds))
                 {
+                    
                     ScoredTeam = squad;
                     teamScore++;
                     team1.GoalsScored = teamScore;
@@ -468,6 +472,10 @@ namespace GameFootball
                             if (toScoreString.Length > 20)
                             {
                                 whoScoredListView.Font = new System.Drawing.Font("Cambria", 9);
+                            }
+                            if (toScoreString.Length > 25)
+                            {
+                                whoScoredListView.Font = new System.Drawing.Font("Cambria", 8);
                             }
                         }
                         whoScoredListView.Items.Add(toScoreString);
