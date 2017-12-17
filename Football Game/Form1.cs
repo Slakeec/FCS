@@ -70,6 +70,7 @@ namespace GameFootball
 
             TimeLabels = new List<Label> { labelMin, labelSec, labelSecSec, labelDoubleDot, labelAddedTime,goalLabel, scoredGoalLabel };
             TeamsLabels = new List<Label> { firstTeamLabel, firstTeamScoreLabel, slashLabel, secondTeamScoreLabel, secondTeamLabel, goalLabel,whoScoredLabel,scoredGoalLabel };
+            MyRep.ColorsForTeams(PlayerSQW, Player2SQW);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
