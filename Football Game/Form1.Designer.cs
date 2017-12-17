@@ -796,6 +796,7 @@
             this.verticalLine.Size = new System.Drawing.Size(24, 105);
             this.verticalLine.TabIndex = 54;
             this.verticalLine.TabStop = false;
+            this.verticalLine.Visible = false;
             // 
             // verticalLine2
             // 
@@ -806,6 +807,7 @@
             this.verticalLine2.Size = new System.Drawing.Size(24, 93);
             this.verticalLine2.TabIndex = 55;
             this.verticalLine2.TabStop = false;
+            this.verticalLine2.Visible = false;
             // 
             // verticalLine3
             // 
@@ -816,6 +818,7 @@
             this.verticalLine3.Size = new System.Drawing.Size(11, 93);
             this.verticalLine3.TabIndex = 56;
             this.verticalLine3.TabStop = false;
+            this.verticalLine3.Visible = false;
             // 
             // gorizontalLine2
             // 
@@ -826,6 +829,7 @@
             this.gorizontalLine2.Size = new System.Drawing.Size(88, 19);
             this.gorizontalLine2.TabIndex = 53;
             this.gorizontalLine2.TabStop = false;
+            this.gorizontalLine2.Visible = false;
             // 
             // gorizontalLine
             // 
@@ -836,6 +840,7 @@
             this.gorizontalLine.Size = new System.Drawing.Size(59, 19);
             this.gorizontalLine.TabIndex = 52;
             this.gorizontalLine.TabStop = false;
+            this.gorizontalLine.Visible = false;
             // 
             // label1
             // 
