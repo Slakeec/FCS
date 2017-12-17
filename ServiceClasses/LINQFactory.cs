@@ -262,5 +262,12 @@ namespace ServiceClasses
                 return context.Teams.First(t => t.UserId == userId && t.MyTeam == true).Points;
             }
         }
+        public static string GetPhoto(int userId, string name)
+        {
+            using (var context = new Context())
+            {
+                return context.Teams.First(t => t.UserId == userId && t.Name == name).Picture;
+            }
+        }
     }
 }

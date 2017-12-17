@@ -95,6 +95,10 @@
     <Compile Include="Migrations\201712161650499_addTeamNametoMatch.Designer.cs">
       <DependentUpon>201712161650499_addTeamNametoMatch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712171403584_LinqToImageAdded.cs" />
+    <Compile Include="Migrations\201712171403584_LinqToImageAdded.Designer.cs">
+      <DependentUpon>201712171403584_LinqToImageAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -131,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712161650499_addTeamNametoMatch.resx">
       <DependentUpon>201712161650499_addTeamNametoMatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712171403584_LinqToImageAdded.resx">
+      <DependentUpon>201712171403584_LinqToImageAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
