@@ -14,6 +14,7 @@ namespace ServiceClasses
             using (var context = new Context())
             {
                 List<int> draw = MakeDraw();
+                List<Team> teams = new List<Team>();
                 for (int i=0; i<Repository.Cnt; i++)
                 {
                     Team t = Repository.GetTeam(new Repository().TeamsId[i]);
@@ -26,6 +27,10 @@ namespace ServiceClasses
                     t.Rating = new Repository().TeamRatings[i];
                     t.MyTeam = t.Name == myTeam;
                     t.UserId = UserId;
+                    teams.Add(t);
+                }
+                foreach (var t in teams)
+                {
                     context.Teams.Add(t);
                     context.SaveChanges();
                 }
