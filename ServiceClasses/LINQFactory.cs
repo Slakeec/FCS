@@ -255,5 +255,12 @@ namespace ServiceClasses
                 }
             }
         }
+        public static int GetPointsById(int userId)
+        {
+            using (var context = new Context())
+            {
+                return context.Teams.First(t => t.UserId == userId && t.MyTeam == true).Points;
+            }
+        }
     }
 }

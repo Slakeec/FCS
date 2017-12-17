@@ -72,6 +72,7 @@
     <Compile Include="MultiPlayerServise.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RandomMusic.cs" />
     <Compile Include="Sorting.cs" />
   </ItemGroup>
   <ItemGroup>

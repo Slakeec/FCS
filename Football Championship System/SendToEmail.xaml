@@ -1,0 +1,23 @@
+﻿<Window x:Class="Football_Championship_System.SendToEmail"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Football_Championship_System"
+        mc:Ignorable="d"
+        Title="SendToEmail" Height="100" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Enter you Email" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+        <TextBox Text="" Name="TextBoxEmail" Grid.Column="1"></TextBox>
+        <Button Name="ButtonBack" Content="EXIT" Grid.Row="1" Margin="5" FontSize="15" Click="ButtonBack_Click"></Button>
+        <Button Name="ButtonOK" Content="CONFIRM" Grid.Column="1" Grid.Row="1" Margin="5" FontSize="15" Click="ButtonOK_Click"></Button>
+    </Grid>
+</Window>
