@@ -146,14 +146,14 @@ namespace ServiceClasses
         }
         public static void PlayerScoreByName(string name, int teamId)
         {
-            if (name != "#")
-            {
+            
+            
                 using (var context = new Context())
                 {
                     context.Players.First(p => p.Name == name && p.TeamId == teamId).Goals++;
                     context.SaveChanges();
                 }
-            }
+            
         }
         public static void MakeMatch(int team1, int team2, List<int>players1, List<int>players2,
              int goal1, int goal2, int round, int userId)
