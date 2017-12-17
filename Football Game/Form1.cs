@@ -92,6 +92,7 @@ namespace GameFootball
                     MyRep.TeamsLeaving();
                     MyRep.ShowStatistics(listViewMatchStat, TeamsLabels);
                     MyRep.GameEnd();
+                    MyRep.WhoScoredMethod(PlayerSQW, Player2SQW);
                 }
             }
 

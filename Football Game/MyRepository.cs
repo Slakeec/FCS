@@ -412,6 +412,26 @@ namespace GameFootball
             team2.TeamLeavingDown(5);
         }
 
+        public void WhoScoredMethod(List<Footballer> squad, List<Footballer> squad2)
+        {
+            foreach (var player in squad)
+            {
+                if (player.GoalsScored != 0)
+                {
+                    player.GoalsScored--;
+                    ScoredFirstTeam.Add(player.Name);
+                }
+            }
+            foreach (var player in squad2)
+            {
+                if (player.GoalsScored != 0)
+                {
+                    player.GoalsScored--;
+                    ScoredSecondTeam.Add(player.Name);
+                }
+            }
+        }
+
         public void TeamGoalScored(PictureBox ball, PictureBox goal, List<Footballer> squad, PictureBox leftgoal, List<Footballer> squad2,  Label goalScoredLabel, Label whoScoredLabel, Label scoredLabel, ref int teamScore, ref int secondTeamScore, ListView whoScoredListView)
         {
             List<Footballer> ScoredTeam = new List<Footballer>();
@@ -423,6 +443,7 @@ namespace GameFootball
                     ScoredTeam = squad;
                     teamScore++;
                     team1.GoalsScored = teamScore;
+
                 }
                 if (ball.Bounds.IntersectsWith(leftgoal.Bounds))
                 {
@@ -437,14 +458,6 @@ namespace GameFootball
                 {
                     if (player.LastTouch == true)
                     {
-                        if (ball.Bounds.IntersectsWith(goal.Bounds))
-                        {
-                            ScoredFirstTeam.Add(player.Name);
-                        }
-                        if (ball.Bounds.IntersectsWith(leftgoal.Bounds))
-                        {
-                            ScoredSecondTeam.Add(player.Name);
-                        }
                         player.GoalsScored++;
                         player.LastGoalTime = Time.Min+1;
                         toScoreString = $"{player.LastGoalTime}' {player.Name}  {team1.GoalsScored}-{team2.GoalsScored}";
