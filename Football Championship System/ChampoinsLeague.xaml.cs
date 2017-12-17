@@ -128,7 +128,7 @@ namespace Football_Championship_System
             //Game
             FootballGameForm f = new FootballGameForm(match.TeamName1, match.TeamName2, LINQFactory.GetNamesById(match.PlayersOne),
                                                      LINQFactory.GetNamesById(match.PlayersTwo), settings.Time, settings.Level, false,
-                                                     match.ScorersOne, match.ScorersTwo);
+                                                     match.ScorersOne, match.ScorersTwo, color1,color2);
             f.ShowDialog();
             match.ScorersOne = f.MyRep.ScoredFirstTeam;
             match.ScorersTwo = f.MyRep.ScoredSecondTeam;
