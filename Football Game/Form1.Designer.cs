@@ -604,7 +604,7 @@
             // 
             this.aBall.BackColor = System.Drawing.Color.Transparent;
             this.aBall.Image = global::Football_Game.Properties.Resources.Ball1;
-            this.aBall.Location = new System.Drawing.Point(1587, 701);
+            this.aBall.Location = new System.Drawing.Point(1573, 744);
             this.aBall.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.aBall.Name = "aBall";
             this.aBall.Size = new System.Drawing.Size(56, 55);
@@ -843,9 +843,10 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(3154, 1643);
+            this.Controls.Add(this.listViewMatchStat);
+            this.Controls.Add(this.aBall);
             this.Controls.Add(this.pictureBoxPause);
             this.Controls.Add(this.labelMin);
-            this.Controls.Add(this.listViewMatchStat);
             this.Controls.Add(this.whoScoredLabel);
             this.Controls.Add(this.goalLabel);
             this.Controls.Add(this.labelDoubleDot);
@@ -865,7 +866,6 @@
             this.Controls.Add(this.Mid1Team2);
             this.Controls.Add(this.labelTimer);
             this.Controls.Add(this.listViewWhoScored);
-            this.Controls.Add(this.scoredGoalLabel);
             this.Controls.Add(this.secondTeamGoal);
             this.Controls.Add(this.firstTeamGoal);
             this.Controls.Add(this.rightForw);
@@ -876,7 +876,6 @@
             this.Controls.Add(this.Mid1);
             this.Controls.Add(this.Mid2);
             this.Controls.Add(this.Goalkeeper);
-            this.Controls.Add(this.aBall);
             this.Controls.Add(this.rightBottomPictBox);
             this.Controls.Add(this.rightHighPictBox);
             this.Controls.Add(this.leftHighPictBox);
@@ -903,6 +902,7 @@
             this.Controls.Add(this.secondTeamScoreLabel);
             this.Controls.Add(this.slashLabel);
             this.Controls.Add(this.secondTeamLabel);
+            this.Controls.Add(this.scoredGoalLabel);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1312, 591);

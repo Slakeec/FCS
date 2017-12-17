@@ -48,7 +48,6 @@ namespace Football_Game
         string goallabel3 = "WITH A BANGER!!!";
         string goallabel4 = "FOUND BACK OF THE NET!!!";
 
-
         public string FirstTeamColor;
         public string SecondTeamColor;
 
@@ -59,6 +58,7 @@ namespace Football_Game
         public static bool isPausePressed = false;
         bool GoalNowScored = false;
         bool LabelsMoved;
+        static bool FinalWhistlePlayed;
 
         public List<Footballer> FirstTeam;
         public List<Footballer> SecondTeam;
@@ -300,6 +300,7 @@ namespace Football_Game
             if (ball.Bounds.IntersectsWith(topLeft.Bounds) || ball.Bounds.IntersectsWith(bottomLeft.Bounds))
                 BallSpeedX = Math.Abs(BallSpeedX);
         }
+
         public void DoLabelAnimation(int count, Label goalscoredLabel, Label whoscoredLabel)
         {
             if (count % 200 != 0)
@@ -321,6 +322,7 @@ namespace Football_Game
                 whoscoredLabel.Visible = false;
             }
         }
+
         public void TeamsReset(List<Footballer> squad,PictureBox ball, List<Footballer> squad2)
         {
             foreach (var player in squad)
@@ -335,13 +337,24 @@ namespace Football_Game
         
         }
 
+        public static void FinalWhistle()
+        {
+            if (!FinalWhistlePlayed)
+            {
+                System.Media.SoundPlayer sp = new System.Media.SoundPlayer();
+                sp.SoundLocation = "../../Resources/finalWhistle.wav";
+                sp.Play();
+                FinalWhistlePlayed = true;
+            }
+        }
+
         public void GameEnd(Label GO, Label winner)
         {
             if (GameEnded==true)
-            {
+            {               
                 if (!LabelsMoved)
                 {
-                    GO.Location = new Point(GO.Location.X, GO.Location.Y - 200);
+                    GO.Location = new Point(GO.Location.X+20, GO.Location.Y - 200);
                     winner.Location = new Point(winner.Location.X, winner.Location.Y - 200);
                     GO.Visible = true;
                     winner.Visible = true;
@@ -354,11 +367,12 @@ namespace Football_Game
                 
             }
         }
+
         public void TechLoose()
         {
             ScoredFirstTeam.Clear();
             ScoredSecondTeam.Clear();
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 3; i++)
             {
                 ScoredSecondTeam.Add("#");
             }
@@ -533,6 +547,9 @@ namespace Football_Game
             countForlabel = r.Next(1, 5);
             if (ball.Bounds.IntersectsWith(goal.Bounds) || ball.Bounds.IntersectsWith(leftgoal.Bounds))
             {
+                System.Media.SoundPlayer sp2 = new System.Media.SoundPlayer();
+                sp2.SoundLocation = "../../Resources/goalscored.wav";
+                sp2.Play();
                 if (ball.Bounds.IntersectsWith(goal.Bounds))
                 {
                     
@@ -840,6 +857,9 @@ namespace Football_Game
             {
                 if(ball.Bounds.IntersectsWith(player.positionOnTheScreen.Bounds))
                 {
+                    //System.Media.SoundPlayer sp3 = new System.Media.SoundPlayer();
+                    //sp3.SoundLocation = "../../Resources/shot.wav";
+                    //sp3.Play();
                     if (ball.Bounds.IntersectsWith(sqwad[0].positionOnTheScreen.Bounds))
                     {
                         team1.GoalKeeperTouches++;
