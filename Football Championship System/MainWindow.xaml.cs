@@ -174,10 +174,9 @@ namespace Football_Championship_System
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
+
             ComboxTeams.ItemsSource = new Repository().TeamNames;
-            string filepath = "../../Resources/Music/1.wav";
-            SoundPlayer sp = new SoundPlayer(filepath);
-            sp.Play();
+
 
         }
 
@@ -185,6 +184,15 @@ namespace Football_Championship_System
         {
             MultiPlayer mp = new MultiPlayer();
             mp.Show();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            string filepath = "../../Resources/Music/1.wav";
+            SoundPlayer sp = new SoundPlayer(filepath);
+            sp.Play();
+            System.Threading.Thread.Sleep(10000);
+            sp.Play();
         }
     }
 }

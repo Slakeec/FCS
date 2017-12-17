@@ -15,7 +15,7 @@ using ServiceClasses;
 using Classes;
 using System.Windows.Forms;
 using Football_Game;
-using GameFootball;
+using Football_Game;
 namespace Football_Championship_System
 {
     /// <summary>

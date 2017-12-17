@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Football_Game;
-using GameFootball;
+using Football_Game;
 using Classes;
 using ServiceClasses;
 using System.Windows.Forms;

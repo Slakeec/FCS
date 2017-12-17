@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Football_Game;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GameFootball
+namespace Football_Game
 {
     public partial class FootballGameForm : Form
     {
@@ -147,6 +148,34 @@ namespace GameFootball
 
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void pictureBoxPause_DoubleClick(object sender, EventArgs e)
+        {
+            //PressPause(timer1, TimerForTime, pictureBoxPause);
+        }
+
+        private void pictureBoxPause_Click(object sender, EventArgs e)
+        {
+            //MyRepository.PressPause(timer1, TimerForTime, pictureBoxPause);
+            if (!MyRepository.isPausePressed)
+            {
+                pictureBoxPause.ImageLocation = "../../Resources/PlayIcon.png";
+                timer1.Enabled = false;
+                TimerForTime.Enabled = false;
+                MyRepository.isPausePressed = true;
+            }
+            else
+            {
+                pictureBoxPause.ImageLocation = "../../Resources/PauseIcon.png";
+                timer1.Enabled = true;
+                TimerForTime.Enabled = true;
+                MyRepository.isPausePressed = false;
+            }
+
+        }
 
         private void TimeTimer_Tick(object sender, EventArgs e)
         {
