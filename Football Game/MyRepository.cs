@@ -62,7 +62,8 @@ namespace GameFootball
         public Match match;
 
         public MyRepository(string name1, string name2, List<string>players1, List<string>players2,
-                            int time, int difficulty, bool isMulti, List<string> FirstScoredPlayers, List<string> SecondScoredPlayers)
+                            int time, int difficulty, bool isMulti, List<string> FirstScoredPlayers, 
+                            List<string> SecondScoredPlayers, string FirstColor, string SecondColor)
         {
             ScoredFirstTeam = FirstScoredPlayers;
             ScoredSecondTeam= SecondScoredPlayers;
@@ -97,37 +98,76 @@ namespace GameFootball
             {
                 Time = new Timer180(0, 0); 
             }
-            //FirstTeam = new List<Footballer>
-            //{
-            //    new Footballer("1",0),
-            //    new Footballer("2",0),
-            //    new Footballer("3",0),
-            //    new Footballer("4",0),
-            //    new Footballer("5",0),
-            //    new Footballer("6",0),
-            //    new Footballer("7",0),
-            //    new Footballer("8",0),
-            //    new Footballer("9",0),
-            //    new Footballer("10",0),
-            //    new Footballer("11",0)
-            //};
-            //SecondTeam = new List<Footballer>
-            //{
-            //    new Footballer("1(2)",0),
-            //    new Footballer("2(2)",0),
-            //    new Footballer("3(2)",0),
-            //    new Footballer("4(2)",0),
-            //    new Footballer("5(2)",0),
-            //    new Footballer("6(2)",0),
-            //    new Footballer("7(2)",0),
-            //    new Footballer("8(2)",0),
-            //    new Footballer("9(2)",0),
-            //    new Footballer("10(2)",0),
-            //    new Footballer("11(2)",0)
-            //};
-            //team1 = new TeamPlayer("Chelsea", FirstTeam);
-            //team2 = new Player2Team("Arsenal", SecondTeam);
-            //Time = new Timer60(0, 0);
+            if (FirstColor == "Black")
+            {
+                foreach (var player in FirstTeam)
+                {
+                    player.positionOnTheScreen.BackColor = Color.Black;
+                }
+            }
+            if (FirstColor == "Gold")
+            {
+                foreach (var player in FirstTeam)
+                {
+                    player.positionOnTheScreen.BackColor = Color.Gold;
+                }
+            }
+            if (FirstColor == "Maroon")
+            {
+                foreach (var player in FirstTeam)
+                {
+                    player.positionOnTheScreen.BackColor = Color.Maroon;
+                }
+            }
+            if (FirstColor == "Blue")
+            {
+                foreach (var player in FirstTeam)
+                {
+                    player.positionOnTheScreen.BackColor = Color.DarkBlue;
+                }
+            }
+            if (FirstColor == "Orange")
+            {
+                foreach (var player in FirstTeam)
+                {
+                    player.positionOnTheScreen.BackColor = Color.Orange;
+                }
+            }
+            if (FirstColor == "Black")
+            {
+                foreach (var player in SecondTeam)
+                {
+                    player.positionOnTheScreen.BackColor = Color.Black;
+                }
+            }
+            if (FirstColor == "Gold")
+            {
+                foreach (var player in SecondTeam)
+                {
+                    player.positionOnTheScreen.BackColor = Color.Gold;
+                }
+            }
+            if (FirstColor == "Maroon")
+            {
+                foreach (var player in SecondTeam)
+                {
+                    player.positionOnTheScreen.BackColor = Color.Maroon;
+                }
+            }
+            if (FirstColor == "Blue")
+            {
+                foreach (var player in SecondTeam)
+                {
+                    player.positionOnTheScreen.BackColor = Color.DarkBlue;
+                }
+            }
+            if (FirstColor == "Orange")
+            {
+                foreach (var player in SecondTeam)
+                {
+                    player.positionOnTheScreen.BackColor = Color.Orange;
+                }
+            }
             Speeds = new List<int> { PlusBallSpeedXClone, PlusBallSpeedX1, PlusBallSpeedX2, PlusBallSpeedX3, PlusBallSpeedX4, PlusBallSpeedY1, PlusBallSpeedY2, PlusBallSpeedY3, PlusBallSpeedY4 };
         }
         public MyRepository(List<string> players1, List<string> players2)

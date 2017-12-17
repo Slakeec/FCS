@@ -32,9 +32,11 @@ namespace GameFootball
         bool isUpPressed, isDownPressed, isUpArrowPressed, isDownArrowPressed;
 
         public FootballGameForm(string name1, string name2, List<string> players1, List<string> players2,
-                            int time, int difficulty, bool isMulti, List<string> FirstScoredPlayers, List<string> SecondScoredPlayers)
+                            int time, int difficulty, bool isMulti, List<string> FirstScoredPlayers, List<string> SecondScoredPlayers,
+                            string color1,string color2)
         {
-            MyRep = new MyRepository(name1, name2, players1, players2, time, difficulty, isMulti, FirstScoredPlayers,SecondScoredPlayers);
+            MyRep = new MyRepository(name1, name2, players1, players2, time, difficulty, isMulti, FirstScoredPlayers,SecondScoredPlayers,
+                                    color1, color2);
             InitializeComponent();
 
         }

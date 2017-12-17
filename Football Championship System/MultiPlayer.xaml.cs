@@ -58,7 +58,7 @@ namespace Football_Championship_System
             List<string> FirstScorers = new List<string>();
             List<string> SecondScorers = new List<string>();
             FootballGameForm f = new FootballGameForm(name1, name2, MultiPlayerServise.GetNames(MultiPlayerServise.GetSquadFromName(name1)),
-                                      MultiPlayerServise.GetNames(MultiPlayerServise.GetSquadFromName(name2)), int.Parse(t), 0, true,FirstScorers, SecondScorers);
+                                      MultiPlayerServise.GetNames(MultiPlayerServise.GetSquadFromName(name2)), int.Parse(t), 0, true,FirstScorers, SecondScorers, form1, form2);
             f.Show();
         }
 
