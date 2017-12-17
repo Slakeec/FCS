@@ -93,6 +93,7 @@ namespace Football_Game
             {
                 if (MyRepository.GameEnded)
                 {
+                    MyRepository.FinalWhistle();
                     MyRep.TeamsLeaving();
                     MyRep.ShowStatistics(listViewMatchStat, TeamsLabels);
                     MyRep.GameEnd(goalLabel,scoredGoalLabel);

@@ -148,6 +148,9 @@ namespace Football_Game
             {
                 if (Ball.Bounds.IntersectsWith(player.positionOnTheScreen.Bounds))
                 {
+                    System.Media.SoundPlayer sp1 = new System.Media.SoundPlayer();
+                    sp1.SoundLocation = "../../Resources/shot.wav";
+                    sp1.Play();
                     if (Ball.Bounds.IntersectsWith(Squad[0].positionOnTheScreen.Bounds))
                     {
                         GoalKeeperTouches++;
