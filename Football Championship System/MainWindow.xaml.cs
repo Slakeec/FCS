@@ -68,11 +68,17 @@ namespace Football_Championship_System
                 MessageBox.Show("Fill login and password fields", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
+            if (LINQFactory.IsLogin(textBoxRegistrationLogin.Text)==true)
+            {
+                MessageBox.Show("This login exists!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
             if (passwordBoxRegistration.Password!=passwordBoxConfirming.Password)
             {
                 MessageBox.Show("You entered different passwords", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
+            
             using (var context = new Context())
             {
                 context.Users.Add(new User(textBoxRegistrationLogin.Text, Hashing.HashPaswword(passwordBoxRegistration.Password)));

@@ -39,7 +39,8 @@ namespace ServiceClasses
         {
             using (var context = new Context())
             {
-                return context.Users.Any(u => u.Login == login);
+                bool res = context.Users.Any(u => u.Login == login);
+                return res;
             }
         }
         public static bool IsLoginAndPassword(string login, string password)
