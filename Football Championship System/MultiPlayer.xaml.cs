@@ -35,21 +35,21 @@ namespace Football_Championship_System
 
         private void ButtonOK_Click(object sender, RoutedEventArgs e)
         {
-            string name1 = ComboBoxFirstTeam.SelectedValue.ToString();
-            string name2 = ComboBoxSecondTeam.SelectedValue.ToString();
+            string name1 = ComboBoxFirstTeam.SelectedIndex==-1 ? "" : ComboBoxFirstTeam.SelectedValue.ToString();
+            string name2 = ComboBoxSecondTeam.SelectedIndex==-1 ? "" : ComboBoxSecondTeam.SelectedValue.ToString();
             if (name1=="" || name2=="")
             {
                 System.Windows.MessageBox.Show("Choose teams please!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            string form1 = ComboBoxColorFirst.SelectedValue.ToString();
-            string form2 = ComboBoxColorSecond.SelectedValue.ToString();
+            string form1 = ComboBoxColorFirst.SelectedIndex==-1 ? "" : ComboBoxColorFirst.SelectedValue.ToString();
+            string form2 = ComboBoxColorSecond.SelectedIndex==-1 ? "" : ComboBoxColorSecond.SelectedValue.ToString();
             if (form1=="" || form2=="")
             {
                 System.Windows.MessageBox.Show("Choose colors please!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            string t = ComboBoxTime.SelectedValue.ToString();
+            string t = ComboBoxTime.SelectedIndex==-1 ? "" : ComboBoxTime.SelectedValue.ToString();
             if (t=="")
             {
                 System.Windows.MessageBox.Show("Choose time please!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);

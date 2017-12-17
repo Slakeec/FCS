@@ -102,6 +102,8 @@ namespace Football_Championship_System
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            ComboBoxColorFirst.ItemsSource = (new Repository()).Colors;
+            ComboBoxCOlorSecond.ItemsSource = (new Repository()).Colors;
             int round = LINQFactory.Round(UserId);
             if (round==Repository.Cnt)
             {
@@ -114,6 +116,13 @@ namespace Football_Championship_System
 
         private void ButtonStartGame_Click(object sender, RoutedEventArgs e)
         {
+            string color1 = ComboBoxColorFirst.SelectedIndex==-1 ? "" : ComboBoxColorFirst.SelectedValue.ToString();
+            string color2 = ComboBoxCOlorSecond.SelectedIndex==-1? "" : ComboBoxCOlorSecond.SelectedValue.ToString();
+            if (color1=="" || color2=="")
+            {
+                System.Windows.MessageBox.Show("Choose forms for the game", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
             int round = LINQFactory.Round(UserId);
             Match match = Championship.playRound(userId, round);
             //Game
